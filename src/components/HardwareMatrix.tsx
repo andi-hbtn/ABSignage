@@ -2,68 +2,97 @@
 
 import React from "react"
 import { Badge } from "@/components/ui/badge"
-import { Check, Tv, Cpu, Monitor, Radio } from "lucide-react"
+import type { Dictionary } from "@/lib/get-dictionary"
+import { Tv, Sparkles, Check, CheckCircle2 } from "lucide-react"
 
-export function HardwareMatrix() {
-  const hardwareTypes = [
+interface HardwareMatrixProps {
+  dict: Dictionary["hardware"]
+}
+
+export function HardwareMatrix({ dict }: HardwareMatrixProps) {
+  const hardware = [
     {
-      name: "Android TV & Google TV",
-      desc: "Sony Bravia, TCL, Xiaomi Mi Box, Google Chromecast with Google TV, Philips Android TV",
-      features: ["4K HDR 60fps", "Zero-Touch Pairing", "Auto-Launch on Boot", "Sleep/Wake Control"],
-      status: "Native Official",
+      name: dict.h1Title,
+      desc: dict.h1Desc,
+      tag: dict.h1Tag,
       badgeVariant: "success" as const,
+      features: [
+        "Native Android TV / Google TV App",
+        "4K UHD & Full HD Hardware Decoding",
+        "Auto-launch on TV power-on",
+        "Remote reboot & power-off controls",
+      ],
     },
     {
-      name: "Commercial SoC Displays",
-      desc: "Vestel Commercial Prime, Philips Q-Line, Elo Touch, Hisense Commercial Signage",
-      features: ["24/7 Continuous Run", "Lockdown Kiosk Mode", "Port & Button Disabling", "Remote Reboot"],
-      status: "Enterprise Certified",
+      name: dict.h2Title,
+      desc: dict.h2Desc,
+      tag: dict.h2Tag,
       badgeVariant: "default" as const,
+      features: [
+        "Converts ANY standard TV with HDMI",
+        "Affordable setup (devices cost ~$30)",
+        "Zero-touch auto-restart on power loss",
+        "Wi-Fi and Ethernet LAN support",
+      ],
     },
     {
-      name: "Micro PC & Raspberry Pi",
-      desc: "Raspberry Pi 4/5, Intel NUC, Khadas VIM4, Android Box Industrial",
-      features: ["Dual-HDMI Output", "Ultra-Low Power (<10W)", "Industrial Heat Dissipation", "DIN Rail Mountable"],
-      status: "Pro Fleet Ready",
+      name: dict.h3Title,
+      desc: dict.h3Desc,
+      tag: dict.h3Tag,
       badgeVariant: "secondary" as const,
+      features: [
+        "Certified for continuous 24/7 retail run",
+        "Lockdown Kiosk Mode security",
+        "Port & physical button disabling",
+        "Designed for heavy commercial traffic",
+      ],
     },
   ]
 
   return (
-    <section id="hardware" className="py-24 relative overflow-hidden bg-slate-950 border-t border-white/[0.06]">
+    <section id="hardware" className="py-24 relative overflow-hidden bg-slate-950/80 border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="default" className="mb-4">
-            Kompatibiliteti i Harduerit
+            <Sparkles className="w-3.5 h-3.5 mr-1" />
+            {dict.badge}
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Funksionon me Ekrane Ekzistuese dhe Pajisje të Reja
+            {dict.title}
           </h2>
-          <p className="mt-4 text-slate-300 text-base sm:text-lg">
-            Nuk keni nevojë të blini pajisje të shtrenjta proprietare. ABSignage instalohet në çdo Android TV, Box ekonomik apo ekran komercial.
+          <p className="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+            {dict.subtitle}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {hardwareTypes.map((hw) => (
+        {/* 3 Hardware Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {hardware.map((hw) => (
             <div
               key={hw.name}
-              className="rounded-3xl border border-white/[0.08] bg-slate-900/60 p-8 flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300"
+              className="rounded-3xl border border-white/[0.08] bg-slate-900/60 p-8 flex flex-col justify-between hover:border-cyan-500/40 transition-all duration-300 group shadow-lg"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <Tv className="w-8 h-8 text-cyan-400" />
-                  <Badge variant={hw.badgeVariant}>{hw.status}</Badge>
+                <div className="flex items-center justify-between mb-5">
+                  <div className="p-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 group-hover:scale-110 transition-transform">
+                    <Tv className="w-6 h-6" />
+                  </div>
+                  <Badge variant={hw.badgeVariant}>{hw.tag}</Badge>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-2">{hw.name}</h3>
-                <p className="text-xs text-slate-400 mb-6 leading-relaxed">{hw.desc}</p>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                  {hw.name}
+                </h3>
+                <p className="text-xs text-slate-400 mb-6 leading-relaxed min-h-[36px]">
+                  {hw.desc}
+                </p>
 
-                <div className="space-y-2.5">
+                <div className="space-y-2.5 pb-6 border-t border-slate-800/80 pt-5">
                   {hw.features.map((feat) => (
-                    <div key={feat} className="flex items-center gap-2 text-xs text-slate-300">
-                      <div className="p-0.5 rounded-full bg-cyan-500/20 text-cyan-400">
+                    <div key={feat} className="flex items-start gap-2.5 text-xs text-slate-300">
+                      <div className="p-0.5 rounded-full bg-cyan-500/20 text-cyan-400 flex-shrink-0 mt-0.5">
                         <Check className="w-3.5 h-3.5" />
                       </div>
                       <span>{feat}</span>
@@ -72,11 +101,19 @@ export function HardwareMatrix() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-slate-800 text-center">
-                <span className="text-xs font-mono text-cyan-300">Shkarkoni APK nga Paneli me 1-Klick</span>
+              <div className="pt-4 border-t border-slate-800 text-center">
+                <span className="text-xs font-mono text-cyan-400 font-semibold">
+                  Zero Special Cables · Plug & Play
+                </span>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Reassurance Callout Banner */}
+        <div className="mt-12 max-w-3xl mx-auto rounded-2xl bg-slate-900/80 border border-cyan-500/30 p-5 text-center flex items-center justify-center gap-3 text-xs sm:text-sm text-cyan-200">
+          <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+          <span>{dict.callout}</span>
         </div>
 
       </div>

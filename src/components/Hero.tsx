@@ -1,253 +1,285 @@
 "use client"
 
 import React, { useState } from "react"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { 
-  Play, 
-  Sparkles, 
-  Tv, 
-  Wifi, 
-  ShieldCheck, 
-  CheckCircle2, 
+import type { Dictionary } from "@/lib/get-dictionary"
+import {
   ArrowRight,
+  CheckCircle2,
+  Play,
   Radio,
-  Clock
+  Clock,
+  QrCode,
+  Flame,
 } from "lucide-react"
 
 interface HeroProps {
+  dict: Dictionary["hero"]
+  statsDict: Dictionary["stats"]
   onOpenDemo: () => void
 }
 
-export function Hero({ onOpenDemo }: HeroProps) {
-  const [activeScreenIndex, setActiveScreenIndex] = useState(0)
+export function Hero({ dict, statsDict, onOpenDemo }: HeroProps) {
+  const [activePreset, setActivePreset] = useState<number>(0)
 
-  const screens = [
+  const presets = [
     {
-      title: "Flagship Retail 4K Video Wall",
-      location: "Tirana City Center Mall · Ekrani #01",
-      resolution: "3840 x 2160 (4K UHD)",
-      fps: "60 FPS",
-      status: "ONLINE · SYNCED",
-      content: {
-        headline: "KOLAKSIONI I RI VEROR 2026",
-        sub: "Ulje Ekskluzive deri në 50% në të gjitha dyqanet partnere",
-        tag: "KAMPANJË DINAMIKE",
-        bgGradient: "from-blue-900 via-indigo-950 to-slate-950",
-      }
+      title: "Restaurant & Bar Menu",
+      location: "Tirana Downtown Lounge",
+      pairingCode: "749-204",
+      headline: "SUMMER SPECIALS & COCKTAILS",
+      sub: "Happy Hour 17:00 - 20:00 · 30% OFF All Signature Drinks",
+      menuItem1: "Gourmet Angus Burger — 850 lek",
+      menuItem2: "Truffle Fries & Dip — 420 lek",
+      menuItem3: "Passion Fruit Mojito — 600 lek",
+      ticker: "Live Order Status: Table #12 Ready · Try our chef's special homemade tiramisu today!",
+      gradient: "from-blue-950 via-slate-900 to-slate-950",
     },
     {
-      title: "Airport Flight Schedule & Ads",
-      location: "Durrës Terminal A · Ekrani #07",
-      resolution: "1920 x 1080 (FHD 60Hz)",
-      fps: "60 FPS",
-      status: "ONLINE · SYNCED",
-      content: {
-        headline: "NISJET NDËRKOMBËTARE · LIVE SCHEDULE",
-        sub: "Fluturimi AB-402 drejt Mynihut: Nisi Boarding në Portën 04",
-        tag: "SCHEDULE REAL-TIME",
-        bgGradient: "from-cyan-950 via-slate-900 to-slate-950",
-      }
+      title: "Retail Fashion Promo",
+      location: "City Mall Flagship Store",
+      pairingCode: "812-409",
+      headline: "NEW SUMMER COLLECTION 2026",
+      sub: "Exclusive in-store launch · Buy 2 items and get 25% discount",
+      menuItem1: "Italian Linen Shirts — 3,900 lek",
+      menuItem2: "Classic Casual Blazers — 7,500 lek",
+      menuItem3: "Summer Leather Sneakers — 5,200 lek",
+      ticker: "Flash Sale Alert: VIP Club members receive double bonus points at checkout today!",
+      gradient: "from-indigo-950 via-slate-900 to-slate-950",
     },
     {
-      title: "Corporate HQ Interactive Lobby",
-      location: "Prishtina Tech Campus · Ekrani #12",
-      resolution: "3840 x 1080 (Ultra-Wide)",
-      fps: "59.9 FPS",
-      status: "ONLINE · CACHED",
-      content: {
-        headline: "MIRË SE VINI NË ANTIGRAVITY INNOVATION SUMMIT",
-        sub: "Konferenca kryesore nis në orën 10:00 në Sallën e Madhe",
-        tag: "BROADCAST KOMPANIE",
-        bgGradient: "from-emerald-950 via-slate-900 to-slate-950",
-      }
+      title: "Clinic & Reception",
+      location: "Medical Care Center",
+      pairingCode: "305-618",
+      headline: "WELCOME TO CARE CLINIC",
+      sub: "Please take a ticket at reception · Free consultations for card holders",
+      menuItem1: "Dr. A. Hoxha — Room 04 (Available)",
+      menuItem2: "Dr. E. Krasniqi — Room 07 (In Session)",
+      menuItem3: "Pharmacy Desk — Ground Floor",
+      ticker: "Health Tip: Schedule your annual general health checkup at our front desk today.",
+      gradient: "from-teal-950 via-slate-900 to-slate-950",
     },
-    {
-      title: "QSR Digital Menu Board",
-      location: "Vlorë Waterfront Drive-Thru · Ekrani #03",
-      resolution: "1920 x 1080 (FHD 60Hz)",
-      fps: "60 FPS",
-      status: "ONLINE · SYNCED",
-      content: {
-        headline: "MENYJA DITORE & OFERTA GOURMET",
-        sub: "Përditësim automatik i çmimeve sipas stokut dhe orës",
-        tag: "DAY-PARTING MENU",
-        bgGradient: "from-amber-950 via-stone-900 to-slate-950",
-      }
-    }
   ]
 
-  const currentScreen = screens[activeScreenIndex]
+  const current = presets[activePreset]
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-      {/* Background Gradients & Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-cyan-500/15 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 left-1/4 w-[450px] h-[400px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute inset-0 grid-pattern opacity-40 -z-20" />
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      {/* Background Neon Gradients */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-cyan-500/12 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-1/4 w-[450px] h-[380px] bg-blue-600/12 rounded-full blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute inset-0 grid-pattern opacity-30 -z-20" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Eyebrow Badge */}
-        <div className="flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/90 border border-cyan-500/40 text-cyan-300 text-xs sm:text-sm font-semibold mb-8 shadow-[0_0_20px_rgba(0,229,255,0.2)]">
-            <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
-            <span>Platforma Enterprise e Menaxhimit të Ekraneve Dixhitale</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-            <span className="text-slate-400 font-normal">Next-Gen Architecture</span>
-          </div>
+        {/* Main Pitch */}
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl leading-[1.1]">
-            Shndërroni çdo ekran në një{" "}
+          {/* Headline */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            {dict.titlePart1}{" "}
             <span className="text-gradient-cyan-blue block sm:inline">
-              Rrjet Inteligjent Reklamimi
+              {dict.titleHighlight}
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
-            Orkestrim pa vonesë në re, parashikim i defekteve para se ekrani të bëhet i zi, sinkronizim inteligjent dhe riprodhim pa ndërprerje në qindra pajisje Android TV e ekrane profesionale.
+          <p className="mt-5 text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            {dict.subtitle}
           </p>
 
-          {/* CTA Buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+          {/* CTAs */}
+          <div className="mt-7 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
             <Button
-              size="lg"
               onClick={onOpenDemo}
-              className="w-full sm:w-auto text-base group"
+              className="w-full sm:w-auto text-xs sm:text-sm h-10 px-5 font-bold group shadow-[0_0_20px_rgba(0,229,255,0.3)]"
             >
-              <span>Nis Provën Falas (14 Ditë)</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <span>{dict.ctaPrimary}</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Button>
 
             <a
-              href="#simulator"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl border border-cyan-500/40 bg-slate-900/80 px-7 h-12 text-base font-semibold text-cyan-300 hover:bg-cyan-950/40 hover:border-cyan-400 transition-all shadow-[0_0_20px_rgba(0,229,255,0.1)]"
+              href="#how-it-works"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-4 h-10 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white hover:border-cyan-500/40 hover:bg-slate-800 transition-all"
             >
-              <Play className="w-4 h-4 fill-cyan-400 text-cyan-400" />
-              <span>Provo Simulatorin Live</span>
+              <Play className="w-3.5 h-3.5 fill-cyan-400 text-cyan-400" />
+              <span>{dict.ctaSecondary}</span>
             </a>
           </div>
 
-          {/* Trust Metrics */}
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 max-w-4xl w-full pt-8 border-t border-white/[0.08]">
-            <div className="text-center">
-              <strong className="block text-2xl sm:text-3xl font-bold text-white tracking-tight">0.00 sekonda</strong>
-              <span className="text-xs sm:text-sm text-slate-400">Kohë ekrani të zi (Fail-safe)</span>
-            </div>
-            <div className="text-center">
-              <strong className="block text-2xl sm:text-3xl font-bold text-cyan-400 tracking-tight">99.99%</strong>
-              <span className="text-xs sm:text-sm text-slate-400">Disponueshmëri e Flotës</span>
-            </div>
-            <div className="text-center">
-              <strong className="block text-2xl sm:text-3xl font-bold text-white tracking-tight">6-Shifror</strong>
-              <span className="text-xs sm:text-sm text-slate-400">Pairing i menjëhershëm</span>
-            </div>
-            <div className="text-center">
-              <strong className="block text-2xl sm:text-3xl font-bold text-cyan-400 tracking-tight">100% Offline</strong>
-              <span className="text-xs sm:text-sm text-slate-400">Cache lokal i pavarur</span>
-            </div>
-          </div>
         </div>
 
-        {/* Interactive Hero Visual Showcase */}
-        <div className="mt-16 relative">
-          <div className="relative mx-auto max-w-5xl rounded-3xl p-2 sm:p-4 bg-gradient-to-b from-cyan-500/30 via-slate-800/40 to-slate-950 border border-cyan-500/30 shadow-[0_20px_60px_-15px_rgba(0,229,255,0.3)]">
-            
-            {/* Screen Selector Tabs */}
-            <div className="flex items-center justify-between pb-3 px-2 border-b border-white/[0.08] flex-wrap gap-2">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-rose-500/80" />
-                <span className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 text-xs font-mono text-slate-400 hidden sm:inline">
-                  ABSignage Enterprise Display Controller · ID: 409-TV
-                </span>
+        {/* Hero Interactive Split-Screen & Pairing Code Showcase */}
+        <div className="mt-14 relative max-w-5xl mx-auto">
+          <div className="rounded-3xl p-2.5 sm:p-4 bg-gradient-to-b from-cyan-500/25 via-slate-800/40 to-slate-950 border border-cyan-500/30 shadow-[0_20px_60px_-15px_rgba(0,229,255,0.25)]">
+
+            {/* Top Toolbar: Switcher & Pairing Code Indicator */}
+            <div className="flex flex-col sm:flex-row items-center justify-between pb-3 px-2 border-b border-white/[0.08] gap-3">
+              <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-start">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-rose-500/80" />
+                  <span className="w-3 h-3 rounded-full bg-amber-500/80" />
+                  <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
+                </div>
+                <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-mono text-[11px] font-bold">
+                  <span>{dict.pairingCodeLabel}:</span>
+                  <span className="text-white tracking-widest">{current.pairingCode}</span>
+                </div>
               </div>
 
-              {/* Selector Pills */}
-              <div className="flex items-center gap-1 overflow-x-auto py-1">
-                {screens.map((scr, idx) => (
+              {/* Sample Preset Switcher */}
+              <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto">
+                {presets.map((p, idx) => (
                   <button
-                    key={scr.title}
-                    onClick={() => setActiveScreenIndex(idx)}
-                    className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all whitespace-nowrap ${
-                      activeScreenIndex === idx
-                        ? "bg-cyan-500 text-slate-950 font-bold shadow-[0_0_10px_rgba(0,229,255,0.5)]"
-                        : "text-slate-400 hover:text-slate-200 hover:bg-slate-800"
-                    }`}
+                    key={p.title}
+                    onClick={() => setActivePreset(idx)}
+                    className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all whitespace-nowrap ${activePreset === idx
+                        ? "bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/30"
+                        : "text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+                      }`}
                   >
-                    Ekrani {idx + 1}
+                    {p.title}
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Display Screen Frame */}
-            <div className={`mt-3 relative rounded-2xl overflow-hidden border border-cyan-500/30 aspect-[16/9] bg-gradient-to-br ${currentScreen.content.bgGradient} p-6 sm:p-10 flex flex-col justify-between shadow-inner`}>
-              
-              {/* Screen Top Status Bar */}
-              <div className="flex items-center justify-between text-xs text-white/80">
-                <div className="flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+            {/* Simulated Commercial TV Frame */}
+            <div className={`mt-3 rounded-2xl overflow-hidden border border-cyan-500/20 bg-gradient-to-br ${current.gradient} p-4 sm:p-6 shadow-inner relative`}>
+
+              {/* TV Status Overlay Header */}
+              <div className="flex items-center justify-between text-xs mb-4">
+                <div className="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
                   <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-                  <span className="font-semibold text-emerald-400">{currentScreen.status}</span>
+                  <span className="text-emerald-400 font-semibold">{dict.activeScreen}</span>
                   <span className="text-white/40">|</span>
-                  <span>{currentScreen.fps}</span>
-                  <span className="text-white/40">|</span>
-                  <span>{currentScreen.resolution}</span>
+                  <span className="text-cyan-300 font-mono">{current.location}</span>
                 </div>
 
-                <div className="flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                  <Tv className="w-3.5 h-3.5 text-cyan-400" />
-                  <span className="text-cyan-300 font-medium">{currentScreen.location}</span>
-                </div>
+                <Badge variant="default" className="text-[11px] font-mono">
+                  4-ZONE SPLIT-SCREEN
+                </Badge>
               </div>
 
-              {/* Active Broadcast Content Graphic */}
-              <div className="my-auto py-6">
-                <span className="inline-block px-3 py-1 rounded-md bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold tracking-widest uppercase mb-3">
-                  {currentScreen.content.tag}
-                </span>
-                <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight max-w-3xl drop-shadow-md">
-                  {currentScreen.content.headline}
-                </h2>
-                <p className="mt-3 text-sm sm:text-lg text-cyan-100/90 max-w-2xl font-normal leading-relaxed">
-                  {currentScreen.content.sub}
-                </p>
-              </div>
+              {/* Multi-Zone TV Content Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5">
 
-              {/* Bottom Playback Ticker & Progress */}
-              <div className="bg-black/50 backdrop-blur-md rounded-xl p-3 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-                <div className="flex items-center gap-3 w-full sm:w-auto">
-                  <div className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
-                  <span className="text-slate-300 font-medium truncate">
-                    Playlista Aktive: "Verë 2026 - Prime Time Loop (00:45s)"
-                  </span>
-                </div>
-                
-                <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
-                  <div className="flex items-center gap-1.5 text-slate-400">
-                    <Clock className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Rifreskuar para 3 sekondash</span>
+                {/* ZONE 1 (Left 7 Cols): Video / Brand Promo */}
+                <div className="lg:col-span-7 rounded-xl bg-black/40 border border-cyan-500/30 p-5 sm:p-7 flex flex-col justify-between backdrop-blur-sm relative overflow-hidden min-h-[220px]">
+                  <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px] font-bold uppercase">
+                    Zone 1 · 4K Video
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-500/30 text-[10px] font-mono">
-                    HASH #a8f9c2
-                  </span>
+
+                  <div>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-cyan-500/20 text-cyan-300 text-xs font-bold tracking-wider uppercase mb-2.5">
+                      <Flame className="w-3.5 h-3.5" />
+                      FEATURED PROMO
+                    </span>
+                    <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight leading-tight">
+                      {current.headline}
+                    </h3>
+                    <p className="mt-2 text-xs sm:text-sm text-cyan-100/90 leading-relaxed max-w-md">
+                      {current.sub}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-300">
+                    <span className="truncate max-w-[200px]">{dict.activePlaylist}</span>
+                    <span className="font-mono text-cyan-400">1080p 60FPS</span>
+                  </div>
+                </div>
+
+                {/* ZONE 2 (Right 5 Cols): Menu / Price List / Announcements */}
+                <div className="lg:col-span-5 rounded-xl bg-slate-950/70 border border-slate-800 p-4 sm:p-5 flex flex-col justify-between backdrop-blur-sm relative">
+                  <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px] font-bold uppercase">
+                    Zone 2 · Live Menu
+                  </div>
+
+                  <div>
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-400 font-bold block mb-3">
+                      DAILY SELECTION & PRICING
+                    </span>
+                    <div className="space-y-2.5 text-xs">
+                      <div className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800/80 flex items-center justify-between">
+                        <span className="font-medium text-white">{current.menuItem1.split("—")[0]}</span>
+                        <strong className="font-mono text-cyan-300 font-bold">{current.menuItem1.split("—")[1]}</strong>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800/80 flex items-center justify-between">
+                        <span className="font-medium text-white">{current.menuItem2.split("—")[0]}</span>
+                        <strong className="font-mono text-cyan-300 font-bold">{current.menuItem2.split("—")[1]}</strong>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800/80 flex items-center justify-between">
+                        <span className="font-medium text-white">{current.menuItem3.split("—")[0]}</span>
+                        <strong className="font-mono text-cyan-300 font-bold">{current.menuItem3.split("—")[1]}</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 pt-2 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-400 font-mono">
+                    <span>Auto-sync with POS</span>
+                    <span className="text-emerald-400 font-semibold">100% Offline Valid</span>
+                  </div>
                 </div>
               </div>
+
+              {/* ZONE 3 & 4 (Bottom Ticker & QR/Clock) */}
+              <div className="mt-3.5 grid grid-cols-1 sm:grid-cols-12 gap-3">
+                {/* Zone 3: Live Ticker */}
+                <div className="sm:col-span-9 bg-black/50 border border-cyan-500/20 backdrop-blur-md rounded-xl p-2.5 flex items-center gap-3 text-xs text-cyan-200 overflow-hidden">
+                  <div className="px-2 py-0.5 rounded bg-cyan-500 text-slate-950 font-mono text-[10px] font-black uppercase flex-shrink-0">
+                    Zone 3 · Ticker
+                  </div>
+                  <span className="truncate font-medium">{current.ticker}</span>
+                </div>
+
+                {/* Zone 4: QR & Clock */}
+                <div className="sm:col-span-3 bg-black/50 border border-slate-800 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between text-xs text-white">
+                  <div className="flex items-center gap-1.5 font-mono text-[11px] text-slate-300">
+                    <Clock className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>12:45 PM</span>
+                  </div>
+                  <div className="flex items-center gap-1 px-2 py-0.5 rounded bg-slate-900 text-cyan-300 text-[10px] font-mono border border-slate-800">
+                    <QrCode className="w-3 h-3 text-cyan-400" />
+                    <span>Scan Menu</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            {/* Micro Device Bar */}
-            <div className="mt-3 flex items-center justify-between px-2 text-xs text-slate-400">
+            {/* Micro Caption */}
+            <div className="mt-3 flex items-center justify-between px-2 text-[11px] text-slate-400">
               <span className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Kriptuar me AES-256 · Proof-of-Play i verifikuar</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span>{dict.refreshed}</span>
               </span>
-              <span className="text-cyan-400 hover:underline cursor-pointer" onClick={() => setActiveScreenIndex((activeScreenIndex + 1) % screens.length)}>
-                Ndërro ekranin tjetër →
+              <span
+                onClick={() => setActivePreset((activePreset + 1) % presets.length)}
+                className="text-cyan-400 hover:underline cursor-pointer font-medium"
+              >
+                Next Example Screen →
               </span>
             </div>
+          </div>
+        </div>
+
+        {/* 4 Proof Numbers Bar */}
+        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-white/[0.08]">
+          <div className="text-center p-3 rounded-2xl bg-slate-900/30 border border-white/[0.04]">
+            <strong className="block text-2xl sm:text-3xl font-extrabold text-white font-mono">{statsDict.stat1Val}</strong>
+            <span className="text-xs text-slate-400 mt-1 block">{statsDict.stat1Label}</span>
+          </div>
+          <div className="text-center p-3 rounded-2xl bg-slate-900/30 border border-white/[0.04]">
+            <strong className="block text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">{statsDict.stat2Val}</strong>
+            <span className="text-xs text-slate-400 mt-1 block">{statsDict.stat2Label}</span>
+          </div>
+          <div className="text-center p-3 rounded-2xl bg-slate-900/30 border border-white/[0.04]">
+            <strong className="block text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">{statsDict.stat3Val}</strong>
+            <span className="text-xs text-slate-400 mt-1 block">{statsDict.stat3Label}</span>
+          </div>
+          <div className="text-center p-3 rounded-2xl bg-slate-900/30 border border-white/[0.04]">
+            <strong className="block text-2xl sm:text-3xl font-extrabold text-white font-mono">{statsDict.stat4Val}</strong>
+            <span className="text-xs text-slate-400 mt-1 block">{statsDict.stat4Label}</span>
           </div>
         </div>
 

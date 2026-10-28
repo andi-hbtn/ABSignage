@@ -4,20 +4,22 @@ import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
+import type { Dictionary } from "@/lib/get-dictionary"
 import { X, CheckCircle2, Sparkles, Building, Mail, Phone, User, Loader2, AlertCircle } from "lucide-react"
 import confetti from "canvas-confetti"
 
 interface DemoBookingModalProps {
+  dict: Dictionary["modal"]
   open: boolean
   onClose: () => void
 }
 
-export function DemoBookingModal({ open, onClose }: DemoBookingModalProps) {
+export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
   const [company, setCompany] = useState("")
-  const [screens, setScreens] = useState("5-20 ekrane")
+  const [screens, setScreens] = useState("2 - 5 Screens")
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [errorMsg, setErrorMsg] = useState<string | null>(null)
@@ -45,7 +47,7 @@ export function DemoBookingModal({ open, onClose }: DemoBookingModalProps) {
     try {
       let isSuccess = false
 
-      // 1. Provo API endpoint-in e brendshëm (/api/send-demo)
+      // 1. Try internal API endpoint (/api/send-demo)
       try {
         const res = await fetch("/api/send-demo", {
           method: "POST",
@@ -58,206 +60,218 @@ export function DemoBookingModal({ open, onClose }: DemoBookingModalProps) {
         const data = await res.json()
         if (res.ok && data.success) {
           isSuccess = true
+        } else {
+          console.warn("API route failed, trying direct formsubmit fallback...", data)
         }
       } catch (apiErr) {
-        console.warn("API route internal error, provojmë dërgimin e drejtpërdrejtë:", apiErr)
+        console.warn("API route error, trying direct fallback...", apiErr)
       }
 
-      // 2. Nëse rruga e brendshme dështon, fallback direkt te FormSubmit nga browser-i
+      // 2. Direct Fallback if needed
       if (!isSuccess) {
-        const directRes = await fetch("https://formsubmit.co/ajax/andi.bevapi@gmail.com", {
+        const fallbackRes = await fetch("https://formsubmit.co/ajax/andi.bevapi@gmail.com", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
           },
           body: JSON.stringify({
-            "Emri dhe Mbiemri": name,
-            "Email Klienti": email,
-            "Numri i Telefonit": phone,
-            "Kompania / Biznesi": company,
-            "Numri i Ekraneve": screens,
-            _subject: `Kërkesë për Provë 14-Ditore ABSignage - ${company} (${name})`,
+            "Full Name": name,
+            "Client Email": email,
+            "Phone Number": phone,
+            "Company Name": company,
+            "TV Screens": screens,
+            _subject: `Trial Request: ABSignage - ${company} (${name})`,
             _template: "table",
             _captcha: "false",
           }),
         })
 
-        const directData = await directRes.json()
-        if (directRes.ok && (directData.success === "true" || directData.success === true || directData.message)) {
+        if (fallbackRes.ok) {
           isSuccess = true
-        } else {
-          throw new Error(directData.message || "Dërgimi i email-it nuk u krye dot. Ju lutem provoni sërish.")
         }
       }
 
-      setSubmitted(true)
-
-      // Shfaq konfeti festimi
-      try {
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ["#00e5ff", "#0052ff", "#ffffff", "#10b981"],
-        })
-      } catch (err) {
-        console.log(err)
+      if (isSuccess) {
+        setSubmitted(true)
+        try {
+          confetti({
+            particleCount: 120,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ["#00e5ff", "#0052ff", "#ffffff"],
+          })
+        } catch {
+          // confetti fallback safe
+        }
+      } else {
+        throw new Error("Could not deliver the request. Please contact us directly.")
       }
     } catch (err: unknown) {
-      console.error("Gabim gjatë dërgimit:", err)
-      const message = err instanceof Error ? err.message : "Ndodhi një gabim i papritur gjatë dërgimit. Ju lutemi provoni sërish."
-      setErrorMsg(message)
+      const msg = err instanceof Error ? err.message : "An error occurred. Please try again."
+      setErrorMsg(msg)
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg rounded-3xl border border-cyan-500/40 bg-slate-950 p-6 sm:p-8 shadow-[0_25px_70px_-15px_rgba(0,229,255,0.4)]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full max-w-lg rounded-3xl bg-slate-900 border border-cyan-500/30 p-6 sm:p-8 shadow-[0_25px_60px_-15px_rgba(0,229,255,0.3)] animate-in zoom-in-95 duration-200">
         
         {/* Close Button */}
         <button
           onClick={handleModalClose}
-          className="absolute top-5 right-5 p-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
-        {submitted ? (
-          <div className="text-center py-8 space-y-4">
-            <div className="w-16 h-16 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto shadow-[0_0_30px_rgba(16,185,129,0.3)]">
-              <CheckCircle2 className="w-8 h-8" />
-            </div>
-            <h3 className="text-2xl font-bold text-white tracking-tight">Kërkesa u Dërgua me Sukses!</h3>
-            <p className="text-slate-300 text-sm max-w-sm mx-auto leading-relaxed">
-              Faleminderit <strong className="text-cyan-400">{name}</strong>. Detajet e kërkesës suaj u dërguan tek ekipi ynë. Eksperti ynë i ABSignage do t&apos;ju kontaktojë brenda 30 minutash për konfigurimin e provës 14-ditore.
-            </p>
-            <div className="pt-4">
-              <Button onClick={handleModalClose} className="w-full">
-                Mbyll Dritaren
-              </Button>
-            </div>
-          </div>
-        ) : (
+        {!submitted ? (
           <div>
             <div className="mb-6">
-              <Badge variant="default" className="mb-2">Provë Pa Detyrim</Badge>
+              <Badge variant="default" className="mb-2">
+                <Sparkles className="w-3.5 h-3.5 mr-1" />
+                ABSignage 14-Day Trial
+              </Badge>
               <h3 className="text-2xl font-bold text-white tracking-tight">
-                Kërkoni Demonstrim të ABSignage
+                {dict.title}
               </h3>
-              <p className="text-slate-400 text-xs mt-1">
-                Zbuloni si të transformoni rrjetin tuaj të ekraneve me zero kosto paraprake.
+              <p className="mt-1 text-xs text-slate-400 leading-relaxed">
+                {dict.subtitle}
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {errorMsg && (
-                <div className="flex items-center gap-2.5 p-3 rounded-xl bg-red-950/60 border border-red-500/40 text-red-200 text-xs animate-in fade-in">
-                  <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
-                  <span>{errorMsg}</span>
-                </div>
-              )}
+            {errorMsg && (
+              <div className="mb-4 p-3 rounded-xl bg-rose-950/60 border border-rose-500/40 text-xs text-rose-300 flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                <span>{errorMsg}</span>
+              </div>
+            )}
 
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Emri & Mbiemri</label>
-                <div className="relative">
-                  <User className="w-4 h-4 text-slate-500 absolute left-3 top-3.5" />
+                <label className="text-xs font-semibold text-slate-300 block mb-1.5 flex items-center gap-1.5">
+                  <User className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>{dict.fullName} *</span>
+                </label>
+                <Input
+                  required
+                  placeholder={dict.fullNamePlaceholder}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="bg-slate-950 border-slate-700 text-white text-xs h-10"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="text-xs font-semibold text-slate-300 block mb-1.5 flex items-center gap-1.5">
+                    <Mail className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>{dict.email} *</span>
+                  </label>
                   <Input
                     required
-                    disabled={loading}
-                    placeholder="p.sh. Alban Berisha"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="pl-9"
+                    type="email"
+                    placeholder={dict.emailPlaceholder}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="bg-slate-950 border-slate-700 text-white text-xs h-10"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-xs font-semibold text-slate-300 block mb-1.5 flex items-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>{dict.phone} *</span>
+                  </label>
+                  <Input
+                    required
+                    type="tel"
+                    placeholder={dict.phonePlaceholder}
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="bg-slate-950 border-slate-700 text-white text-xs h-10"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="text-xs font-semibold text-slate-300 block mb-1">Email Profesional</label>
-                  <div className="relative">
-                    <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-3.5" />
-                    <Input
-                      type="email"
-                      required
-                      disabled={loading}
-                      placeholder="emri@kompania.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="pl-9"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs font-semibold text-slate-300 block mb-1">Numri i Telefonit</label>
-                  <div className="relative">
-                    <Phone className="w-4 h-4 text-slate-500 absolute left-3 top-3.5" />
-                    <Input
-                      type="tel"
-                      required
-                      disabled={loading}
-                      placeholder="+355 69 ..."
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="pl-9"
-                    />
-                  </div>
-                </div>
+              <div>
+                <label className="text-xs font-semibold text-slate-300 block mb-1.5 flex items-center gap-1.5">
+                  <Building className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>{dict.company} *</span>
+                </label>
+                <Input
+                  required
+                  placeholder={dict.companyPlaceholder}
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  className="bg-slate-950 border-slate-700 text-white text-xs h-10"
+                />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="text-xs font-semibold text-slate-300 block mb-1">Kompania / Biznesi</label>
-                  <div className="relative">
-                    <Building className="w-4 h-4 text-slate-500 absolute left-3 top-3.5" />
-                    <Input
-                      required
-                      disabled={loading}
-                      placeholder="Emri i biznesit"
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      className="pl-9"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs font-semibold text-slate-300 block mb-1">Numri i Ekraneve</label>
-                  <select
-                    disabled={loading}
-                    value={screens}
-                    onChange={(e) => setScreens(e.target.value)}
-                    className="w-full h-11 rounded-xl border border-slate-700/80 bg-slate-900/90 px-3 text-sm text-white focus:border-cyan-400 focus:outline-none disabled:opacity-50"
-                  >
-                    <option value="1-4 ekrane">1 - 4 Ekrane (Starter)</option>
-                    <option value="5-20 ekrane">5 - 20 Ekrane (Business)</option>
-                    <option value="21-50 ekrane">21 - 50 Ekrane (Scale)</option>
-                    <option value="50+ ekrane">50+ Ekrane (Enterprise)</option>
-                  </select>
-                </div>
+              <div>
+                <label className="text-xs font-semibold text-slate-300 block mb-1.5">
+                  {dict.screenCount}
+                </label>
+                <select
+                  value={screens}
+                  onChange={(e) => setScreens(e.target.value)}
+                  className="w-full h-10 px-3 rounded-lg bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                >
+                  <option value="1 Screen">{dict.screenOptions.opt1}</option>
+                  <option value="2-5 Screens">{dict.screenOptions.opt2}</option>
+                  <option value="6-10 Screens">{dict.screenOptions.opt3}</option>
+                  <option value="11-20 Screens">{dict.screenOptions.opt4}</option>
+                  <option value="21-50 Screens">{dict.screenOptions.opt5}</option>
+                  <option value="50+ Screens">{dict.screenOptions.opt6}</option>
+                </select>
               </div>
 
-              <Button type="submit" disabled={loading} className="w-full mt-4 text-sm font-bold">
-                {loading ? (
-                  <>
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    Duke dërguar kërkesën...
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="w-4 h-4 mr-2" />
-                    Dërgo Kërkesën & Merr Provë 14-Ditore
-                  </>
-                )}
-              </Button>
+              <div className="pt-2">
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full text-xs font-bold h-11"
+                >
+                  {loading ? (
+                    <span className="flex items-center gap-2">
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      {dict.submitting}
+                    </span>
+                  ) : (
+                    <span>{dict.submitBtn}</span>
+                  )}
+                </Button>
+              </div>
             </form>
           </div>
-        )}
+        ) : (
+          <div className="py-8 text-center space-y-4">
+            <div className="mx-auto w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+              <CheckCircle2 className="w-8 h-8" />
+            </div>
 
+            <h3 className="text-2xl font-bold text-white tracking-tight">
+              {dict.successTitle}
+            </h3>
+
+            <p className="text-xs text-slate-300 max-w-sm mx-auto leading-relaxed">
+              {dict.successMessage}
+            </p>
+
+            <div className="pt-4">
+              <Button
+                variant="outline"
+                onClick={handleModalClose}
+                className="w-full text-xs h-10"
+              >
+                {dict.closeBtn}
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
