@@ -6,9 +6,7 @@
   },
   "nav": {
     "features": "Funzionalità",
-    "howItWorks": "Come Funziona",
     "layouts": "Zone Schermo",
-    "hardware": "Hardware",
     "pricing": "Prezzi",
     "faq": "Domande Frequenti",
     "requestDemo": "Richiedi Demo"
@@ -75,37 +73,6 @@
     "zone2": "Zona 2",
     "zone3": "Zona 3",
     "zone4": "Zona 4"
-  },
-  "howItWorks": {
-    "title": "Dall'installazione alla messa in onda in 4 minuti",
-    "subtitle": "Non serve un tecnico informatico. Qualsiasi collaboratore può collegare un televisore e pubblicare contenuti con facilità.",
-    "s1Num": "01",
-    "s1Title": "Apri l'App sul Televisore",
-    "s1Desc": "Installa ABSignage su Android TV, Smart TV o TV Box. Sullo schermo apparirà un codice di abbinamento univoco a 6 cifre.",
-    "s2Num": "02",
-    "s2Title": "Abbina dal Tuo Pannello",
-    "s2Desc": "Accedi al tuo account ABSignage da computer o smartphone, inserisci il codice a 6 cifre e assegna un nome allo schermo.",
-    "s3Num": "03",
-    "s3Title": "Carica i File e Scegli il Layout",
-    "s3Desc": "Carica le tue foto e i tuoi video. Scegli la riproduzione a schermo intero oppure dividi lo schermo in fino a 4 zone dinamiche.",
-    "s4Num": "04",
-    "s4Title": "Pubblica e Programma Immediatamente",
-    "s4Desc": "Fai clic su pubblica. I contenuti arrivano subito sullo schermo e vengono riprodotti ininterrottamente 24/7."
-  },
-  "hardware": {
-    "badge": "Compatibilità Hardware",
-    "title": "Utilizza i televisori e gli schermi che possiedi già",
-    "subtitle": "ABSignage funziona perfettamente su normali Smart TV consumer, schermi professionali o con chiavette economiche.",
-    "h1Title": "Android TV e Google TV",
-    "h1Desc": "Sony, Philips, TCL, Hisense, Xiaomi o qualsiasi Smart TV con sistema operativo Android TV o Google TV.",
-    "h1Tag": "Nativo Plug & Play",
-    "h2Title": "Android TV Box Economici",
-    "h2Desc": "Xiaomi Mi Box, Google Chromecast o qualsiasi TV Box Android da circa 30€ trasforma qualsiasi normale TV con HDMI.",
-    "h2Tag": "Soluzione Più Economica",
-    "h3Title": "Display Professionali 24/7",
-    "h3Desc": "Pannelli commerciali Vestel, Philips Q-Line, Elo o schermi professionali progettati per funzionamento continuo h24.",
-    "h3Tag": "Per Reti Aziendali",
-    "callout": "Nessun hardware proprietario costoso. Scarica l'applicazione direttamente e inizia subito."
   },
   "pricing": {
     "badge": "Prezzi Trasparenti Senza Sorprese",
@@ -194,7 +161,6 @@
     "systemsOnline": "Tutti i Sistemi Operativi 99.99%",
     "platformCol": "Piattaforma",
     "featuresLink": "Funzionalità",
-    "howItWorksLink": "Come Funziona",
     "layoutsLink": "Zone Schermo",
     "pricingLink": "Piani di Prezzo",
     "legalCol": "Legale e Privacy",
