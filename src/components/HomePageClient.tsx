@@ -5,8 +5,6 @@ import { Navbar } from "@/components/Navbar"
 import { Hero } from "@/components/Hero"
 import { CoreFeatures } from "@/components/CoreFeatures"
 import { ScreenZonesShowcase } from "@/components/ScreenZonesShowcase"
-import { HowItWorks } from "@/components/HowItWorks"
-import { HardwareMatrix } from "@/components/HardwareMatrix"
 import { PricingSection } from "@/components/PricingSection"
 import { FaqSection } from "@/components/FaqSection"
 import { CtaBanner } from "@/components/CtaBanner"
@@ -44,29 +42,17 @@ export function HomePageClient({ dict, locale }: HomePageClientProps) {
           onOpenDemo={handleOpenDemo}
         />
 
-
-        {/* 3. Core Product Capabilities & Benefits */}
+        {/* 2. Core Product Capabilities & Benefits */}
         <CoreFeatures
           dict={dict.features}
         />
 
-        {/* 4. Fullscreen, Dual Split & Triple Split Zones Showcase */}
+        {/* 3. Fullscreen, Dual Split & Triple Split Zones Showcase */}
         <ScreenZonesShowcase
           dict={dict.layouts}
         />
 
-        {/* 5. 4 Simple Steps to Connect & Publish */}
-        <HowItWorks
-          dict={dict.howItWorks}
-        />
-
-        {/* 6. Hardware Compatibility (Android TV, Budget TV Boxes, Commercial) */}
-        <HardwareMatrix
-          dict={dict.hardware}
-        />
-
-
-        {/* 9. Transparent Pricing (Start, Business 5, Business 10, Pro 20, Chain 50, Enterprise) */}
+        {/* 4. Transparent Pricing (Start, Business 5, Business 10, Pro 20, Chain 50, Enterprise) */}
         <PricingSection
           dict={dict.pricing}
           onOpenDemo={handleOpenDemo}

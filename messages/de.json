@@ -6,9 +6,7 @@
   },
   "nav": {
     "features": "Funktionen",
-    "howItWorks": "So funktioniert's",
     "layouts": "Bildschirmzonen",
-    "hardware": "Hardware",
     "pricing": "Preise",
     "faq": "FAQ",
     "requestDemo": "Demo anfordern"
@@ -75,37 +73,6 @@
     "zone2": "Zone 2",
     "zone3": "Zone 3",
     "zone4": "Zone 4"
-  },
-  "howItWorks": {
-    "title": "Vom Auspacken bis zur Live-Übertragung in 4 Minuten",
-    "subtitle": "Sie benötigen keinen IT-Techniker. Jeder Mitarbeiter kann einen Fernseher in vier einfachen Schritten verbinden.",
-    "s1Num": "01",
-    "s1Title": "App auf dem Fernseher öffnen",
-    "s1Desc": "Installieren Sie ABSignage auf Ihrem Android TV oder Ihrer TV-Box. Auf dem Bildschirm erscheint ein eindeutiger 6-stelliger Kopplungscode.",
-    "s2Num": "02",
-    "s2Title": "Über das Dashboard koppeln",
-    "s2Desc": "Melden Sie sich von einem beliebigen Browser in Ihrem ABSignage-Konto an, geben Sie den 6-stelligen Code ein und benennen Sie den Bildschirm.",
-    "s3Num": "03",
-    "s3Title": "Medien hochladen & Layout wählen",
-    "s3Desc": "Laden Sie Ihre Bilder und Videos hoch. Wählen Sie Vollbildwiedergabe oder teilen Sie den Bildschirm in bis zu 4 Zonen auf.",
-    "s4Num": "04",
-    "s4Title": "Sofort veröffentlichen & planen",
-    "s4Desc": "Klicken Sie auf Veröffentlichen. Ihre Inhalte werden sofort übertragen und laufen rund um die Uhr zuverlässig weiter."
-  },
-  "hardware": {
-    "badge": "Hardware-Kompatibilität",
-    "title": "Nutzen Sie Fernseher und Bildschirme, die Sie bereits besitzen",
-    "subtitle": "ABSignage läuft reibungslos auf handelsüblichen Smart-TVs sowie mit kostengünstigen TV-Boxen.",
-    "h1Title": "Android TV & Google TV",
-    "h1Desc": "Sony, Philips, TCL, Hisense, Xiaomi oder jeder Smart-TV mit Android TV bzw. Google TV-Betriebssystem.",
-    "h1Tag": "Natives Plug & Play",
-    "h2Title": "Preiswerte Android TV-Boxen",
-    "h2Desc": "Xiaomi Mi Box, Google Chromecast oder jede günstige Android-Box für ca. 30€ verwandelt jeden HDMI-Fernseher.",
-    "h2Tag": "Wirtschaftlichste Lösung",
-    "h3Title": "Professionelle 24/7-Displays",
-    "h3Desc": "Kommerzielle Panels von Vestel, Philips Q-Line, Elo oder Samsung/LG für den dauerhaften Dauereinsatz.",
-    "h3Tag": "Für Unternehmensflotten",
-    "callout": "Keine teure Spezialhardware erforderlich. App direkt herunterladen und sofort loslegen."
   },
   "pricing": {
     "badge": "Transparente monatliche Preise",
@@ -194,7 +161,6 @@
     "systemsOnline": "Alle Systeme operativ 99.99%",
     "platformCol": "Plattform",
     "featuresLink": "Funktionen",
-    "howItWorksLink": "So funktioniert's",
     "layoutsLink": "Bildschirmzonen",
     "pricingLink": "Preise",
     "legalCol": "Rechtliches & Datenschutz",

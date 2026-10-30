@@ -6,9 +6,7 @@
   },
   "nav": {
     "features": "Mundësitë",
-    "howItWorks": "Si Funksionon",
     "layouts": "Zonat e Ekranit",
-    "hardware": "Pajisjet",
     "pricing": "Çmimet",
     "faq": "Pyetje",
     "requestDemo": "Kërko Demo"
@@ -75,37 +73,6 @@
     "zone2": "Zona 2",
     "zone3": "Zona 3",
     "zone4": "Zona 4"
-  },
-  "howItWorks": {
-    "title": "Nga instalimi në transmetim brenda 4 minutave",
-    "subtitle": "Nuk keni nevojë për teknik IT. Çdo anëtar i stafit tuaj mund të lidhë një televizor dhe të publikojë përmbajtje lehtësisht.",
-    "s1Num": "01",
-    "s1Title": "Hapni Aplikacionin në TV",
-    "s1Desc": "Instaloni ABSignage në Android TV, Smart TV apo TV Box. Në ekran do të shfaqet një kod unik lidhjeje prej 6 shifrash.",
-    "s2Num": "02",
-    "s2Title": "Lidheni nga Paneli Juaj",
-    "s2Desc": "Hyni në llogarinë ABSignage nga kompjuteri ose celulari, shkruani kodin 6-shifror dhe vendosni emrin e vendndodhjes.",
-    "s3Num": "03",
-    "s3Title": "Ngarkoni Përmbajtjen & Zgjidhni Pamjen",
-    "s3Desc": "Ngarkoni fotot dhe videot tuaja. Zgjidhni transmetim me ekran të plotë ose ndani ekranin në zona dinamike (Dual 50/50 & Triple 33%).",
-    "s4Num": "04",
-    "s4Title": "Publikoni & Planifikoni Menjëherë",
-    "s4Desc": "Kliko publiko. Përmbajtja dërgohet menjëherë te ekrani dhe transmetohet pa ndërprerje gjatë gjithë ditës."
-  },
-  "hardware": {
-    "badge": "Përputhshmëria me Pajisjet",
-    "title": "Përdorni televizorët që tashmë keni",
-    "subtitle": "ABSignage funksionon pa probleme në çdo televizor standard Smart TV apo me një pajisje të lirë Android Box.",
-    "h1Title": "Android TV & Google TV",
-    "h1Desc": "Sony, Philips, TCL, Hisense, Xiaomi ose çdo Smart TV me sistem Android TV ose Google TV.",
-    "h1Tag": "Instalim i Drejtpërdrejtë",
-    "h2Title": "Pajisje Ekonomike Android TV Box",
-    "h2Desc": "Xiaomi Mi Box, Google Chromecast ose çdo Android Box ekonomik shndërron çdo televizor të thjeshtë me HDMI.",
-    "h2Tag": "Zgjedhja më Ekonomike",
-    "h3Title": "Ekrane Profesionale Komerciale",
-    "h3Desc": "Panele komerciale Vestel, Philips Q-Line, Elo apo Samsung/LG të projektuara për funksionim të pandërprerë 24/7.",
-    "h3Tag": "Për Flota Biznesi",
-    "callout": "Nuk nevojitet harduer i shtrenjtë apo i veçantë. Shkarkoni aplikacionin dhe nisni menjëherë."
   },
   "pricing": {
     "badge": "Çmimet Transparente & Pa Kosto të Fshehura",
@@ -194,7 +161,6 @@
     "systemsOnline": "Sistemet Operacionale 100%",
     "platformCol": "Platforma",
     "featuresLink": "Mundësitë",
-    "howItWorksLink": "Si Funksionon",
     "layoutsLink": "Zonat e Ekranit",
     "pricingLink": "Planet e Çmimeve",
     "legalCol": "Ligjore & Privatësia",

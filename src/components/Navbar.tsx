@@ -10,12 +10,10 @@ import type { Dictionary } from "@/lib/get-dictionary"
 import {
   Menu,
   X,
-  Tv,
   Layers,
   Sparkles,
   HelpCircle,
   CreditCard,
-  PlaySquare,
 } from "lucide-react"
 
 interface NavbarProps {
@@ -38,9 +36,7 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
 
   const navLinks = [
     { name: dict.features, href: `/${locale}#features`, icon: Sparkles },
-    { name: dict.howItWorks, href: `/${locale}#how-it-works`, icon: PlaySquare },
     { name: dict.layouts, href: `/${locale}#layouts`, icon: Layers },
-    { name: dict.hardware, href: `/${locale}#hardware`, icon: Tv },
     { name: dict.pricing, href: `/${locale}#pricing`, icon: CreditCard },
     { name: dict.faq, href: `/${locale}#faq`, icon: HelpCircle },
   ]

@@ -6,9 +6,7 @@
   },
   "nav": {
     "features": "Capabilities",
-    "howItWorks": "How It Works",
     "layouts": "Screen Zones",
-    "hardware": "Hardware",
     "pricing": "Pricing",
     "faq": "FAQ",
     "requestDemo": "Request Demo"
@@ -75,37 +73,6 @@
     "zone2": "Zone 2",
     "zone3": "Zone 3",
     "zone4": "Zone 4"
-  },
-  "howItWorks": {
-    "title": "From unboxing to live broadcast in 4 minutes",
-    "subtitle": "You don't need an IT technician. Any team member can connect a TV and publish content in four intuitive steps.",
-    "s1Num": "01",
-    "s1Title": "Open the App on Your TV",
-    "s1Desc": "Install ABSignage on your Android TV, Smart TV, or TV Box. A unique 6-digit pairing code will appear on the screen.",
-    "s2Num": "02",
-    "s2Title": "Pair from Your Dashboard",
-    "s2Desc": "Log into your ABSignage account from any browser, type the 6-digit code, and assign your screen a location name.",
-    "s3Num": "03",
-    "s3Title": "Upload Media & Choose Layout",
-    "s3Desc": "Upload your pictures and videos. Choose fullscreen playback or split your screen into up to 4 dynamic zones.",
-    "s4Num": "04",
-    "s4Title": "Publish & Schedule Instantly",
-    "s4Desc": "Hit publish. Your content streams instantly to the screen and continues playing smoothly around the clock."
-  },
-  "hardware": {
-    "badge": "Hardware Compatibility",
-    "title": "Use the TVs and screens you already own",
-    "subtitle": "ABSignage runs smoothly on standard consumer TVs, smart displays, and budget-friendly streaming sticks.",
-    "h1Title": "Android TV & Google TV",
-    "h1Desc": "Sony, Philips, TCL, Hisense, Xiaomi, or any Smart TV running Android TV or Google TV.",
-    "h1Tag": "Plug & Play Native",
-    "h2Title": "Budget Android TV Boxes",
-    "h2Desc": "Xiaomi Mi Box, Google Chromecast, or any affordable $30 Android Box converts any standard HDMI TV.",
-    "h2Tag": "Most Economical",
-    "h3Title": "Commercial 24/7 Displays",
-    "h3Desc": "Vestel, Philips Q-Line, Elo, or LG/Samsung commercial panels designed for continuous 24/7 retail operation.",
-    "h3Tag": "Commercial Fleet",
-    "callout": "No expensive proprietary hardware needed. Download the application directly and begin immediately."
   },
   "pricing": {
     "badge": "Transparent Monthly Pricing",
@@ -194,7 +161,6 @@
     "systemsOnline": "All Systems Operational 99.99%",
     "platformCol": "Platform",
     "featuresLink": "Capabilities",
-    "howItWorksLink": "How It Works",
     "layoutsLink": "Screen Zones",
     "pricingLink": "Pricing Plans",
     "legalCol": "Privacy & Legal",

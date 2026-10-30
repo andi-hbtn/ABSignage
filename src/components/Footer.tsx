@@ -49,11 +49,6 @@ export function Footer({ dict, locale }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#how-it-works`} className="hover:text-cyan-400 transition-colors">
-                  {dict.howItWorksLink}
-                </Link>
-              </li>
-              <li>
                 <Link href={`/${locale}#layouts`} className="hover:text-cyan-400 transition-colors">
                   {dict.layoutsLink}
                 </Link>
