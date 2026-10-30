@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "ABSignage · Platformë Moderne Cloud për Menaxhimin e Ekraneve Dixhitale",
-    "description": "Menaxhoni të gjitha ekranet tuaja televizive nga një panel i vetëm në cloud. Lidhni televizorët në 30 sekonda me kod aktivizimi, ndani ekranin në deri 4 zona dhe planifikoni playlist-at.",
+    "description": "Menaxhoni të gjitha ekranet tuaja televizive nga një panel i vetëm në cloud. Lidhni televizorët në 30 sekonda me kod aktivizimi, ndani ekranin në zona dinamike (Dual & Triple Split) dhe planifikoni playlist-at.",
     "keywords": "digital signage, menaxhim ekranesh, android tv signage, menu dixhitale, ndarje ekrani tv, kod aktivizimi"
   },
   "nav": {
@@ -16,7 +16,7 @@
   "hero": {
     "titlePart1": "Menaxhoni të gjithë televizorët tuaj nga një",
     "titleHighlight": "panel i vetëm në cloud",
-    "subtitle": "Lidhni çdo TV në 30 sekonda me një kod aktivizimi. Ngarkoni foto dhe video 4K, ndani ekranin në deri 4 zona dinamike dhe planifikoni transmetimin pa pasur nevojë për USB.",
+    "subtitle": "Lidhni çdo TV në 30 sekonda me një kod aktivizimi. Ngarkoni foto dhe video 4K, ndani ekranin në zona dinamike (Dual 50/50 & Triple 33%) dhe planifikoni transmetimin pa pasur nevojë për USB.",
     "ctaPrimary": "Fillo Provën 14-Ditore Falas",
     "ctaSecondary": "Shiko Si Funksionon",
     "pairingCodeLabel": "KODI I LIDHJES",
@@ -27,8 +27,8 @@
   "stats": {
     "stat1Val": "30 sek",
     "stat1Label": "Aktivizim i Shpejtë me Kod",
-    "stat2Val": "Deri në 4",
-    "stat2Label": "Zona për çdo Ekran",
+    "stat2Val": "Multi-Zone",
+    "stat2Label": "Ndarje Fleksibile në Zona",
     "stat3Val": "100%",
     "stat3Label": "Cache Lokale e Pavarur",
     "stat4Val": "0.00s",
@@ -45,27 +45,36 @@
     "f3Desc": "Ngarkoni foto me cilësi të lartë, fletëpalosje dhe video 4K. Rregulloni renditjen, caktoni kohëzgjatjen dhe krijoni cikle të qeta transmetimi.",
     "f4Title": "Planifikim Automatik Orar (Day-Parting)",
     "f4Desc": "Ndryshoni automatikisht menynë e mëngjesit në ofertat e drekës apo promovimet e mbrëmjes sipas orarit tuaj të saktë ditor.",
-    "f5Title": "Ndarje Ekrani në Deri 4 Zona",
-    "f5Desc": "Shfaqni disa përmbajtje njëkohësisht në një ekran të vetëm: video promocionale, listë çmimesh, tekst lëvizës dhe orën me kod QR.",
+    "f5Title": "Ndarje Ekrani në Shumë Zona",
+    "f5Desc": "Shfaqni disa përmbajtje njëkohësisht në një ekran të vetëm: Ekran i Plotë, Dual Split 50/50, ose Triple Split 33% në orientim horizontal dhe vertikal.",
     "f6Title": "100% Riprodhim Offline Pa Ndërprerje",
     "f6Desc": "Të gjitha videot dhe imazhet ruhen lokalisht në pajisje. Edhe nëse interneti shkëputet për ditë të tëra, ekrani vazhdon pa u bërë kurrë i zi."
   },
   "layouts": {
-    "title": "Një Ekran. Deri në Katër Zona Përmbajtjeje.",
-    "subtitle": "Maksimizoni vlerën tregtare të çdo televizori. Kaloni nga pamja me ekran të plotë në ndarje me shumë zona me 1 klik.",
+    "sectionBadge": "ARKITEKTURA E FORMATIT TË EKRANIT",
+    "title": "Një Ekran. Ndarje Fleksibile me Shumë Zona.",
+    "subtitle": "Përshtatni çdo televizor me formatin ideal për biznesin tuaj: Ekran i Plotë, Ndarje e Dyfishtë 50/50, ose Ndarje e Trefishtë 33% Horizontale dhe Vertikale me 1 klik.",
     "mode1Title": "Ekran i Plotë 4K",
-    "mode1Desc": "Ndikim maksimal vizual për reklama madhore, video fushata dhe fotografi të pastra me rezolucion të lartë.",
-    "mode2Title": "Ndarje e Dyfishtë (70 / 30)",
-    "mode2Desc": "Videoja kryesore në të majtë, e shoqëruar me listën fikse të çmimeve, menynë ditore ose ofertën speciale në të djathtë.",
-    "mode3Title": "Zonë e Trefishtë (3 Zona)",
-    "mode3Desc": "Video promocionale + imazh i katalogut të produkteve + tekst lajmesh apo njoftimesh urgjente që lëviz në fund të ekranit.",
-    "mode4Title": "Zonë e Katërfishtë (4 Zona)",
-    "mode4Desc": "Fleksibilitet maksimal: video promocionale, poster anësor, listë artikujsh dhe ora live me kod QR për porositje.",
-    "zone1": "Zona 1: Video 4K Promocionale",
-    "zone2": "Zona 2: Meny Ditore & Çmime",
-    "zone3": "Zona 3: Shirit Njoftimesh / Ticker",
-    "zone4": "Zona 4: Ora & Kodi QR për Porosi",
-    "activeLayout": "Pamja e Zgjedhur e Ekranit"
+    "mode1Desc": "Ndikim maksimal vizual me 100% të ekranit për video promocionale 4K, fushata madhore dhe imazhe me cilësi të lartë.",
+    "mode1Tag": "Fullscreen 100%",
+    "mode2Title": "Dual Split (50 / 50)",
+    "mode2Desc": "Ndarje e barabartë 50% / 50% e ekranit në kolona (Vertikale) ose rreshta (Horizontale) për të kombinuar videon me menynë ose çmimet.",
+    "mode2Tag": "Dual Split 50/50",
+    "mode3Title": "Triple Split Horizontal (33%)",
+    "mode3Desc": "3 zona të barabarta horizontale (nga 33.3% secila) të vendosura njëra mbi tjetrën për banner-a kryesorë, oferta dhe njoftime.",
+    "mode3Tag": "33% × 3 Horizontale",
+    "mode4Title": "Triple Split Vertical (33%)",
+    "mode4Desc": "3 kolona paralele vertikale (nga 33.3% secila) në krah të njëra-tjetrës për të shfaqur kategori të shumëfishta produktesh njëkohësisht.",
+    "mode4Tag": "33% × 3 Vertikale",
+    "orientationLabel": "Orientimi",
+    "vertical": "Vertikale (Kolona)",
+    "horizontal": "Horizontale (Rreshta)",
+    "activeLayout": "Pamja e Zgjedhur e Ekranit",
+    "liveEngine": "Motori i Riprodhimit Live",
+    "zone1": "Zona 1",
+    "zone2": "Zona 2",
+    "zone3": "Zona 3",
+    "zone4": "Zona 4"
   },
   "howItWorks": {
     "title": "Nga instalimi në transmetim brenda 4 minutave",
@@ -78,7 +87,7 @@
     "s2Desc": "Hyni në llogarinë ABSignage nga kompjuteri ose celulari, shkruani kodin 6-shifror dhe vendosni emrin e vendndodhjes.",
     "s3Num": "03",
     "s3Title": "Ngarkoni Përmbajtjen & Zgjidhni Pamjen",
-    "s3Desc": "Ngarkoni fotot dhe videot tuaja. Zgjidhni transmetim me ekran të plotë ose ndani ekranin në deri në 4 zona dinamike.",
+    "s3Desc": "Ngarkoni fotot dhe videot tuaja. Zgjidhni transmetim me ekran të plotë ose ndani ekranin në zona dinamike (Dual 50/50 & Triple 33%).",
     "s4Num": "04",
     "s4Title": "Publikoni & Planifikoni Menjëherë",
     "s4Desc": "Kliko publiko. Përmbajtja dërgohet menjëherë te ekrani dhe transmetohet pa ndërprerje gjatë gjithë ditës."
@@ -141,7 +150,7 @@
     "q3": "A duhet të blej ekrane të shtrenjta komerciale?",
     "a3": "Jo. ABSignage punon në çdo Android TV, Google TV, ose në çdo televizor të zakonshëm duke i lidhur një Android TV Box apo HDMI Stick ekonomik (me kosto rreth $30). Mund të përdorni televizorët që keni tashmë.",
     "q4": "Si funksionon ndarja e ekranit në shumë zona (Split-Screen)?",
-    "a4": "Në panelin e menaxhimit mund të zgjidhni që një përmbajtje të shfaqet në ekran të plotë ose të ndani ekranin në deri në 4 zona (p.sh. video në të majtë, meny me çmime në të djathtë, shirit njoftimesh poshtë dhe orën me kod QR).",
+    "a4": "Në panelin e menaxhimit mund të zgjidhni që një përmbajtje të shfaqet me ekran të plotë (Fullscreen) ose të ndani ekranin në zona të barabarta: Dual Split 50/50 dhe Triple Split 33% si në orientim horizontal ashtu edhe vertikal.",
     "q5": "A mund të menaxhoj ekrane në qytete ose pika të ndryshme?",
     "a5": "Po, plotësisht. Paneli është 100% në cloud. Mund t'i ndani ekranet sipas qyteteve, dyqaneve apo dhomave dhe të dërgoni përditësime me 1 klik në një ekran, në një grup apo në të gjitha ekranet njëherësh.",
     "q6": "A mund ta provoj ABSignage para se të paguaj?",
@@ -181,7 +190,7 @@
     "closeBtn": "Mbyll Dritaren"
   },
   "footer": {
-    "desc": "Softuer modern në cloud për ekrane dixhitale. Lidhje me kod në sekonda, ndarje ekrani në deri 4 zona dhe riprodhim 100% i besueshëm offline.",
+    "desc": "Softuer modern në cloud për ekrane dixhitale. Lidhje me kod në sekonda, ndarje ekrani me shumë zona dhe riprodhim 100% i besueshëm offline.",
     "systemsOnline": "Sistemet Operacionale 100%",
     "platformCol": "Platforma",
     "featuresLink": "Mundësitë",

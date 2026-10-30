@@ -58,7 +58,7 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
         <Link href={`/${locale}`} className="flex items-center gap-3 group">
           <div className="relative h-11 w-44 sm:h-12 sm:w-52 transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/ab-signage-3.png"
+              src="/ab-digital-signage.png"
               alt="ABSignage Logo"
               fill
               sizes="(max-width: 640px) 176px, 208px"

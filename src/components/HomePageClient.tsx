@@ -50,7 +50,7 @@ export function HomePageClient({ dict, locale }: HomePageClientProps) {
           dict={dict.features}
         />
 
-        {/* 4. Split-Screen & Up to 4 Zones Showcase */}
+        {/* 4. Fullscreen, Dual Split & Triple Split Zones Showcase */}
         <ScreenZonesShowcase
           dict={dict.layouts}
         />

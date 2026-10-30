@@ -48,7 +48,7 @@ export function CoreFeatures({ dict }: CoreFeaturesProps) {
       icon: Layers,
       title: dict.f5Title,
       desc: dict.f5Desc,
-      tag: "Up to 4 Zones",
+      tag: "Dual & Triple Split",
       color: "from-cyan-500/20 to-teal-600/20",
     },
     {
