@@ -94,13 +94,13 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-1.5">
             {navLinks.map((link) => {
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-3 py-2 text-xs font-semibold text-slate-300 hover:text-cyan-300 hover:bg-slate-900/60 rounded-xl transition-all"
+                  className="px-3.5 py-2 text-sm font-semibold text-slate-300 hover:text-cyan-300 hover:bg-slate-900/60 rounded-xl transition-all"
                 >
                   <span>{link.name}</span>
                 </a>
