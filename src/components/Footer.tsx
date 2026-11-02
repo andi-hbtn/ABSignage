@@ -23,7 +23,7 @@ export function Footer({ dict, locale }: FooterProps) {
           <div className="md:col-span-1 space-y-4">
             <div className="relative h-12 w-48">
               <Image
-                src="/ab-signage-3.png"
+                src="/AB_Signage_Logo_Transparency.png"
                 alt="ABSignage Logo"
                 fill
                 sizes="192px"
