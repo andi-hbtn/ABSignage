@@ -22,16 +22,6 @@
     "activePlaylist": "Aktiv: Sommerspecials & Mittagsmenü (00:45s Loop)",
     "refreshed": "Über Cloud synchronisiert · Sofortiges Update"
   },
-  "stats": {
-    "stat1Val": "30 Sek.",
-    "stat1Label": "Schnelle Aktivierung per Code",
-    "stat2Val": "Bis zu 4",
-    "stat2Label": "Zonen pro Bildschirm",
-    "stat3Val": "100%",
-    "stat3Label": "Lokaler Offline-Speicher",
-    "stat4Val": "0.00s",
-    "stat4Label": "Schwarzbild-Downtime"
-  },
   "features": {
     "title": "Alles, was Sie brauchen, um Fernseher in Verkaufskanäle zu verwandeln",
     "subtitle": "Keine komplizierte Netzwerkkonfiguration. Keine teure proprietäre Hardware. Einfache Werkzeuge, die Ihnen jede Woche Stunden sparen.",
@@ -90,21 +80,7 @@
     "mostPopular": "Von Unternehmen am meisten gewählt",
     "bestValue": "Niedrigste Kosten pro TV",
     "enterpriseBadge": "Unbegrenzte Flotte",
-    "startPlan": "Starten mit",
-    "comparisonTable": "Vollständige Paket-Vergleichstabelle",
-    "comparisonDesc": "Komplette Übersicht zu Bildschirmkapazität, Monatspreis und effektiven Kosten pro Display.",
-    "colPackage": "PAKET",
-    "colCapacity": "TV-KAPAZITÄT",
-    "colMonthly": "PREIS / MONAT",
-    "colEffective": "EFFEKTIV / TV",
-    "colSavings": "ERSPARNIS",
-    "colAction": "AKTION",
-    "selectBtn": "Auswählen",
-    "fixedPrice": "Fester Pauschalpreis",
-    "basePrice": "Basistarif",
-    "guarantee1": "Läuft auf Android TV oder jeder TV-Box",
-    "guarantee2": "Keine Knebelverträge — jederzeit kündbar",
-    "guarantee3": "14 Tage kostenlose Testphase enthalten"
+    "startPlan": "Starten mit"
   },
   "faq": {
     "badge": "Häufig gestellte Fragen",

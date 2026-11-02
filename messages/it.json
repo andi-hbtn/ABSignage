@@ -22,16 +22,6 @@
     "activePlaylist": "Attivo: Offerte Stagionali e Menu Pranzo (Loop 00:45s)",
     "refreshed": "Sincronizzato via Cloud · Aggiornamento Immediato"
   },
-  "stats": {
-    "stat1Val": "30 sec",
-    "stat1Label": "Attivazione Rapida con Codice",
-    "stat2Val": "Fino a 4",
-    "stat2Label": "Zone per ogni Schermo",
-    "stat3Val": "100%",
-    "stat3Label": "Memoria Locale Offline",
-    "stat4Val": "0.00s",
-    "stat4Label": "Tempo di Schermo Nero"
-  },
   "features": {
     "title": "Tutto ciò di cui hai bisogno per trasformare i TV in canali di vendita",
     "subtitle": "Nessuna configurazione di rete complessa. Nessun hardware proprietario costoso. Solo strumenti intuitivi che ti fanno risparmiare ore ogni settimana.",
@@ -90,21 +80,7 @@
     "mostPopular": "Il Più Scelto dalle Aziende",
     "bestValue": "Costo Minimo per TV",
     "enterpriseBadge": "Flotta Illimitata",
-    "startPlan": "Inizia con",
-    "comparisonTable": "Tabella di Confronto Completa dei Piani",
-    "comparisonDesc": "Riepilogo completo di capacità schermi, prezzo mensile e costo effettivo per display.",
-    "colPackage": "PACCHETTO",
-    "colCapacity": "CAPACITÀ TV",
-    "colMonthly": "PREZZO / MESE",
-    "colEffective": "EFFETTIVO / TV",
-    "colSavings": "RISPARMIO",
-    "colAction": "AZIONE",
-    "selectBtn": "Scegli",
-    "fixedPrice": "Costo Fisso Illimitato",
-    "basePrice": "Piano Base",
-    "guarantee1": "Funziona su Android TV o qualsiasi TV Box",
-    "guarantee2": "Nessun vincolo a lungo termine — disdici quando vuoi",
-    "guarantee3": "14 giorni di prova gratuita inclusi"
+    "startPlan": "Inizia con"
   },
   "faq": {
     "badge": "Domande Frequenti",

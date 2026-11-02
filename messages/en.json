@@ -22,16 +22,6 @@
     "activePlaylist": "Active: Summer Specials & Lunch Menu (00:45s Loop)",
     "refreshed": "Synced via Cloud · Instant Update"
   },
-  "stats": {
-    "stat1Val": "30 sec",
-    "stat1Label": "Quick Pairing Activation",
-    "stat2Val": "Up to 4",
-    "stat2Label": "Zones per Screen",
-    "stat3Val": "100%",
-    "stat3Label": "Offline Fail-Safe Cache",
-    "stat4Val": "0.00s",
-    "stat4Label": "Black Screen Time"
-  },
   "features": {
     "title": "Everything you need to turn TVs into powerful sales tools",
     "subtitle": "No complicated network setups. No expensive hardware. Just clear, reliable tools that save you hours every week.",
@@ -90,21 +80,7 @@
     "mostPopular": "Most Popular",
     "bestValue": "Lowest Cost per TV",
     "enterpriseBadge": "Unlimited Fleet",
-    "startPlan": "Get Started with",
-    "comparisonTable": "Complete Pricing Comparison Table",
-    "comparisonDesc": "Full summary of package capacity, monthly price, and effective cost per screen.",
-    "colPackage": "PACKAGE",
-    "colCapacity": "TV CAPACITY",
-    "colMonthly": "PRICE / MONTH",
-    "colEffective": "EFFECTIVE / TV",
-    "colSavings": "SAVINGS",
-    "colAction": "ACTION",
-    "selectBtn": "Select",
-    "fixedPrice": "Fixed Flat Rate",
-    "basePrice": "Base Tier",
-    "guarantee1": "Works on Android TV or any TV Box",
-    "guarantee2": "No long-term contracts — cancel anytime",
-    "guarantee3": "Free 14-day trial included"
+    "startPlan": "Get Started with"
   },
   "faq": {
     "badge": "Frequently Asked Questions",

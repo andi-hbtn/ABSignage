@@ -16,11 +16,10 @@ import {
 
 interface HeroProps {
   dict: Dictionary["hero"]
-  statsDict: Dictionary["stats"]
   onOpenDemo: () => void
 }
 
-export function Hero({ dict, statsDict, onOpenDemo }: HeroProps) {
+export function Hero({ dict, onOpenDemo }: HeroProps) {
   const [activePreset, setActivePreset] = useState<number>(0)
 
   const presets = [
@@ -260,26 +259,6 @@ export function Hero({ dict, statsDict, onOpenDemo }: HeroProps) {
                 Next Example Screen →
               </span>
             </div>
-          </div>
-        </div>
-
-        {/* 4 Proof Numbers Bar */}
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-white/[0.08]">
-          <div className="text-center p-3 rounded-2xl bg-slate-900/30 border border-white/[0.04]">
-            <strong className="block text-2xl sm:text-3xl font-extrabold text-white font-mono">{statsDict.stat1Val}</strong>
-            <span className="text-xs text-slate-400 mt-1 block">{statsDict.stat1Label}</span>
-          </div>
-          <div className="text-center p-3 rounded-2xl bg-slate-900/30 border border-white/[0.04]">
-            <strong className="block text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">{statsDict.stat2Val}</strong>
-            <span className="text-xs text-slate-400 mt-1 block">{statsDict.stat2Label}</span>
-          </div>
-          <div className="text-center p-3 rounded-2xl bg-slate-900/30 border border-white/[0.04]">
-            <strong className="block text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">{statsDict.stat3Val}</strong>
-            <span className="text-xs text-slate-400 mt-1 block">{statsDict.stat3Label}</span>
-          </div>
-          <div className="text-center p-3 rounded-2xl bg-slate-900/30 border border-white/[0.04]">
-            <strong className="block text-2xl sm:text-3xl font-extrabold text-white font-mono">{statsDict.stat4Val}</strong>
-            <span className="text-xs text-slate-400 mt-1 block">{statsDict.stat4Label}</span>
           </div>
         </div>
 

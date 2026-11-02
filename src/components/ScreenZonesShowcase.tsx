@@ -11,9 +11,7 @@ import {
   Rows3,
   Clock,
   Sparkles,
-  Radio,
   CheckCircle2,
-  Layers,
 } from "lucide-react"
 
 interface ScreenZonesShowcaseProps {
@@ -495,7 +493,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                         SEASONAL HIGHLIGHT
                       </span>
                       <h4 className="text-lg sm:text-2xl font-black text-white">
-                        CHEF'S SIGNATURE TASTING MENU
+                        CHEF&apos;S SIGNATURE TASTING MENU
                       </h4>
                       <p className="text-xs text-cyan-100/80 mt-0.5">
                         Five courses of fresh Mediterranean seafood paired with premium wines.

@@ -22,16 +22,6 @@
     "activePlaylist": "Aktive: Oferta Verore & Meny Ditore (Loop 00:45s)",
     "refreshed": "Sinkronizuar në Cloud · Përditësim i Menjëhershëm"
   },
-  "stats": {
-    "stat1Val": "30 sek",
-    "stat1Label": "Aktivizim i Shpejtë me Kod",
-    "stat2Val": "Multi-Zone",
-    "stat2Label": "Ndarje Fleksibile në Zona",
-    "stat3Val": "100%",
-    "stat3Label": "Cache Lokale e Pavarur",
-    "stat4Val": "0.00s",
-    "stat4Label": "Kohë me Ekran të Zi"
-  },
   "features": {
     "title": "Gjithçka që ju nevojitet për t'i kthyer televizorët në kanale shitjeje",
     "subtitle": "Pa konfigurime të ndërlikuara rrjeti. Pa pajisje të shtrenjta. Thjesht mjete të qarta që ju kursejnë orë të tëra çdo javë.",
@@ -90,21 +80,7 @@
     "mostPopular": "Më i Zgjedhuri për Biznese",
     "bestValue": "Kostoja më e Ulët për TV",
     "enterpriseBadge": "Flotë e Pakufizuar",
-    "startPlan": "Fillo me",
-    "comparisonTable": "Tabela Krahasuese e të Gjitha Paketave",
-    "comparisonDesc": "Përmbledhje e plotë e kapacitetit, çmimit mujor dhe kostos efektive për çdo ekran.",
-    "colPackage": "PAKETA",
-    "colCapacity": "KAPACITETI I TV",
-    "colMonthly": "ÇMIMI / MUAJ",
-    "colEffective": "EFEKTIVISHT / TV",
-    "colSavings": "KURSENI",
-    "colAction": "AKSIONI",
-    "selectBtn": "Zgjidh",
-    "fixedPrice": "Kosto Fikse Pa Limit",
-    "basePrice": "Çmimi Bazë",
-    "guarantee1": "Funksionon në Android TV ose çdo TV Box",
-    "guarantee2": "Pa kontrata të detyrueshme — anuloni kur të doni",
-    "guarantee3": "14 ditë provë falas të përfshira"
+    "startPlan": "Fillo me"
   },
   "faq": {
     "badge": "Pyetjet më të Shpeshta",

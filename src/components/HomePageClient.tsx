@@ -21,6 +21,31 @@ interface HomePageClientProps {
 export function HomePageClient({ dict, locale }: HomePageClientProps) {
   const [demoModalOpen, setDemoModalOpen] = useState(false)
 
+  // When language changes, restore exact vertical scroll position so the user never jumps to another section
+  React.useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const saved = sessionStorage.getItem("ab_saved_scroll")
+    if (saved !== null) {
+      sessionStorage.removeItem("ab_saved_scroll")
+      const targetY = parseInt(saved, 10)
+      if (!isNaN(targetY)) {
+        const html = document.documentElement
+        const prevBehavior = html.style.scrollBehavior
+        html.style.scrollBehavior = "auto"
+
+        window.scrollTo({ top: targetY, behavior: "instant" })
+
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: targetY, behavior: "instant" })
+          requestAnimationFrame(() => {
+            html.style.scrollBehavior = prevBehavior
+          })
+        })
+      }
+    }
+  }, [locale])
+
   const handleOpenDemo = () => setDemoModalOpen(true)
   const handleCloseDemo = () => setDemoModalOpen(false)
 
@@ -38,7 +63,6 @@ export function HomePageClient({ dict, locale }: HomePageClientProps) {
         {/* 1. Hero: Core Value, Pairing Code, Live Multi-Zone Preview */}
         <Hero
           dict={dict.hero}
-          statsDict={dict.stats}
           onOpenDemo={handleOpenDemo}
         />
 

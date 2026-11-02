@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import type { Dictionary } from "@/lib/get-dictionary"
-import { Sparkles, ArrowRight, ShieldCheck } from "lucide-react"
+import { ArrowRight, ShieldCheck } from "lucide-react"
 
 interface CtaBannerProps {
   dict: Dictionary["ctaBanner"]

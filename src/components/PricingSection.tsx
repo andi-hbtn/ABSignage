@@ -14,7 +14,6 @@ import {
   ShieldCheck,
   Crown,
   Sparkles,
-  TableProperties,
   CheckCircle2,
 } from "lucide-react"
 
@@ -359,119 +358,7 @@ export function PricingSection({ dict, onOpenDemo }: PricingSectionProps) {
           })}
         </div>
 
-        {/* Comparison Table */}
-        <div className="rounded-3xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-slate-800 gap-4">
-            <div>
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <TableProperties className="w-5 h-5 text-cyan-400" />
-                {dict.comparisonTable}
-              </h3>
-              <p className="text-xs text-slate-400 mt-1">
-                {dict.comparisonDesc}
-              </p>
-            </div>
-            <div className="flex items-center gap-2 text-xs text-slate-400 font-mono">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Live Pricing 2026</span>
-            </div>
-          </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead>
-                <tr className="border-b border-slate-800 text-slate-400 uppercase font-mono tracking-wider text-[11px]">
-                  <th className="py-3 px-4 font-semibold">{dict.colPackage}</th>
-                  <th className="py-3 px-4 font-semibold">{dict.colCapacity}</th>
-                  <th className="py-3 px-4 font-semibold">{dict.colMonthly}</th>
-                  <th className="py-3 px-4 font-semibold">{dict.colEffective}</th>
-                  <th className="py-3 px-4 font-semibold">{dict.colSavings}</th>
-                  <th className="py-3 px-4 font-semibold text-right">{dict.colAction}</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-800/60 text-slate-300 font-sans">
-                {plans.map((p) => {
-                  const displayedMonthly = annual ? p.annualPricePerMonth : p.monthlyPrice
-                  const displayedEffective = annual ? p.effectiveAnnual : p.effectiveMonthly
-
-                  return (
-                    <tr
-                      key={`table-${p.id}`}
-                      className={`hover:bg-slate-800/40 transition-colors ${
-                        p.popular ? "bg-cyan-500/[0.04]" : ""
-                      }`}
-                    >
-                      <td className="py-4 px-4 font-bold text-white flex items-center gap-2">
-                        <span>{p.name}</span>
-                        {p.popular && (
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-semibold">
-                            {dict.mostPopular}
-                          </span>
-                        )}
-                        {p.bestValue && (
-                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">
-                            {dict.bestValue}
-                          </span>
-                        )}
-                      </td>
-                      <td className="py-4 px-4 font-mono font-medium text-slate-200">
-                        {p.tvCount === "1" ? "1 TV" : p.tvCount === "Pa limit" ? dict.unlimited : `${p.tvCount} TV`}
-                      </td>
-                      <td className="py-4 px-4 font-mono font-bold text-white">
-                        {formatPrice(displayedMonthly)} lek
-                        <span className="text-[10px] text-slate-400 font-normal"> / muaj</span>
-                      </td>
-                      <td className="py-4 px-4 font-mono font-bold text-cyan-300">
-                        {displayedEffective !== "-" ? `${displayedEffective}` : "-"}
-                      </td>
-                      <td className="py-4 px-4">
-                        {p.savingsPercentage ? (
-                          <span className="text-[11px] font-mono text-emerald-400 font-semibold">
-                            {p.savingsPercentage} / TV
-                          </span>
-                        ) : p.enterprise ? (
-                          <span className="text-[11px] font-mono text-sky-400 font-semibold">
-                            {dict.fixedPrice}
-                          </span>
-                        ) : (
-                          <span className="text-[11px] font-mono text-slate-500">
-                            {dict.basePrice}
-                          </span>
-                        )}
-                      </td>
-                      <td className="py-4 px-4 text-right">
-                        <Button
-                          size="sm"
-                          variant={p.popular ? "default" : "outline"}
-                          onClick={onOpenDemo}
-                          className="h-8 text-xs font-semibold"
-                        >
-                          {dict.selectBtn}
-                        </Button>
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Guarantees */}
-          <div className="mt-8 pt-6 border-t border-slate-800/80 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-400">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-              <span>{dict.guarantee1}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-              <span>{dict.guarantee2}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-              <span>{dict.guarantee3}</span>
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>
