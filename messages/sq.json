@@ -194,5 +194,22 @@
     "dashboardLink": "Hyr në Panelin e Kontrollit",
     "rightsReserved": "Të gjitha të drejtat të rezervuara.",
     "craftedWith": "Ndërtuar me performancë të lartë nga AB"
+  },
+  "howItWorks": {
+    "badge": "SI FUNKSIONON",
+    "title": "Një Platformë. Çdo Biznes. Çdo Ekran.",
+    "subtitle": "Nga restorantet dhe kafenetë deri te dyqanet me pakicë, markat e modës dhe bizneset e bukurisë, ABSignage e bën të lehtë menaxhimin e ekraneve tuaja dixhitale. Lidhni televizorët tuaj, ngarkoni përmbajtjen, krijoni playlista dhe publikoni fushata — të gjitha nga një platformë e vetme e fuqishme.",
+    "videoCta": "Shiko Si Funksionon",
+    "playVideo": "Luaj Videon",
+    "pauseVideo": "Ndalo Videon",
+    "playing": "Video po luhet",
+    "paused": "E ndaluar",
+    "restart": "Rifillo nga fillimi",
+    "prevScene": "Skena paraardhëse",
+    "nextScene": "Skena pasuese",
+    "soundOn": "Aktivizo Zërin",
+    "soundOff": "Çaktivizo Zërin",
+    "speed": "Shpejtësia",
+    "fullscreen": "Ekran i Plotë"
   }
 }

@@ -19,6 +19,7 @@ import {
   Globe,
   Check,
   ChevronDown,
+  Video,
 } from "lucide-react"
 
 interface NavbarProps {
@@ -59,6 +60,18 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
   const navLinks = [
     { name: dict.features, href: `/${locale}#features`, icon: Sparkles },
     { name: dict.layouts, href: `/${locale}#layouts`, icon: Layers },
+    {
+      name:
+        locale === "sq"
+          ? "Si Funksionon"
+          : locale === "it"
+          ? "Come Funziona"
+          : locale === "de"
+          ? "Funktionsweise"
+          : "How It Works",
+      href: `/${locale}#how-it-works`,
+      icon: Video,
+    },
     { name: dict.pricing, href: `/${locale}#pricing`, icon: CreditCard },
     { name: dict.faq, href: `/${locale}#faq`, icon: HelpCircle },
   ]

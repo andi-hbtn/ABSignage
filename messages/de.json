@@ -194,5 +194,22 @@
     "dashboardLink": "Web-Dashboard öffnen",
     "rightsReserved": "Alle Rechte vorbehalten.",
     "craftedWith": "Entwickelt für Höchstleistung von AB"
+  },
+  "howItWorks": {
+    "badge": "FUNKTIONSWEISE",
+    "title": "Eine Plattform. Jedes Unternehmen. Jeder Bildschirm.",
+    "subtitle": "Von Restaurants und Cafés über Einzelhandelsgeschäfte bis hin zu Modemarken und Kosmetikstudios: ABSignage macht die Verwaltung Ihrer digitalen Displays mühelos. TVs verbinden, Medien hochladen, Playlists erstellen und Kampagnen veröffentlichen — alles über eine zentrale Plattform.",
+    "videoCta": "Funktionsweise ansehen",
+    "playVideo": "Video Abspielen",
+    "pauseVideo": "Pause",
+    "playing": "Video läuft",
+    "paused": "Pausiert",
+    "restart": "Neu starten",
+    "prevScene": "Vorherige Szene",
+    "nextScene": "Nächste Szene",
+    "soundOn": "Ton an",
+    "soundOff": "Stummschalten",
+    "speed": "Geschwindigkeit",
+    "fullscreen": "Vollbild"
   }
 }

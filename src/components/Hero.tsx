@@ -98,10 +98,10 @@ export function Hero({ dict, onOpenDemo }: HeroProps) {
             </Button>
 
             <a
-              href="#layouts"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-4 h-10 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white hover:border-cyan-500/40 hover:bg-slate-800 transition-all"
+              href="#how-it-works"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-4 h-10 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white hover:border-cyan-500/40 hover:bg-slate-800 transition-all cursor-pointer group shadow-[0_0_15px_rgba(0,229,255,0.15)]"
             >
-              <Play className="w-3.5 h-3.5 fill-cyan-400 text-cyan-400" />
+              <Play className="w-3.5 h-3.5 fill-cyan-400 text-cyan-400 transition-transform group-hover:scale-110" />
               <span>{dict.ctaSecondary}</span>
             </a>
           </div>

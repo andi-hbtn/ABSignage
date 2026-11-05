@@ -194,5 +194,22 @@
     "dashboardLink": "Open Web Dashboard",
     "rightsReserved": "All rights reserved.",
     "craftedWith": "Engineered for high performance by AB"
+  },
+  "howItWorks": {
+    "badge": "HOW IT WORKS",
+    "title": "One Platform. Every Business. Every Screen.",
+    "subtitle": "From restaurants and cafes to retail stores, fashion brands, and beauty businesses, ABSignage makes it easy to manage your digital screens. Connect your TVs, upload your content, create playlists, and publish campaigns — all from one powerful platform.",
+    "videoCta": "Watch How It Works",
+    "playVideo": "Play Video",
+    "pauseVideo": "Pause Video",
+    "playing": "Playing Walkthrough",
+    "paused": "Paused",
+    "restart": "Restart",
+    "prevScene": "Previous Scene",
+    "nextScene": "Next Scene",
+    "soundOn": "Unmute Sound",
+    "soundOff": "Mute Sound",
+    "speed": "Speed",
+    "fullscreen": "Fullscreen"
   }
 }

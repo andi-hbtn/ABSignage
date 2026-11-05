@@ -194,5 +194,22 @@
     "dashboardLink": "Accedi al Pannello Web",
     "rightsReserved": "Tutti i diritti riservati.",
     "craftedWith": "Sviluppato per prestazioni elevate da AB"
+  },
+  "howItWorks": {
+    "badge": "COME FUNZIONA",
+    "title": "Una Piattaforma. Ogni Attività. Ogni Schermo.",
+    "subtitle": "Dai ristoranti e bar ai negozi al dettaglio, marchi di moda e centri estetici, ABSignage semplifica la gestione dei tuoi schermi digitali. Collega le tue TV, carica contenuti, crea playlist e pubblica campagne da un'unica piattaforma intuitiva.",
+    "videoCta": "Guarda Come Funziona",
+    "playVideo": "Riproduci Video",
+    "pauseVideo": "Metti in Pausa",
+    "playing": "Video in riproduzione",
+    "paused": "In pausa",
+    "restart": "Ricomincia",
+    "prevScene": "Scena Precedente",
+    "nextScene": "Scena Successiva",
+    "soundOn": "Attiva Audio",
+    "soundOff": "Disattiva Audio",
+    "speed": "Velocità",
+    "fullscreen": "Schermo Intero"
   }
 }

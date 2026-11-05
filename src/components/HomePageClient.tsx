@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar"
 import { Hero } from "@/components/Hero"
 import { CoreFeatures } from "@/components/CoreFeatures"
 import { ScreenZonesShowcase } from "@/components/ScreenZonesShowcase"
+import { HowItWorks } from "@/components/HowItWorks"
 import { PricingSection } from "@/components/PricingSection"
 import { FaqSection } from "@/components/FaqSection"
 import { CtaBanner } from "@/components/CtaBanner"
@@ -76,7 +77,14 @@ export function HomePageClient({ dict, locale }: HomePageClientProps) {
           dict={dict.layouts}
         />
 
-        {/* 4. Transparent Pricing (Start, Business 5, Business 10, Pro 20, Chain 50, Enterprise) */}
+        {/* 4. Complete Product Demonstration: How It Works (8-Scene Workflow) */}
+        <HowItWorks
+          dict={dict.howItWorks}
+          locale={locale}
+          onOpenDemo={handleOpenDemo}
+        />
+
+        {/* 5. Transparent Pricing (Start, Business 5, Business 10, Pro 20, Chain 50, Enterprise) */}
         <PricingSection
           dict={dict.pricing}
           onOpenDemo={handleOpenDemo}
