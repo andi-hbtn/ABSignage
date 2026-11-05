@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
+import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import type { Dictionary } from "@/lib/get-dictionary"
 import {
@@ -16,6 +17,97 @@ import {
 
 interface ScreenZonesShowcaseProps {
   dict: Dictionary["layouts"]
+}
+
+const ZONE_IMAGES = {
+  fullscreen: {
+    src: "/images/product-demo-references/idea_10.jpeg",
+    alt: "High-Definition Brand Spotlight Commercial Campaign",
+    position: "object-center",
+  },
+  dualVertical: {
+    left: {
+      src: "/images/product-demo-references/promo.jpg",
+      alt: "Restaurant Combo Meal Commercial Promotion",
+      position: "object-center",
+    },
+    right: {
+      src: "/images/product-demo-references/drinks.jpg",
+      alt: "Specialty Cold Brew & Handcrafted Beverages Display",
+      position: "object-center",
+    },
+  },
+  dualHorizontal: {
+    top: {
+      src: "/images/product-demo-references/platter.jpg",
+      alt: "Chef's Signature Steak & Pasta Promotion",
+      position: "object-[center_60%]",
+    },
+    bottom: {
+      src: "/images/product-demo-references/sandwich.jpg",
+      alt: "Artisan Grilled Club Sandwich Showcase",
+      position: "object-[center_55%]",
+    },
+  },
+  tripleHorizontal: {
+    top: {
+      src: "/images/product-demo-references/pizza.jpg",
+      alt: "Wood-Fired Artisan Pizza Horizontal Banner",
+      position: "object-[center_55%]",
+    },
+    middle: {
+      src: "/images/product-demo-references/platter.jpg",
+      alt: "Signature Gourmet Platter Horizontal Banner",
+      position: "object-[center_60%]",
+    },
+    bottom: {
+      src: "/images/product-demo-references/sandwich.jpg",
+      alt: "Fresh Toasted Brioche Horizontal Banner",
+      position: "object-[center_55%]",
+    },
+  },
+  tripleVertical: {
+    left: {
+      src: "/images/product-demo-references/promo.jpg",
+      alt: "Featured Restaurant Combo Vertical Promotion",
+      position: "object-center",
+    },
+    center: {
+      src: "/images/product-demo-references/drinks.jpg",
+      alt: "Iced Coffee & Cocktails Vertical Showcase",
+      position: "object-center",
+    },
+    right: {
+      src: "/images/product-demo-references/burger.jpg",
+      alt: "Gourmet Double Cheeseburger Vertical Showcase",
+      position: "object-[58%_center]",
+    },
+  },
+} as const
+
+function ZoneBackgroundImage({
+  src,
+  alt,
+  position = "object-center",
+  overlayClassName = "bg-gradient-to-b from-slate-950/80 via-slate-950/15 to-slate-950/85",
+}: {
+  src: string
+  alt: string
+  position?: string
+  overlayClassName?: string
+}) {
+  return (
+    <>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 1024px) 100vw, 1024px"
+        className={`object-cover ${position} pointer-events-none select-none`}
+      />
+      <div className={`absolute inset-0 ${overlayClassName} pointer-events-none`} />
+    </>
+  )
 }
 
 export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
@@ -336,31 +428,34 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
             {/* ========================================================= */}
             {selectedMode === 1 && (
               <div className="h-full rounded-xl bg-gradient-to-br from-blue-950/80 via-slate-950 to-cyan-950/60 border border-cyan-400/40 p-6 sm:p-10 flex flex-col justify-between animate-in fade-in duration-300 relative overflow-hidden">
-                <div className="absolute -top-24 -right-24 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+                <ZoneBackgroundImage
+                  src={ZONE_IMAGES.fullscreen.src}
+                  alt={ZONE_IMAGES.fullscreen.alt}
+                  position={ZONE_IMAGES.fullscreen.position}
+                  overlayClassName="bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-slate-950/75"
+                />
 
                 <div className="flex justify-between items-center text-xs relative z-10">
                   <div className="flex items-center gap-2">
-                    <span className="px-2.5 py-1 rounded-md bg-cyan-500/20 text-cyan-300 font-mono text-[11px] font-bold border border-cyan-400/30 flex items-center gap-1.5">
+                    <span className="px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono text-[11px] font-bold border border-cyan-400/30 flex items-center gap-1.5">
                       <Maximize2 className="w-3.5 h-3.5" />
                       ZONE 1 · 100% FULLSCREEN
                     </span>
                   </div>
-
                 </div>
 
                 <div className="my-auto text-center py-4 sm:py-6 relative z-10">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold uppercase tracking-widest mb-3 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/75 backdrop-blur-sm border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold uppercase tracking-widest mb-3 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
                     ★ MAXIMUM COMMERCIAL IMPACT
                   </span>
-                  <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                  <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
                     HIGH-DEFINITION BRAND SPOTLIGHT
                   </h3>
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-3 border-t border-white/10 text-xs text-slate-400 font-mono relative z-10">
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-3 border-t border-white/15 text-xs text-slate-300 font-mono relative z-10">
                   <div className="flex items-center gap-3 w-full sm:w-auto">
-                    <div className="h-1.5 w-28 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-1.5 w-28 bg-slate-800/90 rounded-full overflow-hidden">
                       <div className="h-full w-3/4 bg-cyan-400 rounded-full animate-pulse" />
                     </div>
                     <span className="text-[11px]">Timeline: 00:24 / 00:30</span>
@@ -380,18 +475,41 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
               <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-3 animate-in fade-in duration-300">
                 {/* Zone 1: Left 50% - Video / Promo */}
                 <div className="rounded-xl bg-gradient-to-br from-cyan-950/50 via-slate-900/80 to-blue-950/40 border border-cyan-500/40 p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.dualVertical.left.src}
+                    alt={ZONE_IMAGES.dualVertical.left.alt}
+                    position={ZONE_IMAGES.dualVertical.left.position}
+                  />
+                  <div className="flex justify-between items-center text-xs relative z-10">
+                    <span className="px-2.5 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-cyan-500/30">
+                      ZONE 1 · 50% VERTICAL
+                    </span>
+                    <span className="text-emerald-400 font-mono text-[10px] font-bold drop-shadow">
+                      4K VIDEO · 60 FPS
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center text-[10px] text-slate-300 font-mono pt-2 border-t border-cyan-500/20 relative z-10">
+                    <span>Left Column · 50% Display Width</span>
+                    <span className="text-emerald-400">Synced Real-Time</span>
+                  </div>
                 </div>
 
                 {/* Zone 2: Right 50% - Digital Menu Board */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 sm:p-5 flex flex-col justify-between relative">
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="px-2.5 py-0.5 rounded-md bg-slate-800 text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
+                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.dualVertical.right.src}
+                    alt={ZONE_IMAGES.dualVertical.right.alt}
+                    position={ZONE_IMAGES.dualVertical.right.position}
+                  />
+                  <div className="flex justify-between items-center text-xs relative z-10">
+                    <span className="px-2.5 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
                       ZONE 2 · 50% VERTICAL
                     </span>
-                    <span className="text-cyan-400 font-mono text-[10px]">LIVE MENU BOARD</span>
+                    <span className="text-cyan-400 font-mono text-[10px] font-bold drop-shadow">
+                      LIVE MENU BOARD
+                    </span>
                   </div>
-                
-                  <div className="flex justify-between items-center text-[10px] text-slate-400 font-mono pt-2 border-t border-slate-800">
+                  <div className="flex justify-between items-center text-[10px] text-slate-300 font-mono pt-2 border-t border-white/15 relative z-10">
                     <span>Right Column · 50% Display Width</span>
                     <span className="text-cyan-300 font-medium">Auto-Updates via Cloud</span>
                   </div>
@@ -403,68 +521,42 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
             {selectedMode === 2 && dualOrientation === "horizontal" && (
               <div className="h-full grid grid-rows-2 gap-3 animate-in fade-in duration-300">
                 {/* Zone 1: Top 50% Height - Wide Commercial Banner */}
-                <div className="rounded-xl bg-gradient-to-r from-blue-950/60 via-slate-900 to-cyan-950/50 border border-cyan-500/40 p-4 flex flex-col justify-between">
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="px-2.5 py-0.5 rounded-md bg-cyan-500/20 text-cyan-300 font-mono font-bold text-[10px] border border-cyan-500/30">
+                <div className="rounded-xl bg-gradient-to-r from-blue-950/60 via-slate-900 to-cyan-950/50 border border-cyan-500/40 p-4 flex flex-col justify-between relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.dualHorizontal.top.src}
+                    alt={ZONE_IMAGES.dualHorizontal.top.alt}
+                    position={ZONE_IMAGES.dualHorizontal.top.position}
+                  />
+                  <div className="flex justify-between items-center text-xs relative z-10">
+                    <span className="px-2.5 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-cyan-500/30">
                       ZONE 1 · 50% HORIZONTAL (TOP ROW)
                     </span>
-                    <span className="text-emerald-400 font-mono text-[10px]">VIDEO BILLBOARD · 60 FPS</span>
+                    <span className="text-emerald-400 font-mono text-[10px] font-bold drop-shadow">
+                      VIDEO BILLBOARD · 60 FPS
+                    </span>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 my-auto">
-                    <div>
-                      <span className="text-[10px] font-mono text-cyan-400 uppercase font-bold tracking-wider">
-                        SEASONAL HIGHLIGHT
-                      </span>
-                      <h4 className="text-lg sm:text-2xl font-black text-white">
-                        CHEF&apos;S SIGNATURE TASTING MENU
-                      </h4>
-                      <p className="text-xs text-cyan-100/80 mt-0.5">
-                        Five courses of fresh Mediterranean seafood paired with premium wines.
-                      </p>
-                    </div>
-                    <div className="text-left sm:text-right flex-shrink-0">
-                      <span className="text-[10px] text-slate-400 font-mono block">Special Set Price</span>
-                      <strong className="text-xl sm:text-2xl font-black text-cyan-300 font-mono">2,800 lek</strong>
-                    </div>
-                  </div>
-                  <div className="flex justify-between text-[10px] text-slate-400 font-mono pt-1.5 border-t border-cyan-500/20">
+                  <div className="flex justify-between text-[10px] text-slate-300 font-mono pt-1.5 border-t border-cyan-500/20 relative z-10">
                     <span>Top Row · 50% Screen Height</span>
                     <span className="text-emerald-400">Hardware Video Decode</span>
                   </div>
                 </div>
 
-                {/* Zone 2: Bottom 50% Height - 3-Item Highlights Grid */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between">
-                  <div className="flex justify-between items-center text-xs mb-1">
-                    <span className="px-2.5 py-0.5 rounded-md bg-slate-800 text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
+                {/* Zone 2: Bottom 50% Height - Wide Product Showcase */}
+                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.dualHorizontal.bottom.src}
+                    alt={ZONE_IMAGES.dualHorizontal.bottom.alt}
+                    position={ZONE_IMAGES.dualHorizontal.bottom.position}
+                  />
+                  <div className="flex justify-between items-center text-xs relative z-10">
+                    <span className="px-2.5 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
                       ZONE 2 · 50% HORIZONTAL (BOTTOM ROW)
                     </span>
-                    <span className="text-slate-400 font-mono text-[10px]">FEATURED SPECIALS GRID</span>
+                    <span className="text-cyan-300 font-mono text-[10px] font-bold drop-shadow">
+                      FEATURED SPECIALS GRID
+                    </span>
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-auto">
-                    <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex flex-col justify-between">
-                      <div>
-                        <span className="text-white font-bold text-xs block">Artisan Angus Burger</span>
-                        <span className="text-[10px] text-slate-400">Brioche bun · Smoked Cheddar</span>
-                      </div>
-                      <strong className="text-cyan-300 font-mono text-xs mt-1.5">780 lek</strong>
-                    </div>
-                    <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex flex-col justify-between">
-                      <div>
-                        <span className="text-white font-bold text-xs block">Truffle Parmesan Fries</span>
-                        <span className="text-[10px] text-slate-400">Hand-cut · Garlic aioli dip</span>
-                      </div>
-                      <strong className="text-cyan-300 font-mono text-xs mt-1.5">380 lek</strong>
-                    </div>
-                    <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex flex-col justify-between">
-                      <div>
-                        <span className="text-white font-bold text-xs block">Pistachio Tiramisu</span>
-                        <span className="text-[10px] text-slate-400">Mascarpone · Espresso savoiardi</span>
-                      </div>
-                      <strong className="text-cyan-300 font-mono text-xs mt-1.5">420 lek</strong>
-                    </div>
-                  </div>
-                  <div className="flex justify-between text-[10px] text-slate-400 font-mono pt-1.5 border-t border-slate-800">
+                  <div className="flex justify-between text-[10px] text-slate-300 font-mono pt-1.5 border-t border-white/15 relative z-10">
                     <span>Bottom Row · 50% Screen Height</span>
                     <span className="text-cyan-300">Live Menu Feed</span>
                   </div>
@@ -478,18 +570,52 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
             {selectedMode === 3 && (
               <div className="h-full grid grid-rows-3 gap-2.5 animate-in fade-in duration-300">
                 {/* Zone 1: Top 33.3% Height */}
-                <div className="rounded-xl bg-gradient-to-r from-blue-950/70 via-cyan-950/40 to-slate-900 border border-cyan-500/40 px-4 py-2.5 flex items-center justify-between">
-                  
+                <div className="rounded-xl bg-gradient-to-r from-blue-950/70 via-cyan-950/40 to-slate-900 border border-cyan-500/40 px-4 py-2.5 flex items-center justify-between relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.tripleHorizontal.top.src}
+                    alt={ZONE_IMAGES.tripleHorizontal.top.alt}
+                    position={ZONE_IMAGES.tripleHorizontal.top.position}
+                    overlayClassName="bg-gradient-to-r from-slate-950/75 via-slate-950/20 to-slate-950/75"
+                  />
+                  <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-cyan-400/30 flex-shrink-0 relative z-10">
+                    ZONE 1 · 33.3% TOP
+                  </span>
+                  <span className="text-[10px] text-emerald-400 font-mono font-bold relative z-10 drop-shadow">
+                    4K PROMO
+                  </span>
                 </div>
 
                 {/* Zone 2: Middle 33.3% Height */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 px-4 py-2 flex items-center justify-between">
-                
+                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 px-4 py-2 flex items-center justify-between relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.tripleHorizontal.middle.src}
+                    alt={ZONE_IMAGES.tripleHorizontal.middle.alt}
+                    position={ZONE_IMAGES.tripleHorizontal.middle.position}
+                    overlayClassName="bg-gradient-to-r from-slate-950/75 via-slate-950/20 to-slate-950/75"
+                  />
+                  <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700 flex-shrink-0 relative z-10">
+                    ZONE 2 · 33.3% MID
+                  </span>
+                  <span className="text-[10px] text-cyan-300 font-mono font-bold relative z-10 drop-shadow">
+                    LIVE MENU
+                  </span>
                 </div>
 
                 {/* Zone 3: Bottom 33.3% Height */}
-                <div className="rounded-xl bg-black/60 border border-cyan-500/30 px-4 py-2.5 flex items-center justify-between text-xs">
-
+                <div className="rounded-xl bg-black/60 border border-cyan-500/30 px-4 py-2.5 flex items-center justify-between text-xs relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.tripleHorizontal.bottom.src}
+                    alt={ZONE_IMAGES.tripleHorizontal.bottom.alt}
+                    position={ZONE_IMAGES.tripleHorizontal.bottom.position}
+                    overlayClassName="bg-gradient-to-r from-slate-950/75 via-slate-950/20 to-slate-950/75"
+                  />
+                  <span className="px-2 py-0.5 rounded bg-cyan-500 text-slate-950 font-mono font-bold text-[10px] uppercase flex-shrink-0 relative z-10">
+                    ZONE 3 · 33.3% BOTTOM
+                  </span>
+                  <div className="flex items-center gap-2 font-mono text-[11px] text-slate-200 flex-shrink-0 ml-3 relative z-10 drop-shadow">
+                    <Clock className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>12:45 PM</span>
+                  </div>
                 </div>
               </div>
             )}
@@ -500,44 +626,63 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
             {selectedMode === 4 && (
               <div className="h-full grid grid-cols-1 md:grid-cols-3 gap-3 animate-in fade-in duration-300">
                 {/* Column 1: Left 33.3% Width */}
-                <div className="rounded-xl bg-gradient-to-b from-cyan-950/50 via-slate-900 to-blue-950/40 border border-cyan-500/40 p-4 flex flex-col justify-between">
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono font-bold text-[10px] border border-cyan-500/30">
+                <div className="rounded-xl bg-gradient-to-b from-cyan-950/50 via-slate-900 to-blue-950/40 border border-cyan-500/40 p-4 flex flex-col justify-between relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.tripleVertical.left.src}
+                    alt={ZONE_IMAGES.tripleVertical.left.alt}
+                    position={ZONE_IMAGES.tripleVertical.left.position}
+                  />
+                  <div className="flex justify-between items-center text-xs relative z-10">
+                    <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-cyan-500/30">
                       ZONE 1 · 33.3% COL
                     </span>
-                    <span className="text-emerald-400 font-mono text-[10px]">VIDEO 60FPS</span>
+                    <span className="text-emerald-400 font-mono text-[10px] font-bold drop-shadow">
+                      VIDEO 60FPS
+                    </span>
                   </div>
-                  <div className="pt-2 border-t border-cyan-500/20 text-[10px] font-mono text-slate-400 flex justify-between">
+                  <div className="pt-2 border-t border-cyan-500/20 text-[10px] font-mono text-slate-300 flex justify-between relative z-10">
                     <span>Left Column</span>
                     <span className="text-emerald-400">Active</span>
                   </div>
                 </div>
 
                 {/* Column 2: Center 33.3% Width */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between">
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="px-2 py-0.5 rounded bg-slate-800 text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
+                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.tripleVertical.center.src}
+                    alt={ZONE_IMAGES.tripleVertical.center.alt}
+                    position={ZONE_IMAGES.tripleVertical.center.position}
+                  />
+                  <div className="flex justify-between items-center text-xs relative z-10">
+                    <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
                       ZONE 2 · 33.3% COL
                     </span>
-                    <span className="text-cyan-400 font-mono text-[10px]">BEVERAGES</span>
+                    <span className="text-cyan-400 font-mono text-[10px] font-bold drop-shadow">
+                      BEVERAGES
+                    </span>
                   </div>
-                  
-                  <div className="pt-2 border-t border-slate-800 text-[10px] font-mono text-slate-400 flex justify-between">
+                  <div className="pt-2 border-t border-white/15 text-[10px] font-mono text-slate-300 flex justify-between relative z-10">
                     <span>Center Column</span>
                     <span className="text-cyan-300">Live Menu</span>
                   </div>
                 </div>
 
                 {/* Column 3: Right 33.3% Width */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between">
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="px-2 py-0.5 rounded bg-slate-800 text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
+                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between relative overflow-hidden">
+                  <ZoneBackgroundImage
+                    src={ZONE_IMAGES.tripleVertical.right.src}
+                    alt={ZONE_IMAGES.tripleVertical.right.alt}
+                    position={ZONE_IMAGES.tripleVertical.right.position}
+                  />
+                  <div className="flex justify-between items-center text-xs relative z-10">
+                    <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
                       ZONE 3 · 33.3% COL
                     </span>
-                    <span className="text-cyan-400 font-mono text-[10px]">FOOD & BITES</span>
+                    <span className="text-cyan-400 font-mono text-[10px] font-bold drop-shadow">
+                      FOOD & BITES
+                    </span>
                   </div>
-                 
-                  <div className="pt-2 border-t border-slate-800 text-[10px] font-mono text-slate-400 flex justify-between">
+                  <div className="pt-2 border-t border-white/15 text-[10px] font-mono text-slate-300 flex justify-between relative z-10">
                     <span>Right Column</span>
                     <span className="text-emerald-400">In Stock</span>
                   </div>
