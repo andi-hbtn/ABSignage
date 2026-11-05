@@ -47,9 +47,9 @@ export async function generateMetadata({
       type: "website",
     },
     icons: {
-      icon: "/ab-signage-3.png",
-      shortcut: "/ab-signage-3.png",
-      apple: "/ab-signage-3.png",
+      icon: "/AB_Signage_Logo_Transparency.png",
+      shortcut: "/AB_Signage_Logo_Transparency.png",
+      apple: "/AB_Signage_Logo_Transparency.png",
     },
   }
 }

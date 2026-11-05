@@ -236,7 +236,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
         </div>
 
         {/* Dynamic TV Screen Preview */}
-        <div className="max-w-5xl mx-auto rounded-3xl p-3 sm:p-5 bg-gradient-to-b from-slate-900 via-slate-950 to-black border border-cyan-500/30 shadow-[0_20px_60px_-15px_rgba(0,229,255,0.25)] relative">
+        <div className="max-w-8xl mx-auto rounded-3xl p-3 sm:p-5 bg-gradient-to-b from-slate-900 via-slate-950 to-black border border-cyan-500/30 shadow-[0_20px_60px_-15px_rgba(0,229,255,0.25)] relative">
           
           {/* TV Top Header Toolbar */}
           <div className="flex flex-wrap items-center justify-between gap-3 px-2 pb-3 mb-3 border-b border-slate-800 text-xs">
@@ -345,16 +345,8 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                       <Maximize2 className="w-3.5 h-3.5" />
                       ZONE 1 · 100% FULLSCREEN
                     </span>
-                    <span className="text-slate-400 font-mono text-[11px] hidden sm:inline">
-                      3840 × 2160 UHD
-                    </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold border border-emerald-500/30 flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      60 FPS UHD LOOP
-                    </span>
-                  </div>
+
                 </div>
 
                 <div className="my-auto text-center py-4 sm:py-6 relative z-10">
@@ -364,20 +356,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                   <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
                     HIGH-DEFINITION BRAND SPOTLIGHT
                   </h3>
-                  <p className="text-xs sm:text-base text-slate-300 max-w-xl mx-auto mt-3 leading-relaxed">
-                    Full-bleed 4K video playback with zero borders or split barriers. Ideal for retail window showcases, video walls, flagship showrooms, and luxury hospitality venues.
-                  </p>
-                  <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-cyan-300/80">
-                    <span className="px-2.5 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px]">
-                      Hardware Video Decode
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px]">
-                      100% Offline Cache Protected
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px]">
-                      Instant Remote Cloud Push
-                    </span>
-                  </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-3 border-t border-white/10 text-xs text-slate-400 font-mono relative z-10">
@@ -402,32 +380,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
               <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-3 animate-in fade-in duration-300">
                 {/* Zone 1: Left 50% - Video / Promo */}
                 <div className="rounded-xl bg-gradient-to-br from-cyan-950/50 via-slate-900/80 to-blue-950/40 border border-cyan-500/40 p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden">
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="px-2.5 py-0.5 rounded-md bg-cyan-500/20 text-cyan-300 font-mono font-bold text-[10px] border border-cyan-500/30">
-                      ZONE 1 · 50% VERTICAL
-                    </span>
-                    <span className="text-emerald-400 font-mono text-[10px] font-bold">
-                      4K VIDEO · 60 FPS
-                    </span>
-                  </div>
-                  <div className="my-auto py-3">
-                    <span className="text-[10px] font-mono font-bold text-cyan-400 uppercase tracking-widest block mb-1">
-                      ARTISAN ROASTERY & BAR
-                    </span>
-                    <h4 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
-                      SPECIALTY COLD BREW
-                    </h4>
-                    <p className="text-xs text-cyan-100/80 mt-1.5 leading-relaxed">
-                      Single-origin Ethiopian beans steeped for 18 hours. Smooth, chocolatey notes brewed fresh daily.
-                    </p>
-                    <div className="mt-3 inline-flex items-center gap-2 px-2.5 py-1 rounded bg-black/40 border border-cyan-500/20 text-[11px] font-mono text-cyan-300">
-                      <span>Seamless Auto-Loop (30s)</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center text-[10px] text-slate-400 font-mono pt-2 border-t border-cyan-500/20">
-                    <span>Left Column · 50% Display Width</span>
-                    <span className="text-emerald-400">Synced Real-Time</span>
-                  </div>
                 </div>
 
                 {/* Zone 2: Right 50% - Digital Menu Board */}
@@ -438,36 +390,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     </span>
                     <span className="text-cyan-400 font-mono text-[10px]">LIVE MENU BOARD</span>
                   </div>
-                  <div className="my-auto space-y-1.5 text-xs py-1">
-                    <div className="p-2 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-between">
-                      <div>
-                        <span className="text-white font-medium block text-xs">Espresso Doppio Reserve</span>
-                        <span className="text-[10px] text-slate-400 font-mono">Double shot · Single origin</span>
-                      </div>
-                      <strong className="text-cyan-300 font-mono text-xs font-bold">180 lek</strong>
-                    </div>
-                    <div className="p-2 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-between">
-                      <div>
-                        <span className="text-white font-medium block text-xs">Cold Brew Supreme</span>
-                        <span className="text-[10px] text-slate-400 font-mono">Organic · 18hr slow extraction</span>
-                      </div>
-                      <strong className="text-cyan-300 font-mono text-xs font-bold">340 lek</strong>
-                    </div>
-                    <div className="p-2 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-between">
-                      <div>
-                        <span className="text-white font-medium block text-xs">Matcha Cream Latte</span>
-                        <span className="text-[10px] text-slate-400 font-mono">Ceremonial grade · Oat milk</span>
-                      </div>
-                      <strong className="text-cyan-300 font-mono text-xs font-bold">360 lek</strong>
-                    </div>
-                    <div className="p-2 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-between">
-                      <div>
-                        <span className="text-white font-medium block text-xs">Avocado Brioche Supreme</span>
-                        <span className="text-[10px] text-slate-400 font-mono">Poached egg · Fresh microgreens</span>
-                      </div>
-                      <strong className="text-cyan-300 font-mono text-xs font-bold">480 lek</strong>
-                    </div>
-                  </div>
+                
                   <div className="flex justify-between items-center text-[10px] text-slate-400 font-mono pt-2 border-t border-slate-800">
                     <span>Right Column · 50% Display Width</span>
                     <span className="text-cyan-300 font-medium">Auto-Updates via Cloud</span>
@@ -556,63 +479,17 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
               <div className="h-full grid grid-rows-3 gap-2.5 animate-in fade-in duration-300">
                 {/* Zone 1: Top 33.3% Height */}
                 <div className="rounded-xl bg-gradient-to-r from-blue-950/70 via-cyan-950/40 to-slate-900 border border-cyan-500/40 px-4 py-2.5 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono font-bold text-[10px] border border-cyan-400/30 flex-shrink-0">
-                      ZONE 1 · 33.3% TOP
-                    </span>
-                    <div>
-                      <h4 className="text-xs sm:text-sm font-black text-white leading-tight">
-                        BREAKFAST COMBO SPECIAL · 20% OFF BEFORE 10:30 AM
-                      </h4>
-                      <span className="text-[11px] text-cyan-200/80 hidden sm:inline">
-                        Fresh croissant + any specialty coffee with complimentary fruit bowl
-                      </span>
-                    </div>
-                  </div>
-                  <div className="text-right flex-shrink-0 hidden sm:block">
-                    <span className="text-[10px] text-emerald-400 font-mono font-bold">4K PROMO</span>
-                    <strong className="text-cyan-300 font-mono block text-xs">390 lek</strong>
-                  </div>
+                  
                 </div>
 
                 {/* Zone 2: Middle 33.3% Height */}
                 <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 px-4 py-2 flex items-center justify-between">
-                  <div className="flex items-center gap-3 w-full">
-                    <span className="px-2 py-0.5 rounded bg-slate-800 text-cyan-300 font-mono font-bold text-[10px] border border-slate-700 flex-shrink-0">
-                      ZONE 2 · 33.3% MID
-                    </span>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full text-xs">
-                      <div className="flex items-center justify-between px-2.5 py-1 rounded bg-slate-950 border border-slate-800">
-                        <span className="text-white truncate">Salmon Poke Bowl</span>
-                        <strong className="text-cyan-300 font-mono ml-2">690 lek</strong>
-                      </div>
-                      <div className="flex items-center justify-between px-2.5 py-1 rounded bg-slate-950 border border-slate-800">
-                        <span className="text-white truncate">Crispy Bao Buns</span>
-                        <strong className="text-cyan-300 font-mono ml-2">450 lek</strong>
-                      </div>
-                      <div className="flex items-center justify-between px-2.5 py-1 rounded bg-slate-950 border border-slate-800">
-                        <span className="text-white truncate">Mango Dragon Shake</span>
-                        <strong className="text-cyan-300 font-mono ml-2">320 lek</strong>
-                      </div>
-                    </div>
-                  </div>
+                
                 </div>
 
                 {/* Zone 3: Bottom 33.3% Height */}
                 <div className="rounded-xl bg-black/60 border border-cyan-500/30 px-4 py-2.5 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-3 overflow-hidden">
-                    <span className="px-2 py-0.5 rounded bg-cyan-500 text-slate-950 font-mono font-bold text-[10px] uppercase flex-shrink-0">
-                      ZONE 3 · 33.3% BOTTOM
-                    </span>
-                    <span className="text-cyan-100 truncate font-medium">
-                      HAPPY HOUR TODAY (17:00 - 20:00): Buy 1 cocktail get 1 free · Free guest Wi-Fi:{" "}
-                      <strong className="text-cyan-300 font-mono">ABSignage_Guest</strong>
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 font-mono text-[11px] text-slate-300 flex-shrink-0 ml-3">
-                    <Clock className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>12:45 PM</span>
-                  </div>
+
                 </div>
               </div>
             )}
@@ -630,20 +507,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     </span>
                     <span className="text-emerald-400 font-mono text-[10px]">VIDEO 60FPS</span>
                   </div>
-                  <div className="my-auto py-2">
-                    <span className="text-[10px] font-mono text-cyan-400 uppercase font-bold tracking-widest block mb-1">
-                      FEATURED PROMO
-                    </span>
-                    <h4 className="text-lg sm:text-xl font-black text-white leading-tight">
-                      SUMMER REFRESHERS
-                    </h4>
-                    <p className="text-xs text-cyan-100/80 mt-1 leading-relaxed">
-                      Signature iced blends crafted with seasonal fruit extracts.
-                    </p>
-                    <div className="mt-2.5 p-1.5 rounded bg-slate-950/70 border border-cyan-500/20 text-[10px] font-mono text-cyan-300">
-                      <span>Looping 4K media</span>
-                    </div>
-                  </div>
                   <div className="pt-2 border-t border-cyan-500/20 text-[10px] font-mono text-slate-400 flex justify-between">
                     <span>Left Column</span>
                     <span className="text-emerald-400">Active</span>
@@ -658,24 +521,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     </span>
                     <span className="text-cyan-400 font-mono text-[10px]">BEVERAGES</span>
                   </div>
-                  <div className="my-auto space-y-1.5 text-xs py-1">
-                    <div className="p-1.5 rounded bg-slate-950 border border-slate-800 flex justify-between items-center">
-                      <span className="text-white truncate">Iced Caramel Latte</span>
-                      <strong className="text-cyan-300 font-mono ml-2">320 lek</strong>
-                    </div>
-                    <div className="p-1.5 rounded bg-slate-950 border border-slate-800 flex justify-between items-center">
-                      <span className="text-white truncate">Cold Drip Reserve</span>
-                      <strong className="text-cyan-300 font-mono ml-2">350 lek</strong>
-                    </div>
-                    <div className="p-1.5 rounded bg-slate-950 border border-slate-800 flex justify-between items-center">
-                      <span className="text-white truncate">Citrus Green Fizz</span>
-                      <strong className="text-cyan-300 font-mono ml-2">280 lek</strong>
-                    </div>
-                    <div className="p-1.5 rounded bg-slate-950 border border-slate-800 flex justify-between items-center">
-                      <span className="text-white truncate">Hibiscus Berry Tea</span>
-                      <strong className="text-cyan-300 font-mono ml-2">240 lek</strong>
-                    </div>
-                  </div>
+                  
                   <div className="pt-2 border-t border-slate-800 text-[10px] font-mono text-slate-400 flex justify-between">
                     <span>Center Column</span>
                     <span className="text-cyan-300">Live Menu</span>
@@ -690,24 +536,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     </span>
                     <span className="text-cyan-400 font-mono text-[10px]">FOOD & BITES</span>
                   </div>
-                  <div className="my-auto space-y-1.5 text-xs py-1">
-                    <div className="p-1.5 rounded bg-slate-950 border border-slate-800 flex justify-between items-center">
-                      <span className="text-white truncate">Smoked Turkey Panini</span>
-                      <strong className="text-cyan-300 font-mono ml-2">420 lek</strong>
-                    </div>
-                    <div className="p-1.5 rounded bg-slate-950 border border-slate-800 flex justify-between items-center">
-                      <span className="text-white truncate">Mozzarella Caprese</span>
-                      <strong className="text-cyan-300 font-mono ml-2">390 lek</strong>
-                    </div>
-                    <div className="p-1.5 rounded bg-slate-950 border border-slate-800 flex justify-between items-center">
-                      <span className="text-white truncate">Almond Butter Danish</span>
-                      <strong className="text-cyan-300 font-mono ml-2">220 lek</strong>
-                    </div>
-                    <div className="p-1.5 rounded bg-slate-950 border border-slate-800 flex justify-between items-center">
-                      <span className="text-white truncate">Chocolate Lava Cup</span>
-                      <strong className="text-cyan-300 font-mono ml-2">290 lek</strong>
-                    </div>
-                  </div>
+                 
                   <div className="pt-2 border-t border-slate-800 text-[10px] font-mono text-slate-400 flex justify-between">
                     <span>Right Column</span>
                     <span className="text-emerald-400">In Stock</span>
