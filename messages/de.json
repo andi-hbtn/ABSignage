@@ -39,7 +39,6 @@
     "f6Desc": "Alle Medien werden im lokalen Speicher des Fernsehers abgelegt. Selbst bei tagelangem Internetausfall läuft das Programm ohne Schwarzbild weiter."
   },
   "layouts": {
-    "sectionBadge": "BILDSCHIRM-LAYOUT-ARCHITEKTUR",
     "title": "Ein Bildschirm. Flexible Multi-Zonen-Layouts.",
     "subtitle": "Passen Sie jedes Display an Ihr Unternehmen an: Vollbild, 50/50 Dual Split sowie 33% Triple Split horizontal und vertikal mit nur einem Klick.",
     "mode1Title": "Vollbild 4K",

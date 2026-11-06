@@ -11,7 +11,6 @@ import {
   Rows2,
   Rows3,
   Clock,
-  Sparkles,
   CheckCircle2,
 } from "lucide-react"
 
@@ -158,10 +157,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
 
         {/* Section Header */}
         <div className="text-center max-w-5xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider mb-4 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>{dict.sectionBadge ?? "DISPLAY LAYOUT ARCHITECTURE"}</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             {dict.title}
           </h2>
