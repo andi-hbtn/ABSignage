@@ -20,64 +20,64 @@ interface ScreenZonesShowcaseProps {
 
 const ZONE_IMAGES = {
   fullscreen: {
-    src: "/images/product-demo-references/idea_10.jpeg",
+    src: "/media/idea_10.jpeg",
     alt: "High-Definition Brand Spotlight Commercial Campaign",
     position: "object-center",
   },
   dualVertical: {
     left: {
-      src: "/images/product-demo-references/promo.jpg",
+      src: "/media/promo.jpg",
       alt: "Restaurant Combo Meal Commercial Promotion",
       position: "object-center",
     },
     right: {
-      src: "/images/product-demo-references/drinks.jpg",
+      src: "/media/drinks.jpg",
       alt: "Specialty Cold Brew & Handcrafted Beverages Display",
       position: "object-center",
     },
   },
   dualHorizontal: {
     top: {
-      src: "/images/product-demo-references/platter.jpg",
+      src: "/media/platter.jpg",
       alt: "Chef's Signature Steak & Pasta Promotion",
       position: "object-[center_60%]",
     },
     bottom: {
-      src: "/images/product-demo-references/sandwich.jpg",
+      src: "/media/sandwich.jpg",
       alt: "Artisan Grilled Club Sandwich Showcase",
       position: "object-[center_55%]",
     },
   },
   tripleHorizontal: {
     top: {
-      src: "/images/product-demo-references/pizza.jpg",
+      src: "/media/pizza.jpg",
       alt: "Wood-Fired Artisan Pizza Horizontal Banner",
       position: "object-[center_55%]",
     },
     middle: {
-      src: "/images/product-demo-references/platter.jpg",
+      src: "/media/platter.jpg",
       alt: "Signature Gourmet Platter Horizontal Banner",
       position: "object-[center_60%]",
     },
     bottom: {
-      src: "/images/product-demo-references/sandwich.jpg",
+      src: "/media/sandwich.jpg",
       alt: "Fresh Toasted Brioche Horizontal Banner",
       position: "object-[center_55%]",
     },
   },
   tripleVertical: {
     left: {
-      src: "/images/product-demo-references/promo.jpg",
+      src: "/media/promo.jpg",
       alt: "Featured Restaurant Combo Vertical Promotion",
       position: "object-center",
     },
     center: {
-      src: "/images/product-demo-references/drinks.jpg",
+      src: "/media/drinks.jpg",
       alt: "Iced Coffee & Cocktails Vertical Showcase",
       position: "object-center",
     },
     right: {
-      src: "/images/product-demo-references/burger.jpg",
+      src: "/media/burger.jpg",
       alt: "Gourmet Double Cheeseburger Vertical Showcase",
       position: "object-[58%_center]",
     },
@@ -88,7 +88,7 @@ function ZoneBackgroundImage({
   src,
   alt,
   position = "object-center",
-  overlayClassName = "bg-gradient-to-b from-slate-950/80 via-slate-950/15 to-slate-950/85",
+  overlayClassName = "bg-gradient-to-b from-slate-950/55 via-slate-950/10 to-slate-950/60",
 }: {
   src: string
   alt: string
@@ -101,10 +101,11 @@ function ZoneBackgroundImage({
         src={src}
         alt={alt}
         fill
-        sizes="(max-width: 1024px) 100vw, 1024px"
-        className={`object-cover ${position} pointer-events-none select-none`}
+        priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1024px"
+        className={`object-cover ${position} pointer-events-none select-none z-0`}
       />
-      <div className={`absolute inset-0 ${overlayClassName} pointer-events-none`} />
+      <div className={`absolute inset-0 ${overlayClassName} pointer-events-none z-[1]`} />
     </>
   )
 }
@@ -415,19 +416,19 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
             </Badge>
           </div>
 
-          {/* TV Display Area (16:9 Aspect Ratio) */}
-          <div className="aspect-[16/9] rounded-2xl bg-gradient-to-br from-slate-950 via-blue-950/80 to-slate-900 border border-cyan-500/20 p-3 sm:p-5 shadow-inner overflow-hidden flex flex-col justify-between">
+          {/* TV Display Area (16:9 Aspect Ratio on Desktop, Responsive Height on Mobile) */}
+          <div className="min-h-[380px] sm:min-h-[440px] md:min-h-0 md:aspect-[16/9] rounded-2xl bg-gradient-to-br from-slate-950 via-blue-950/80 to-slate-900 border border-cyan-500/20 p-3 sm:p-5 shadow-inner overflow-hidden flex flex-col">
 
             {/* ========================================================= */}
             {/* MODE 1: FULLSCREEN (100% DISPLAY AREA)                    */}
             {/* ========================================================= */}
             {selectedMode === 1 && (
-              <div className="h-full rounded-xl bg-gradient-to-br from-blue-950/80 via-slate-950 to-cyan-950/60 border border-cyan-400/40 p-6 sm:p-10 flex flex-col justify-between animate-in fade-in duration-300 relative overflow-hidden">
+              <div className="flex-1 min-h-[350px] sm:min-h-[400px] md:min-h-0 h-full rounded-xl bg-gradient-to-br from-blue-950/80 via-slate-950 to-cyan-950/60 border border-cyan-400/40 p-5 sm:p-10 flex flex-col justify-between animate-in fade-in duration-300 relative overflow-hidden">
                 <ZoneBackgroundImage
                   src={ZONE_IMAGES.fullscreen.src}
                   alt={ZONE_IMAGES.fullscreen.alt}
                   position={ZONE_IMAGES.fullscreen.position}
-                  overlayClassName="bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-slate-950/75"
+                  overlayClassName="bg-gradient-to-t from-slate-950/75 via-slate-950/25 to-slate-950/60"
                 />
 
                 <div className="flex justify-between items-center text-xs relative z-10">
@@ -467,9 +468,9 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
             {/* MODE 2: DUAL SPLIT 50/50 (VERTICAL OR HORIZONTAL)          */}
             {/* ========================================================= */}
             {selectedMode === 2 && dualOrientation === "vertical" && (
-              <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-3 animate-in fade-in duration-300">
+              <div className="flex-1 h-full grid grid-cols-1 md:grid-cols-2 gap-3 animate-in fade-in duration-300">
                 {/* Zone 1: Left 50% - Video / Promo */}
-                <div className="rounded-xl bg-gradient-to-br from-cyan-950/50 via-slate-900/80 to-blue-950/40 border border-cyan-500/40 p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden">
+                <div className="min-h-[200px] sm:min-h-[230px] md:min-h-0 rounded-xl bg-gradient-to-br from-cyan-950/50 via-slate-900/80 to-blue-950/40 border border-cyan-500/40 p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.dualVertical.left.src}
                     alt={ZONE_IMAGES.dualVertical.left.alt}
@@ -490,7 +491,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 </div>
 
                 {/* Zone 2: Right 50% - Digital Menu Board */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden">
+                <div className="min-h-[200px] sm:min-h-[230px] md:min-h-0 rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 sm:p-5 flex flex-col justify-between relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.dualVertical.right.src}
                     alt={ZONE_IMAGES.dualVertical.right.alt}
@@ -514,9 +515,9 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
 
             {/* Mode 2: Horizontal Variant (Top/Bottom 50/50) */}
             {selectedMode === 2 && dualOrientation === "horizontal" && (
-              <div className="h-full grid grid-rows-2 gap-3 animate-in fade-in duration-300">
+              <div className="flex-1 h-full grid grid-rows-2 gap-3 animate-in fade-in duration-300">
                 {/* Zone 1: Top 50% Height - Wide Commercial Banner */}
-                <div className="rounded-xl bg-gradient-to-r from-blue-950/60 via-slate-900 to-cyan-950/50 border border-cyan-500/40 p-4 flex flex-col justify-between relative overflow-hidden">
+                <div className="min-h-[180px] sm:min-h-[210px] md:min-h-0 rounded-xl bg-gradient-to-r from-blue-950/60 via-slate-900 to-cyan-950/50 border border-cyan-500/40 p-4 flex flex-col justify-between relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.dualHorizontal.top.src}
                     alt={ZONE_IMAGES.dualHorizontal.top.alt}
@@ -537,7 +538,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 </div>
 
                 {/* Zone 2: Bottom 50% Height - Wide Product Showcase */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between relative overflow-hidden">
+                <div className="min-h-[180px] sm:min-h-[210px] md:min-h-0 rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.dualHorizontal.bottom.src}
                     alt={ZONE_IMAGES.dualHorizontal.bottom.alt}
@@ -563,14 +564,14 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
             {/* MODE 3: TRIPLE SPLIT HORIZONTAL (33% / 33% / 33% ROWS)    */}
             {/* ========================================================= */}
             {selectedMode === 3 && (
-              <div className="h-full grid grid-rows-3 gap-2.5 animate-in fade-in duration-300">
+              <div className="flex-1 h-full grid grid-rows-3 gap-2.5 animate-in fade-in duration-300">
                 {/* Zone 1: Top 33.3% Height */}
-                <div className="rounded-xl bg-gradient-to-r from-blue-950/70 via-cyan-950/40 to-slate-900 border border-cyan-500/40 px-4 py-2.5 flex items-center justify-between relative overflow-hidden">
+                <div className="min-h-[120px] sm:min-h-[140px] md:min-h-0 rounded-xl bg-gradient-to-r from-blue-950/70 via-cyan-950/40 to-slate-900 border border-cyan-500/40 px-4 py-2.5 flex items-center justify-between relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.tripleHorizontal.top.src}
                     alt={ZONE_IMAGES.tripleHorizontal.top.alt}
                     position={ZONE_IMAGES.tripleHorizontal.top.position}
-                    overlayClassName="bg-gradient-to-r from-slate-950/75 via-slate-950/20 to-slate-950/75"
+                    overlayClassName="bg-gradient-to-r from-slate-950/60 via-slate-950/15 to-slate-950/60"
                   />
                   <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-cyan-400/30 flex-shrink-0 relative z-10">
                     ZONE 1 · 33.3% TOP
@@ -581,12 +582,12 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 </div>
 
                 {/* Zone 2: Middle 33.3% Height */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 px-4 py-2 flex items-center justify-between relative overflow-hidden">
+                <div className="min-h-[120px] sm:min-h-[140px] md:min-h-0 rounded-xl bg-slate-900/90 border border-slate-700/80 px-4 py-2 flex items-center justify-between relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.tripleHorizontal.middle.src}
                     alt={ZONE_IMAGES.tripleHorizontal.middle.alt}
                     position={ZONE_IMAGES.tripleHorizontal.middle.position}
-                    overlayClassName="bg-gradient-to-r from-slate-950/75 via-slate-950/20 to-slate-950/75"
+                    overlayClassName="bg-gradient-to-r from-slate-950/60 via-slate-950/15 to-slate-950/60"
                   />
                   <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700 flex-shrink-0 relative z-10">
                     ZONE 2 · 33.3% MID
@@ -597,12 +598,12 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 </div>
 
                 {/* Zone 3: Bottom 33.3% Height */}
-                <div className="rounded-xl bg-black/60 border border-cyan-500/30 px-4 py-2.5 flex items-center justify-between text-xs relative overflow-hidden">
+                <div className="min-h-[120px] sm:min-h-[140px] md:min-h-0 rounded-xl bg-black/60 border border-cyan-500/30 px-4 py-2.5 flex items-center justify-between text-xs relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.tripleHorizontal.bottom.src}
                     alt={ZONE_IMAGES.tripleHorizontal.bottom.alt}
                     position={ZONE_IMAGES.tripleHorizontal.bottom.position}
-                    overlayClassName="bg-gradient-to-r from-slate-950/75 via-slate-950/20 to-slate-950/75"
+                    overlayClassName="bg-gradient-to-r from-slate-950/60 via-slate-950/15 to-slate-950/60"
                   />
                   <span className="px-2 py-0.5 rounded bg-cyan-500 text-slate-950 font-mono font-bold text-[10px] uppercase flex-shrink-0 relative z-10">
                     ZONE 3 · 33.3% BOTTOM
@@ -619,9 +620,9 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
             {/* MODE 4: TRIPLE SPLIT VERTICAL (33% / 33% / 33% COLUMNS)   */}
             {/* ========================================================= */}
             {selectedMode === 4 && (
-              <div className="h-full grid grid-cols-1 md:grid-cols-3 gap-3 animate-in fade-in duration-300">
+              <div className="flex-1 h-full grid grid-cols-1 md:grid-cols-3 gap-3 animate-in fade-in duration-300">
                 {/* Column 1: Left 33.3% Width */}
-                <div className="rounded-xl bg-gradient-to-b from-cyan-950/50 via-slate-900 to-blue-950/40 border border-cyan-500/40 p-4 flex flex-col justify-between relative overflow-hidden">
+                <div className="min-h-[190px] sm:min-h-[210px] md:min-h-0 rounded-xl bg-gradient-to-b from-cyan-950/50 via-slate-900 to-blue-950/40 border border-cyan-500/40 p-4 flex flex-col justify-between relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.tripleVertical.left.src}
                     alt={ZONE_IMAGES.tripleVertical.left.alt}
@@ -642,7 +643,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 </div>
 
                 {/* Column 2: Center 33.3% Width */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between relative overflow-hidden">
+                <div className="min-h-[190px] sm:min-h-[210px] md:min-h-0 rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.tripleVertical.center.src}
                     alt={ZONE_IMAGES.tripleVertical.center.alt}
@@ -663,7 +664,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 </div>
 
                 {/* Column 3: Right 33.3% Width */}
-                <div className="rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between relative overflow-hidden">
+                <div className="min-h-[190px] sm:min-h-[210px] md:min-h-0 rounded-xl bg-slate-900/90 border border-slate-700/80 p-4 flex flex-col justify-between relative overflow-hidden">
                   <ZoneBackgroundImage
                     src={ZONE_IMAGES.tripleVertical.right.src}
                     alt={ZONE_IMAGES.tripleVertical.right.alt}

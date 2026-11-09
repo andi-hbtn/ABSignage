@@ -41,9 +41,9 @@ export default function LocalizedDataDeletionPage() {
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
       <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-cyan-500/20 h-20 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
-          <Link href={`/${locale}`} className="flex items-center gap-3">
-            <div className="relative h-11 w-44 sm:h-12 sm:w-52">
-              <Image src="/ab-signage-3.png" alt="ABSignage Logo" fill sizes="(max-width: 640px) 176px, 208px" className="object-contain" priority />
+          <Link href={`/${locale}`} className="flex items-center gap-3 group">
+            <div className="relative h-11 w-44 sm:h-12 sm:w-52 transition-transform duration-300 group-hover:scale-105">
+              <Image src="/AB_Signage_Logo_Transparency.png" alt="ABSignage Logo" fill sizes="(max-width: 640px) 176px, 208px" className="object-contain" priority />
             </div>
           </Link>
 
