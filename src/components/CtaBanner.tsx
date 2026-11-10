@@ -2,7 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import type { Dictionary } from "@/lib/get-dictionary"
-import { ArrowRight, ShieldCheck } from "lucide-react"
+import { ArrowRight, ShieldCheck, Download } from "lucide-react"
+
+const GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.andibevapi.digitalsignageplayer&hl=en"
 
 interface CtaBannerProps {
   dict: Dictionary["ctaBanner"]
@@ -35,9 +38,12 @@ export function CtaBanner({ dict, onOpenDemo }: CtaBannerProps) {
           </Button>
 
           <a
-            href="#pricing"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-7 h-12 text-sm font-semibold text-slate-200 hover:text-white hover:border-cyan-500/40 transition-all"
+            href={GOOGLE_PLAY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-slate-900 px-7 h-12 text-sm font-semibold text-cyan-300 hover:text-white hover:border-cyan-400 hover:bg-slate-800 transition-all"
           >
+            <Download className="w-4 h-4 text-cyan-400" />
             <span>{dict.secondaryBtn}</span>
           </a>
         </div>

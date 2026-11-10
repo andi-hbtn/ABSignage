@@ -17,6 +17,7 @@
     "subtitle": "Lidhni çdo TV në 30 sekonda me një kod aktivizimi. Ngarkoni foto dhe video 4K, ndani ekranin në zona dinamike (Dual 50/50 & Triple 33%) dhe planifikoni transmetimin pa pasur nevojë për USB.",
     "ctaPrimary": "Fillo Provën 14-Ditore Falas",
     "ctaSecondary": "Shiko Si Funksionon",
+    "downloadApp": "Shkarko në Google Play",
     "pairingCodeLabel": "KODI I LIDHJES",
     "activeScreen": "Ekrani Kryesor · Online",
     "activePlaylist": "Aktive: Oferta Verore & Meny Ditore (Loop 00:45s)",
@@ -64,7 +65,6 @@
     "zone4": "Zona 4"
   },
   "pricing": {
-    "badge": "Çmimet Transparente & Pa Kosto të Fshehura",
     "title": "Paketa të qarta që rriten bashkë me ekranet tuaja",
     "subtitle": "Pa kosto fillestare instalimi. Çmimi mujor llogaritet sipas numrit të ekraneve, me kosto më të ulët për çdo TV sa më shumë ekrane të keni.",
     "monthlyToggle": "Faturim Mujor",
@@ -147,20 +147,16 @@
     "title": "Gati për të modernizuar ekranet tuaja televizive?",
     "subtitle": "Filloni provën tuaj 14-ditore falas sot. Lidhni ekranin tuaj të parë në më pak se 2 minuta.",
     "primaryBtn": "Fillo Provën 14-Ditore Falas",
-    "secondaryBtn": "Bisedo me një Inxhinier",
+    "secondaryBtn": "Shkarko në Google Play",
     "disclaimer": "Pa kartë krediti · Aktivizim i menjëhershëm · Anuloni në çdo kohë"
   },
   "modal": {
     "title": "Kërkoni Provën Tuaj 14-Ditore Falas",
     "subtitle": "Plotësoni të dhënat tuaja dhe ekipi ynë do të aktivizojë menjëherë llogarinë tuaj testuese.",
     "fullName": "Emri dhe Mbiemri",
-    "fullNamePlaceholder": "p.sh. Agim Berisha",
     "email": "Email Zyrtar / Biznesi",
-    "emailPlaceholder": "emri@kompania.com",
     "phone": "Numri i Telefonit",
-    "phonePlaceholder": "+355 69 ... ose numër tjetër",
     "company": "Emri i Kompanisë / Biznesit",
-    "companyPlaceholder": "p.sh. Restorant & Bar Tirana",
     "screenCount": "Numri i Përafërt i Ekraneve",
     "screenOptions": {
       "opt1": "1 Ekran (Start)",
@@ -188,9 +184,9 @@
     "dataDeletion": "Fshirja e Llogarisë & të Dhënave",
     "gdprCompliant": "Në përputhje me GDPR & Privatësinë",
     "googlePlayPolicy": "Google Play User Data Policy",
-    "securityCol": "Siguria & Konsola",
+    "securityCol": "Siguria & Aplikacioni TV",
     "securityDesc": "Enkriptim AES-256 në cloud dhe ruajtje lokale e sigurt.",
-    "dashboardLink": "Hyr në Panelin e Kontrollit",
+    "dashboardLink": "Shkarko Aplikacionin në Google Play",
     "rightsReserved": "Të gjitha të drejtat të rezervuara.",
     "craftedWith": "Ndërtuar me performancë të lartë nga AB"
   },
@@ -198,6 +194,8 @@
     "badge": "SI FUNKSIONON",
     "title": "Një Platformë. Çdo Biznes. Çdo Ekran.",
     "subtitle": "Nga restorantet dhe kafenetë deri te dyqanet me pakicë, markat e modës dhe bizneset e bukurisë, ABSignage e bën të lehtë menaxhimin e ekraneve tuaja dixhitale. Lidhni televizorët tuaj, ngarkoni përmbajtjen, krijoni playlista dhe publikoni fushata — të gjitha nga një platformë e vetme e fuqishme.",
+    "downloadAppText": "Instaloni falas aplikacionin zyrtar ABSignage Player në Android TV ose Google TV:",
+    "downloadApp": "Shkarko në Google Play",
     "videoCta": "Shiko Si Funksionon",
     "playVideo": "Luaj Videon",
     "pauseVideo": "Ndalo Videon",

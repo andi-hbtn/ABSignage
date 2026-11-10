@@ -17,6 +17,7 @@
     "subtitle": "Connect any TV in 30 seconds with a pairing code. Upload images and 4K videos, create multi-zone split-screen layouts, and schedule content remotely without USB drives.",
     "ctaPrimary": "Start 14-Day Free Trial",
     "ctaSecondary": "See How It Works",
+    "downloadApp": "Download on Google Play",
     "pairingCodeLabel": "PAIRING CODE",
     "activeScreen": "Main Lounge Screen · Online",
     "activePlaylist": "Active: Summer Specials & Lunch Menu (00:45s Loop)",
@@ -64,7 +65,6 @@
     "zone4": "Zone 4"
   },
   "pricing": {
-    "badge": "Transparent Monthly Pricing",
     "title": "Clear packages that scale with your screens",
     "subtitle": "No hidden setup fees. Transparent monthly pricing based on your screen count, with lower effective cost per TV as your fleet grows.",
     "monthlyToggle": "Monthly Billing",
@@ -147,20 +147,16 @@
     "title": "Ready to modernize your TV displays?",
     "subtitle": "Start your 14-day free trial today. Connect your first screen in less than 2 minutes.",
     "primaryBtn": "Start Free 14-Day Trial",
-    "secondaryBtn": "Talk to an Expert",
+    "secondaryBtn": "Download on Google Play",
     "disclaimer": "No credit card required · Instant setup · Cancel anytime"
   },
   "modal": {
     "title": "Request Your 14-Day Free Trial",
     "subtitle": "Fill in your details and our team will activate your test account immediately.",
     "fullName": "Full Name",
-    "fullNamePlaceholder": "e.g. John Doe",
     "email": "Business Email",
-    "emailPlaceholder": "john@company.com",
     "phone": "Phone Number",
-    "phonePlaceholder": "+355 69 ... or international",
     "company": "Company / Business Name",
-    "companyPlaceholder": "e.g. Grand Hotel & Bar",
     "screenCount": "Estimated Number of TV Screens",
     "screenOptions": {
       "opt1": "1 Screen (Start)",
@@ -188,9 +184,9 @@
     "dataDeletion": "Account & Data Deletion",
     "gdprCompliant": "GDPR & Privacy Compliant",
     "googlePlayPolicy": "Google Play User Data Policy",
-    "securityCol": "Security & Console",
+    "securityCol": "Security & TV App",
     "securityDesc": "AES-256 cloud encryption and tamper-proof local storage.",
-    "dashboardLink": "Open Web Dashboard",
+    "dashboardLink": "Download App on Google Play",
     "rightsReserved": "All rights reserved.",
     "craftedWith": "Engineered for high performance by AB"
   },
@@ -198,6 +194,8 @@
     "badge": "HOW IT WORKS",
     "title": "One Platform. Every Business. Every Screen.",
     "subtitle": "From restaurants and cafes to retail stores, fashion brands, and beauty businesses, ABSignage makes it easy to manage your digital screens. Connect your TVs, upload your content, create playlists, and publish campaigns — all from one powerful platform.",
+    "downloadAppText": "Install the official ABSignage Player app for free on Android TV or Google TV:",
+    "downloadApp": "Download on Google Play",
     "videoCta": "Watch How It Works",
     "playVideo": "Play Video",
     "pauseVideo": "Pause Video",

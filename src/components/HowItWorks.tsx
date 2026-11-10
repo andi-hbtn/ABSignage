@@ -22,7 +22,12 @@ import {
   Volume2,
   VolumeX,
   Maximize2,
+  Download,
+  ExternalLink,
 } from "lucide-react"
+
+const GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.andibevapi.digitalsignageplayer&hl=en"
 
 interface HowItWorksProps {
   dict?: Dictionary["howItWorks"]
@@ -71,8 +76,7 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
           : "Scene 1 — Pairing Code Generation on Android TV",
         desc: isSq
           ? "Aplikacioni ABSignage hapet në televizor dhe gjeneron automatikisht një kod unik prej 6 shifrash (739-204), duke pritur lidhjen me platformën."
-          : "The ABSignage Android TV app launches and automatically generates a unique 6-digit pairing code (739-204), waiting for the platform connection.",
-        guidingText: "Start by connecting your TV.",
+          : "The ABSignage Android TV app launches and automatically generates a unique 6-digit pairing code (739-204), waiting for the platform connection."
       },
       {
         number: "02",
@@ -91,8 +95,7 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
           : "Scene 2 — Enter Pairing Code into ABSignage Platform",
         desc: isSq
           ? "Përdoruesi hap konsolën web të ABSignage, shkon te pajisjet dhe fut me lehtësi të njëjtin kod 6-shifror (739-204) të shfaqur në televizor."
-          : "The user opens the ABSignage web console, navigates to Devices, and enters the exact same 6-digit code (739-204) shown on the TV.",
-        guidingText: "Pair your TV in seconds.",
+          : "The user opens the ABSignage web console, navigates to Devices, and enters the exact same 6-digit code (739-204) shown on the TV."
       },
       {
         number: "03",
@@ -111,8 +114,7 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
           : "Scene 3 — Successful Pairing & TV Activation",
         desc: isSq
           ? "Platforma verifikon kodin menjëherë. Televizori regjistrohet me statusin Online & Aktiv, gati për të marrë përmbajtje dhe fushata."
-          : "The platform confirms pairing instantly. The TV registers as Online & Active, ready to receive playlists and campaigns.",
-        guidingText: "Your screen is connected and ready.",
+          : "The platform confirms pairing instantly. The TV registers as Online & Active, ready to receive playlists and campaigns."
       },
       {
         number: "04",
@@ -131,8 +133,7 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
           : "Scene 4 — Upload Commercial Images & Videos",
         desc: isSq
           ? "Ngarkoni me lehtësi foto dhe video 4K për ushqime, pije, produkte bukurie e parfume, veshje mode dhe promovime me pakicë nga një vend i vetëm."
-          : "Upload professional 4K images and videos across food, beverages, cosmetics, fashion collections, and retail promotions in one centralized hub.",
-        guidingText: "Upload and manage all your content in one place.",
+          : "Upload professional 4K images and videos across food, beverages, cosmetics, fashion collections, and retail promotions in one centralized hub."
       },
       {
         number: "05",
@@ -151,8 +152,7 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
           : "Scene 5 — Create Different Playlist Formats",
         desc: isSq
           ? "Krijoni playlista sipas nevojave: Ekran i plotë (1 zonë 100%), Horizontal me 3 zona të sinkronizuara, ose Totem Vertikal (9:16) për modë dhe dyqane."
-          : "Choose the perfect layout: Full-screen (100% display), Horizontal Multi-Zone (3 synchronized zones), or Vertical Totem (9:16) for retail pillars.",
-        guidingText: "Create playlists that fit your screens.",
+          : "Choose the perfect layout: Full-screen (100% display), Horizontal Multi-Zone (3 synchronized zones), or Vertical Totem (9:16) for retail pillars."
       },
       {
         number: "06",
@@ -171,8 +171,7 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
           : "Scene 6 — Select & Organize Media Inside Playlists",
         desc: isSq
           ? "Zgjidhni materialet nga Media Library, vendosni kohëzgjatjen (10s, 15s) dhe efektet e tranzicionit me preview live në kohë reale."
-          : "Assign media from the library to zones, set display durations (10s, 15s) and smooth transitions with interactive real-time TV preview.",
-        guidingText: "Your content. Your layout. Your creativity.",
+          : "Assign media from the library to zones, set display durations (10s, 15s) and smooth transitions with interactive real-time TV preview."
       },
       {
         number: "07",
@@ -191,8 +190,7 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
           : "Scene 7 — Create & Configure Campaign (Campaign → Playlist → TV)",
         desc: isSq
           ? "Lidhni playlistën me televizorin e regjistruar: FUSHATË ──▶ PLAYLISTË ──▶ TELEVIZOR. Klikoni Publiko dhe përmbajtja shpërndahet në çast."
-          : "Connect the workflow: CAMPAIGN ──▶ PLAYLIST ──▶ TV DEVICE. Hit Publish and the cloud network pushes the update to your screen instantly.",
-        guidingText: "Choose your playlist. Select your screen. Publish.",
+          : "Connect the workflow: CAMPAIGN ──▶ PLAYLIST ──▶ TV DEVICE. Hit Publish and the cloud network pushes the update to your screen instantly."
       },
       {
         number: "08",
@@ -211,8 +209,7 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
           : "Scene 8 — Campaign Playing on Android TV across Multiple Environments",
         desc: isSq
           ? "Televizori fillon menjëherë luajtjen e fushatës së publikuar në restorante, bare, dyqane kozmetike dhe butikë mode. Një platformë për çdo biznes."
-          : "The TV plays the published campaign across restaurants, bars, cosmetics stores, and fashion boutiques. One platform for every business.",
-        guidingText: "From your dashboard to your screens.",
+          : "The TV plays the published campaign across restaurants, bars, cosmetics stores, and fashion boutiques. One platform for every business."
       },
     ],
     [isSq, isIt, isDe]
@@ -600,7 +597,7 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
           </div>
 
           {/* Active Scene Banner */}
-          <div className="mb-3 px-3 py-2.5 rounded-2xl bg-slate-900/80 border border-slate-800/90 flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="mb-3 px-3.5 py-3 rounded-2xl bg-slate-900/80 border border-slate-800/90 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
             <div className="space-y-1">
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="default" className="text-[10px] font-mono uppercase bg-cyan-500 text-slate-950 font-bold">
@@ -615,11 +612,32 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
               </p>
             </div>
 
-            <div className="flex-shrink-0 flex items-center gap-2 px-3.5 py-2 rounded-xl bg-cyan-500/10 border border-cyan-400/40">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
-              <span className="text-xs sm:text-sm font-bold text-cyan-200 tracking-wide">
-                “{currentScene.guidingText}”
+            <div className="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end justify-between gap-2 pt-2 lg:pt-0 border-t lg:border-t-0 border-slate-800/80 shrink-0">
+              <span className="text-[11px] text-slate-400">
+                {dict?.downloadAppText ??
+                  (isSq
+                    ? "Instaloni falas aplikacionin zyrtar ABSignage Player në Android TV ose Google TV:"
+                    : "Install the official ABSignage Player app for free on Android TV or Google TV:")}
               </span>
+              <a
+                href={GOOGLE_PLAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 text-slate-950 font-extrabold text-xs hover:brightness-110 transition-all shadow-[0_0_20px_rgba(0,229,255,0.3)]"
+              >
+                <Download className="w-3.5 h-3.5 stroke-[2.5]" />
+                <span>
+                  {dict?.downloadApp ??
+                    (isSq
+                      ? "Shkarko në Google Play"
+                      : isIt
+                      ? "Scarica su Google Play"
+                      : isDe
+                      ? "Bei Google Play herunterladen"
+                      : "Download on Google Play")}
+                </span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
             </div>
           </div>
 

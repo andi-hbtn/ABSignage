@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import type { Dictionary } from "@/lib/get-dictionary"
 import { X, CheckCircle2, Sparkles, Building, Mail, Phone, User, Loader2, AlertCircle } from "lucide-react"
-import confetti from "canvas-confetti"
 
 interface DemoBookingModalProps {
   dict: Dictionary["modal"]
@@ -15,16 +14,30 @@ interface DemoBookingModalProps {
 }
 
 export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps) {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [company, setCompany] = useState("")
-  const [screens, setScreens] = useState("2 - 5 Screens")
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    screens: "2 - 5 Screens",
+  })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [errorMsg, setErrorMsg] = useState<string | null>(null)
 
   if (!open) return null
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target
+    if (!name) return
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
 
   const handleModalClose = () => {
     setErrorMsg(null)
@@ -37,11 +50,11 @@ export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps)
     setErrorMsg(null)
 
     const payload = {
-      name,
-      email,
-      phone,
-      company,
-      screens,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      screens: formData.screens,
     }
 
     try {
@@ -76,12 +89,12 @@ export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps)
             Accept: "application/json",
           },
           body: JSON.stringify({
-            "Full Name": name,
-            "Client Email": email,
-            "Phone Number": phone,
-            "Company Name": company,
-            "TV Screens": screens,
-            _subject: `Trial Request: ABSignage - ${company} (${name})`,
+            "Full Name": formData.name,
+            "Client Email": formData.email,
+            "Phone Number": formData.phone,
+            "Company Name": formData.company,
+            "TV Screens": formData.screens,
+            _subject: `Trial Request: ABSignage - ${formData.company} (${formData.name})`,
             _template: "table",
             _captcha: "false",
           }),
@@ -95,6 +108,7 @@ export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps)
       if (isSuccess) {
         setSubmitted(true)
         try {
+          const confetti = (await import("canvas-confetti")).default
           confetti({
             particleCount: 120,
             spread: 70,
@@ -158,9 +172,9 @@ export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps)
                 </label>
                 <Input
                   required
-                  placeholder={dict.fullNamePlaceholder}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   className="bg-slate-950 border-slate-700 text-white text-xs h-10"
                 />
               </div>
@@ -174,9 +188,9 @@ export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps)
                   <Input
                     required
                     type="email"
-                    placeholder={dict.emailPlaceholder}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     className="bg-slate-950 border-slate-700 text-white text-xs h-10"
                   />
                 </div>
@@ -189,9 +203,9 @@ export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps)
                   <Input
                     required
                     type="tel"
-                    placeholder={dict.phonePlaceholder}
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     className="bg-slate-950 border-slate-700 text-white text-xs h-10"
                   />
                 </div>
@@ -204,9 +218,9 @@ export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps)
                 </label>
                 <Input
                   required
-                  placeholder={dict.companyPlaceholder}
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
+                  name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
                   className="bg-slate-950 border-slate-700 text-white text-xs h-10"
                 />
               </div>
@@ -216,8 +230,9 @@ export function DemoBookingModal({ dict, open, onClose }: DemoBookingModalProps)
                   {dict.screenCount}
                 </label>
                 <select
-                  value={screens}
-                  onChange={(e) => setScreens(e.target.value)}
+                  name="screens"
+                  value={formData.screens}
+                  onChange={handleInputChange}
                   className="w-full h-10 px-3 rounded-lg bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 >
                   <option value="1 Screen">{dict.screenOptions.opt1}</option>

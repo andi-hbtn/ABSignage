@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
+import dynamic from "next/dynamic"
 import { Navbar } from "@/components/Navbar"
 import { Hero } from "@/components/Hero"
 import { CoreFeatures } from "@/components/CoreFeatures"
@@ -9,10 +10,14 @@ import { HowItWorks } from "@/components/HowItWorks"
 import { PricingSection } from "@/components/PricingSection"
 import { FaqSection } from "@/components/FaqSection"
 import { CtaBanner } from "@/components/CtaBanner"
-import { DemoBookingModal } from "@/components/DemoBookingModal"
 import { Footer } from "@/components/Footer"
 import type { Dictionary } from "@/lib/get-dictionary"
 import type { Locale } from "@/lib/i18n-config"
+
+const DemoBookingModal = dynamic(
+  () => import("@/components/DemoBookingModal").then((mod) => mod.DemoBookingModal),
+  { ssr: false }
+)
 
 interface HomePageClientProps {
   dict: Dictionary
@@ -103,11 +108,13 @@ export function HomePageClient({ dict, locale }: HomePageClientProps) {
       </main>
 
       {/* Demo / 14-Day Free Trial Modal */}
-      <DemoBookingModal
-        dict={dict.modal}
-        open={demoModalOpen}
-        onClose={handleCloseDemo}
-      />
+      {demoModalOpen && (
+        <DemoBookingModal
+          dict={dict.modal}
+          open={demoModalOpen}
+          onClose={handleCloseDemo}
+        />
+      )}
 
       {/* Localized Footer */}
       <Footer

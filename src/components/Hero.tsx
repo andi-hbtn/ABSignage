@@ -12,7 +12,11 @@ import {
   Clock,
   QrCode,
   Flame,
+  Download,
 } from "lucide-react"
+
+const GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.andibevapi.digitalsignageplayer&hl=en"
 
 interface HeroProps {
   dict: Dictionary["hero"]
@@ -88,7 +92,7 @@ export function Hero({ dict, onOpenDemo }: HeroProps) {
           </p>
 
           {/* CTAs */}
-          <div className="mt-7 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+          <div className="mt-7 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
             <Button
               onClick={onOpenDemo}
               className="w-full sm:w-auto text-xs sm:text-sm h-10 px-5 font-bold group shadow-[0_0_20px_rgba(0,229,255,0.3)]"
@@ -103,6 +107,16 @@ export function Hero({ dict, onOpenDemo }: HeroProps) {
             >
               <Play className="w-3.5 h-3.5 fill-cyan-400 text-cyan-400 transition-transform group-hover:scale-110" />
               <span>{dict.ctaSecondary}</span>
+            </a>
+
+            <a
+              href={GOOGLE_PLAY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 h-10 text-xs sm:text-sm font-bold text-cyan-300 hover:text-white hover:border-cyan-400 hover:bg-cyan-500/20 transition-all cursor-pointer group shadow-[0_0_15px_rgba(0,229,255,0.15)]"
+            >
+              <Download className="w-3.5 h-3.5 text-cyan-400 transition-transform group-hover:translate-y-0.5" />
+              <span>{dict.downloadApp}</span>
             </a>
           </div>
 

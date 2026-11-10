@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import type { Dictionary } from "@/lib/get-dictionary"
 import type { Locale } from "@/lib/i18n-config"
-import { ShieldCheck, Heart, ArrowUpRight, Lock, Trash2 } from "lucide-react"
+import { ShieldCheck, ArrowUpRight, Lock, Trash2 } from "lucide-react"
 
 interface FooterProps {
   dict: Dictionary["footer"]
@@ -91,10 +91,10 @@ export function Footer({ dict, locale }: FooterProps) {
               </div>
               <div className="pt-2">
                 <a
-                  href="http://localhost:5173"
+                  href="https://play.google.com/store/apps/details?id=com.andibevapi.digitalsignageplayer&hl=en"
                   target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-cyan-400 hover:underline"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-cyan-400 font-semibold hover:underline"
                 >
                   <span>{dict.dashboardLink}</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -110,7 +110,6 @@ export function Footer({ dict, locale }: FooterProps) {
           <p>© {new Date().getFullYear()} ABSignage Platform. {dict.rightsReserved}</p>
           <div className="flex items-center gap-1">
             <span>{dict.craftedWith}</span>
-            <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
           </div>
         </div>
 

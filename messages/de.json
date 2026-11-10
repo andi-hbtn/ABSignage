@@ -17,6 +17,7 @@
     "subtitle": "Verbinden Sie jeden Fernseher in 30 Sekunden über einen Kopplungscode. Laden Sie Bilder und 4K-Videos hoch, teilen Sie Bildschirme in bis zu 4 Zonen auf und steuern Sie Inhalte ohne USB-Sticks.",
     "ctaPrimary": "14 Tage kostenlos testen",
     "ctaSecondary": "Funktionsweise ansehen",
+    "downloadApp": "Bei Google Play herunterladen",
     "pairingCodeLabel": "KOPPLUNGSCODE",
     "activeScreen": "Hauptbildschirm Lounge · Online",
     "activePlaylist": "Aktiv: Sommerspecials & Mittagsmenü (00:45s Loop)",
@@ -64,7 +65,6 @@
     "zone4": "Zone 4"
   },
   "pricing": {
-    "badge": "Transparente monatliche Preise",
     "title": "Klare Pakete, die mit Ihren Bildschirmen wachsen",
     "subtitle": "Keine versteckten Einrichtungsgebühren. Transparente Monatspreise basierend auf der Bildschirmanzahl mit sinkenden Kosten pro TV bei größeren Flotten.",
     "monthlyToggle": "Monatliche Abrechnung",
@@ -147,20 +147,16 @@
     "title": "Bereit, Ihre TV-Bildschirme zu modernisieren?",
     "subtitle": "Starten Sie noch heute Ihre 14-tägige kostenlose Testphase. Verbinden Sie Ihren ersten Bildschirm in unter 2 Minuten.",
     "primaryBtn": "14 Tage kostenlos testen",
-    "secondaryBtn": "Mit einem Experten sprechen",
+    "secondaryBtn": "Bei Google Play herunterladen",
     "disclaimer": "Keine Kreditkarte erforderlich · Sofortige Aktivierung · Jederzeit kündbar"
   },
   "modal": {
     "title": "14-tägige kostenlose Testphase anfordern",
     "subtitle": "Tragen Sie Ihre Kontaktdaten ein und unser Team schaltet Ihren Testzugang umgehend frei.",
     "fullName": "Vor- und Nachname",
-    "fullNamePlaceholder": "z.B. Max Mustermann",
     "email": "Geschäftliche E-Mail",
-    "emailPlaceholder": "max@unternehmen.de",
     "phone": "Telefonnummer",
-    "phonePlaceholder": "+49 ... oder internationale Nummer",
     "company": "Firmen- / Betriebsname",
-    "companyPlaceholder": "z.B. Grand Hotel & Restaurant",
     "screenCount": "Geschätzte Anzahl an TV-Bildschirmen",
     "screenOptions": {
       "opt1": "1 Bildschirm (Start)",
@@ -188,9 +184,9 @@
     "dataDeletion": "Konto- & Datenlöschung",
     "gdprCompliant": "DSGVO- & Datenschutzkonform",
     "googlePlayPolicy": "Google Play Nutzerdaten-Richtlinie",
-    "securityCol": "Sicherheit & Konsole",
+    "securityCol": "Sicherheit & TV-App",
     "securityDesc": "AES-256 Cloud-Verschlüsselung und manipulationssichere lokale Speicherung.",
-    "dashboardLink": "Web-Dashboard öffnen",
+    "dashboardLink": "App bei Google Play herunterladen",
     "rightsReserved": "Alle Rechte vorbehalten.",
     "craftedWith": "Entwickelt für Höchstleistung von AB"
   },
@@ -198,6 +194,8 @@
     "badge": "FUNKTIONSWEISE",
     "title": "Eine Plattform. Jedes Unternehmen. Jeder Bildschirm.",
     "subtitle": "Von Restaurants und Cafés über Einzelhandelsgeschäfte bis hin zu Modemarken und Kosmetikstudios: ABSignage macht die Verwaltung Ihrer digitalen Displays mühelos. TVs verbinden, Medien hochladen, Playlists erstellen und Kampagnen veröffentlichen — alles über eine zentrale Plattform.",
+    "downloadAppText": "Installieren Sie die offizielle ABSignage Player App kostenlos auf Android TV oder Google TV:",
+    "downloadApp": "Bei Google Play herunterladen",
     "videoCta": "Funktionsweise ansehen",
     "playVideo": "Video Abspielen",
     "pauseVideo": "Pause",

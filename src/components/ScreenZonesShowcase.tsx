@@ -10,7 +10,6 @@ import {
   Columns3,
   Rows2,
   Rows3,
-  Clock,
   CheckCircle2,
 } from "lucide-react"
 
@@ -26,7 +25,7 @@ const ZONE_IMAGES = {
   },
   dualVertical: {
     left: {
-      src: "/media/promo.jpg",
+      src: "/media/combo_meal.jpg",
       alt: "Restaurant Combo Meal Commercial Promotion",
       position: "object-center",
     },
@@ -67,7 +66,7 @@ const ZONE_IMAGES = {
   },
   tripleVertical: {
     left: {
-      src: "/media/promo.jpg",
+      src: "/media/combo_meal.jpg",
       alt: "Featured Restaurant Combo Vertical Promotion",
       position: "object-center",
     },
@@ -101,7 +100,6 @@ function ZoneBackgroundImage({
         src={src}
         alt={alt}
         fill
-        priority
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1024px"
         className={`object-cover ${position} pointer-events-none select-none z-0`}
       />
@@ -177,29 +175,26 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 key={mode.id}
                 type="button"
                 onClick={() => setSelectedMode(mode.id as 1 | 2 | 3 | 4)}
-                className={`text-left p-5 rounded-2xl border transition-all duration-300 relative flex flex-col justify-between group ${
-                  isSelected
-                    ? "bg-slate-900 border-cyan-400 ring-2 ring-cyan-400/20 shadow-[0_0_30px_rgba(0,229,255,0.22)]"
-                    : "bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90"
-                }`}
+                className={`text-left p-5 rounded-2xl border transition-all duration-300 relative flex flex-col justify-between group ${isSelected
+                  ? "bg-slate-900 border-cyan-400 ring-2 ring-cyan-400/20 shadow-[0_0_30px_rgba(0,229,255,0.22)]"
+                  : "bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90"
+                  }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3.5">
                     <div
-                      className={`p-2.5 rounded-xl border transition-colors ${
-                        isSelected
-                          ? "bg-cyan-500 text-slate-950 border-cyan-400 shadow-[0_0_15px_rgba(0,229,255,0.4)]"
-                          : "bg-slate-800 text-slate-300 border-slate-700 group-hover:text-cyan-300"
-                      }`}
+                      className={`p-2.5 rounded-xl border transition-colors ${isSelected
+                        ? "bg-cyan-500 text-slate-950 border-cyan-400 shadow-[0_0_15px_rgba(0,229,255,0.4)]"
+                        : "bg-slate-800 text-slate-300 border-slate-700 group-hover:text-cyan-300"
+                        }`}
                     >
                       <Icon className="w-4 h-4" />
                     </div>
                     <span
-                      className={`text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full border transition-colors ${
-                        isSelected
-                          ? "bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
-                          : "bg-slate-800 text-slate-400 border-slate-700/60"
-                      }`}
+                      className={`text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full border transition-colors ${isSelected
+                        ? "bg-cyan-500/20 text-cyan-300 border-cyan-500/30"
+                        : "bg-slate-800 text-slate-400 border-slate-700/60"
+                        }`}
                     >
                       {mode.tag}
                     </span>
@@ -212,19 +207,17 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 {/* Wireframe Preview Box */}
                 <div className="mt-5 pt-4 border-t border-slate-800/80">
                   <div
-                    className={`h-11 rounded-lg border p-1 transition-all flex ${
-                      isSelected
-                        ? "bg-slate-950 border-cyan-500/40 shadow-inner"
-                        : "bg-slate-950/60 border-slate-800"
-                    }`}
+                    className={`h-11 rounded-lg border p-1 transition-all flex ${isSelected
+                      ? "bg-slate-950 border-cyan-500/40 shadow-inner"
+                      : "bg-slate-950/60 border-slate-800"
+                      }`}
                   >
                     {mode.id === 1 && (
                       <div
-                        className={`w-full h-full rounded flex items-center justify-center text-[10px] font-mono font-bold ${
-                          isSelected
-                            ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40"
-                            : "bg-slate-800/40 text-slate-500 border border-slate-800"
-                        }`}
+                        className={`w-full h-full rounded flex items-center justify-center text-[10px] font-mono font-bold ${isSelected
+                          ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40"
+                          : "bg-slate-800/40 text-slate-500 border border-slate-800"
+                          }`}
                       >
                         100% FULLSCREEN
                       </div>
@@ -233,20 +226,18 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     {mode.id === 2 && (
                       <div className="w-full h-full grid grid-cols-2 gap-1 text-[9px] font-mono font-bold text-center">
                         <div
-                          className={`rounded flex items-center justify-center ${
-                            isSelected
-                              ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40"
-                              : "bg-slate-800/40 text-slate-500 border border-slate-800"
-                          }`}
+                          className={`rounded flex items-center justify-center ${isSelected
+                            ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40"
+                            : "bg-slate-800/40 text-slate-500 border border-slate-800"
+                            }`}
                         >
                           50%
                         </div>
                         <div
-                          className={`rounded flex items-center justify-center ${
-                            isSelected
-                              ? "bg-slate-800 text-slate-300 border border-slate-700"
-                              : "bg-slate-800/40 text-slate-500 border border-slate-800"
-                          }`}
+                          className={`rounded flex items-center justify-center ${isSelected
+                            ? "bg-slate-800 text-slate-300 border border-slate-700"
+                            : "bg-slate-800/40 text-slate-500 border border-slate-800"
+                            }`}
                         >
                           50%
                         </div>
@@ -256,29 +247,26 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     {mode.id === 3 && (
                       <div className="w-full h-full grid grid-rows-3 gap-0.5 text-[8px] font-mono font-bold text-center">
                         <div
-                          className={`rounded-sm flex items-center justify-center ${
-                            isSelected
-                              ? "bg-cyan-500/20 text-cyan-300"
-                              : "bg-slate-800/40 text-slate-500"
-                          }`}
+                          className={`rounded-sm flex items-center justify-center ${isSelected
+                            ? "bg-cyan-500/20 text-cyan-300"
+                            : "bg-slate-800/40 text-slate-500"
+                            }`}
                         >
                           33.3% ROW 1
                         </div>
                         <div
-                          className={`rounded-sm flex items-center justify-center ${
-                            isSelected
-                              ? "bg-slate-800 text-slate-300"
-                              : "bg-slate-800/40 text-slate-500"
-                          }`}
+                          className={`rounded-sm flex items-center justify-center ${isSelected
+                            ? "bg-slate-800 text-slate-300"
+                            : "bg-slate-800/40 text-slate-500"
+                            }`}
                         >
                           33.3% ROW 2
                         </div>
                         <div
-                          className={`rounded-sm flex items-center justify-center ${
-                            isSelected
-                              ? "bg-slate-800/60 text-slate-400"
-                              : "bg-slate-800/40 text-slate-500"
-                          }`}
+                          className={`rounded-sm flex items-center justify-center ${isSelected
+                            ? "bg-slate-800/60 text-slate-400"
+                            : "bg-slate-800/40 text-slate-500"
+                            }`}
                         >
                           33.3% ROW 3
                         </div>
@@ -288,29 +276,26 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     {mode.id === 4 && (
                       <div className="w-full h-full grid grid-cols-3 gap-1 text-[8px] font-mono font-bold text-center">
                         <div
-                          className={`rounded flex items-center justify-center ${
-                            isSelected
-                              ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40"
-                              : "bg-slate-800/40 text-slate-500 border border-slate-800"
-                          }`}
+                          className={`rounded flex items-center justify-center ${isSelected
+                            ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40"
+                            : "bg-slate-800/40 text-slate-500 border border-slate-800"
+                            }`}
                         >
                           33%
                         </div>
                         <div
-                          className={`rounded flex items-center justify-center ${
-                            isSelected
-                              ? "bg-slate-800 text-slate-300 border border-slate-700"
-                              : "bg-slate-800/40 text-slate-500 border border-slate-800"
-                          }`}
+                          className={`rounded flex items-center justify-center ${isSelected
+                            ? "bg-slate-800 text-slate-300 border border-slate-700"
+                            : "bg-slate-800/40 text-slate-500 border border-slate-800"
+                            }`}
                         >
                           33%
                         </div>
                         <div
-                          className={`rounded flex items-center justify-center ${
-                            isSelected
-                              ? "bg-slate-800 text-slate-300 border border-slate-700"
-                              : "bg-slate-800/40 text-slate-500 border border-slate-800"
-                          }`}
+                          className={`rounded flex items-center justify-center ${isSelected
+                            ? "bg-slate-800 text-slate-300 border border-slate-700"
+                            : "bg-slate-800/40 text-slate-500 border border-slate-800"
+                            }`}
                         >
                           33%
                         </div>
@@ -325,7 +310,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
 
         {/* Dynamic TV Screen Preview */}
         <div className="max-w-8xl mx-auto rounded-3xl p-3 sm:p-5 bg-gradient-to-b from-slate-900 via-slate-950 to-black border border-cyan-500/30 shadow-[0_20px_60px_-15px_rgba(0,229,255,0.25)] relative">
-          
+
           {/* TV Top Header Toolbar */}
           <div className="flex flex-wrap items-center justify-between gap-3 px-2 pb-3 mb-3 border-b border-slate-800 text-xs">
             <div className="flex items-center gap-2">
@@ -348,11 +333,10 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 <button
                   type="button"
                   onClick={() => setDualOrientation("vertical")}
-                  className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${
-                    dualOrientation === "vertical"
-                      ? "bg-cyan-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)]"
-                      : "text-slate-400 hover:text-white hover:bg-slate-800/60"
-                  }`}
+                  className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${dualOrientation === "vertical"
+                    ? "bg-cyan-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)]"
+                    : "text-slate-400 hover:text-white hover:bg-slate-800/60"
+                    }`}
                 >
                   <Columns2 className="w-3.5 h-3.5" />
                   <span>{dict.vertical ?? "Vertical (50/50)"}</span>
@@ -360,11 +344,10 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 <button
                   type="button"
                   onClick={() => setDualOrientation("horizontal")}
-                  className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${
-                    dualOrientation === "horizontal"
-                      ? "bg-cyan-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)]"
-                      : "text-slate-400 hover:text-white hover:bg-slate-800/60"
-                  }`}
+                  className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${dualOrientation === "horizontal"
+                    ? "bg-cyan-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)]"
+                    : "text-slate-400 hover:text-white hover:bg-slate-800/60"
+                    }`}
                 >
                   <Rows2 className="w-3.5 h-3.5" />
                   <span>{dict.horizontal ?? "Horizontal (50/50)"}</span>
@@ -381,11 +364,10 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 <button
                   type="button"
                   onClick={() => setSelectedMode(3)}
-                  className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${
-                    selectedMode === 3
-                      ? "bg-cyan-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)]"
-                      : "text-slate-400 hover:text-white hover:bg-slate-800/60"
-                  }`}
+                  className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${selectedMode === 3
+                    ? "bg-cyan-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)]"
+                    : "text-slate-400 hover:text-white hover:bg-slate-800/60"
+                    }`}
                 >
                   <Rows3 className="w-3.5 h-3.5" />
                   <span>{dict.horizontal ?? "Horizontal (3 Rows)"}</span>
@@ -393,11 +375,10 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                 <button
                   type="button"
                   onClick={() => setSelectedMode(4)}
-                  className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${
-                    selectedMode === 4
-                      ? "bg-cyan-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)]"
-                      : "text-slate-400 hover:text-white hover:bg-slate-800/60"
-                  }`}
+                  className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${selectedMode === 4
+                    ? "bg-cyan-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,229,255,0.3)]"
+                    : "text-slate-400 hover:text-white hover:bg-slate-800/60"
+                    }`}
                 >
                   <Columns3 className="w-3.5 h-3.5" />
                   <span>{dict.vertical ?? "Vertical (3 Cols)"}</span>
@@ -440,22 +421,7 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                   </div>
                 </div>
 
-                <div className="my-auto text-center py-4 sm:py-6 relative z-10">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-950/75 backdrop-blur-sm border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold uppercase tracking-widest mb-3 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
-                    ★ MAXIMUM COMMERCIAL IMPACT
-                  </span>
-                  <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
-                    HIGH-DEFINITION BRAND SPOTLIGHT
-                  </h3>
-                </div>
-
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-3 border-t border-white/15 text-xs text-slate-300 font-mono relative z-10">
-                  <div className="flex items-center gap-3 w-full sm:w-auto">
-                    <div className="h-1.5 w-28 bg-slate-800/90 rounded-full overflow-hidden">
-                      <div className="h-full w-3/4 bg-cyan-400 rounded-full animate-pulse" />
-                    </div>
-                    <span className="text-[11px]">Timeline: 00:24 / 00:30</span>
-                  </div>
                   <div className="flex items-center gap-2 text-emerald-400 text-[11px]">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>Single Zone Active · Zero Glitch Playback</span>
@@ -480,13 +446,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     <span className="px-2.5 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-cyan-500/30">
                       ZONE 1 · 50% VERTICAL
                     </span>
-                    <span className="text-emerald-400 font-mono text-[10px] font-bold drop-shadow">
-                      4K VIDEO · 60 FPS
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center text-[10px] text-slate-300 font-mono pt-2 border-t border-cyan-500/20 relative z-10">
-                    <span>Left Column · 50% Display Width</span>
-                    <span className="text-emerald-400">Synced Real-Time</span>
                   </div>
                 </div>
 
@@ -501,13 +460,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     <span className="px-2.5 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
                       ZONE 2 · 50% VERTICAL
                     </span>
-                    <span className="text-cyan-400 font-mono text-[10px] font-bold drop-shadow">
-                      LIVE MENU BOARD
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center text-[10px] text-slate-300 font-mono pt-2 border-t border-white/15 relative z-10">
-                    <span>Right Column · 50% Display Width</span>
-                    <span className="text-cyan-300 font-medium">Auto-Updates via Cloud</span>
                   </div>
                 </div>
               </div>
@@ -527,13 +479,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     <span className="px-2.5 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-cyan-500/30">
                       ZONE 1 · 50% HORIZONTAL (TOP ROW)
                     </span>
-                    <span className="text-emerald-400 font-mono text-[10px] font-bold drop-shadow">
-                      VIDEO BILLBOARD · 60 FPS
-                    </span>
-                  </div>
-                  <div className="flex justify-between text-[10px] text-slate-300 font-mono pt-1.5 border-t border-cyan-500/20 relative z-10">
-                    <span>Top Row · 50% Screen Height</span>
-                    <span className="text-emerald-400">Hardware Video Decode</span>
                   </div>
                 </div>
 
@@ -548,13 +493,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     <span className="px-2.5 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
                       ZONE 2 · 50% HORIZONTAL (BOTTOM ROW)
                     </span>
-                    <span className="text-cyan-300 font-mono text-[10px] font-bold drop-shadow">
-                      FEATURED SPECIALS GRID
-                    </span>
-                  </div>
-                  <div className="flex justify-between text-[10px] text-slate-300 font-mono pt-1.5 border-t border-white/15 relative z-10">
-                    <span>Bottom Row · 50% Screen Height</span>
-                    <span className="text-cyan-300">Live Menu Feed</span>
                   </div>
                 </div>
               </div>
@@ -576,9 +514,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                   <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-cyan-400/30 flex-shrink-0 relative z-10">
                     ZONE 1 · 33.3% TOP
                   </span>
-                  <span className="text-[10px] text-emerald-400 font-mono font-bold relative z-10 drop-shadow">
-                    4K PROMO
-                  </span>
                 </div>
 
                 {/* Zone 2: Middle 33.3% Height */}
@@ -591,9 +526,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                   />
                   <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700 flex-shrink-0 relative z-10">
                     ZONE 2 · 33.3% MID
-                  </span>
-                  <span className="text-[10px] text-cyan-300 font-mono font-bold relative z-10 drop-shadow">
-                    LIVE MENU
                   </span>
                 </div>
 
@@ -608,10 +540,6 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                   <span className="px-2 py-0.5 rounded bg-cyan-500 text-slate-950 font-mono font-bold text-[10px] uppercase flex-shrink-0 relative z-10">
                     ZONE 3 · 33.3% BOTTOM
                   </span>
-                  <div className="flex items-center gap-2 font-mono text-[11px] text-slate-200 flex-shrink-0 ml-3 relative z-10 drop-shadow">
-                    <Clock className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>12:45 PM</span>
-                  </div>
                 </div>
               </div>
             )}
@@ -632,13 +560,9 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-cyan-500/30">
                       ZONE 1 · 33.3% COL
                     </span>
-                    <span className="text-emerald-400 font-mono text-[10px] font-bold drop-shadow">
-                      VIDEO 60FPS
-                    </span>
                   </div>
                   <div className="pt-2 border-t border-cyan-500/20 text-[10px] font-mono text-slate-300 flex justify-between relative z-10">
                     <span>Left Column</span>
-                    <span className="text-emerald-400">Active</span>
                   </div>
                 </div>
 
@@ -653,13 +577,9 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
                       ZONE 2 · 33.3% COL
                     </span>
-                    <span className="text-cyan-400 font-mono text-[10px] font-bold drop-shadow">
-                      BEVERAGES
-                    </span>
                   </div>
                   <div className="pt-2 border-t border-white/15 text-[10px] font-mono text-slate-300 flex justify-between relative z-10">
                     <span>Center Column</span>
-                    <span className="text-cyan-300">Live Menu</span>
                   </div>
                 </div>
 
@@ -674,13 +594,9 @@ export function ScreenZonesShowcase({ dict }: ScreenZonesShowcaseProps) {
                     <span className="px-2 py-0.5 rounded bg-slate-950/80 backdrop-blur-sm text-cyan-300 font-mono font-bold text-[10px] border border-slate-700">
                       ZONE 3 · 33.3% COL
                     </span>
-                    <span className="text-cyan-400 font-mono text-[10px] font-bold drop-shadow">
-                      FOOD & BITES
-                    </span>
                   </div>
                   <div className="pt-2 border-t border-white/15 text-[10px] font-mono text-slate-300 flex justify-between relative z-10">
                     <span>Right Column</span>
-                    <span className="text-emerald-400">In Stock</span>
                   </div>
                 </div>
               </div>

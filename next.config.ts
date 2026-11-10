@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
    * krejt `node_modules` — qindra megabajt që nuk ekzekutohen kurrë.
    */
   output: "standalone",
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 };
 
 export default nextConfig;
