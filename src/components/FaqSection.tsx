@@ -1,9 +1,8 @@
 "use client"
 
 import React, { useState } from "react"
-import { Badge } from "@/components/ui/badge"
 import type { Dictionary } from "@/lib/get-dictionary"
-import { HelpCircle, ChevronDown } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 interface FaqSectionProps {
   dict: Dictionary["faq"]
@@ -31,10 +30,6 @@ export function FaqSection({ dict }: FaqSectionProps) {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="default" className="mb-4">
-            <HelpCircle className="w-3.5 h-3.5 mr-1" />
-            {dict.badge}
-          </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             {dict.title}
           </h2>

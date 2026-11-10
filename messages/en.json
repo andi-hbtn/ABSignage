@@ -127,8 +127,7 @@
     "entF6": "24/7 VIP Success Manager & Staff Training"
   },
   "faq": {
-    "badge": "Frequently Asked Questions",
-    "title": "Everything you need to know before starting",
+    "title": "Frequently Asked Questions",
     "subtitle": "Have questions about hardware, setup, or features? Here are clear answers.",
     "q1": "How does pairing a TV screen work?",
     "a1": "Install the ABSignage app on your TV or Android Box. When you open it, a 6-digit pairing code appears on screen. Open your ABSignage web dashboard on your computer or phone, enter the code, and your TV is instantly connected.",
