@@ -27,6 +27,7 @@ interface PricingPlan {
   tvCount: string
   monthlyPrice: number
   annualPricePerMonth: number
+  annualTotalPrice: number
   effectiveMonthly: string
   effectiveAnnual: string
   savingsPercentage?: string
@@ -48,10 +49,11 @@ export function PricingSection({ dict, onOpenDemo }: PricingSectionProps) {
         id: "start",
         name: "Start",
         tvCount: "1 TV",
-        monthlyPrice: 500,
-        annualPricePerMonth: 417,
-        effectiveMonthly: "500 lek",
-        effectiveAnnual: "417 lek",
+        monthlyPrice: 5,
+        annualPricePerMonth: 4.17,
+        annualTotalPrice: 50,
+        effectiveMonthly: "$5",
+        effectiveAnnual: "$4.17",
         desc: dict.planStartDesc,
         icon: Tv,
         popular: false,
@@ -69,10 +71,11 @@ export function PricingSection({ dict, onOpenDemo }: PricingSectionProps) {
         id: "business-5",
         name: "Business 5",
         tvCount: `${dict.upTo} 5 TV`,
-        monthlyPrice: 1900,
-        annualPricePerMonth: 1583,
-        effectiveMonthly: "380 lek",
-        effectiveAnnual: "317 lek",
+        monthlyPrice: 19,
+        annualPricePerMonth: 15.83,
+        annualTotalPrice: 190,
+        effectiveMonthly: "$3.80",
+        effectiveAnnual: "$3.17",
         savingsPercentage: `${dict.savePercent} 24%`,
         desc: dict.planB5Desc,
         icon: Layers,
@@ -91,10 +94,11 @@ export function PricingSection({ dict, onOpenDemo }: PricingSectionProps) {
         id: "business-10",
         name: "Business 10",
         tvCount: `${dict.upTo} 10 TV`,
-        monthlyPrice: 3300,
-        annualPricePerMonth: 2750,
-        effectiveMonthly: "330 lek",
-        effectiveAnnual: "275 lek",
+        monthlyPrice: 33,
+        annualPricePerMonth: 27.5,
+        annualTotalPrice: 330,
+        effectiveMonthly: "$3.30",
+        effectiveAnnual: "$2.75",
         savingsPercentage: `${dict.savePercent} 34%`,
         desc: dict.planB10Desc,
         icon: Zap,
@@ -113,10 +117,11 @@ export function PricingSection({ dict, onOpenDemo }: PricingSectionProps) {
         id: "pro-20",
         name: "Pro 20",
         tvCount: `${dict.upTo} 20 TV`,
-        monthlyPrice: 6000,
-        annualPricePerMonth: 5000,
-        effectiveMonthly: "300 lek",
-        effectiveAnnual: "250 lek",
+        monthlyPrice: 60,
+        annualPricePerMonth: 50,
+        annualTotalPrice: 600,
+        effectiveMonthly: "$3.00",
+        effectiveAnnual: "$2.50",
         savingsPercentage: `${dict.savePercent} 40%`,
         desc: dict.planP20Desc,
         icon: Building2,
@@ -135,10 +140,11 @@ export function PricingSection({ dict, onOpenDemo }: PricingSectionProps) {
         id: "chain-50",
         name: "Chain 50",
         tvCount: `${dict.upTo} 50 TV`,
-        monthlyPrice: 12500,
-        annualPricePerMonth: 10417,
-        effectiveMonthly: "250 lek",
-        effectiveAnnual: "208 lek",
+        monthlyPrice: 125,
+        annualPricePerMonth: 104.17,
+        annualTotalPrice: 1250,
+        effectiveMonthly: "$2.50",
+        effectiveAnnual: "$2.08",
         savingsPercentage: `${dict.savePercent} 50%`,
         bestValue: true,
         desc: dict.planC50Desc,
@@ -158,8 +164,9 @@ export function PricingSection({ dict, onOpenDemo }: PricingSectionProps) {
         id: "enterprise",
         name: "Enterprise",
         tvCount: dict.unlimitedTv,
-        monthlyPrice: 18000,
-        annualPricePerMonth: 15000,
+        monthlyPrice: 180,
+        annualPricePerMonth: 150,
+        annualTotalPrice: 1800,
         effectiveMonthly: "-",
         effectiveAnnual: "-",
         enterprise: true,
@@ -180,7 +187,12 @@ export function PricingSection({ dict, onOpenDemo }: PricingSectionProps) {
     [dict]
   )
 
-  const formatPrice = (val: number) => val.toLocaleString("en-US")
+  const formatPrice = (val: number) => {
+    if (Number.isInteger(val)) {
+      return val.toLocaleString("en-US")
+    }
+    return val.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+  }
 
   return (
     <section id="pricing" className="py-24 relative overflow-hidden bg-slate-950">
@@ -297,17 +309,17 @@ export function PricingSection({ dict, onOpenDemo }: PricingSectionProps) {
 
                   {/* Price Box */}
                   <div className="p-4 rounded-2xl bg-slate-950/70 border border-slate-800/80 mb-6">
-                    <div className="flex items-baseline gap-2">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-2xl sm:text-3xl font-extrabold text-cyan-300 font-mono tracking-tight">$</span>
                       <span className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight">
                         {formatPrice(displayedPrice)}
                       </span>
-                      <span className="text-sm font-semibold text-cyan-300">lek</span>
-                      <span className="text-xs text-slate-400 font-medium">{dict.monthPer}</span>
+                      <span className="text-xs text-slate-400 font-medium ml-1">{dict.monthPer}</span>
                     </div>
 
                     {annual && (
                       <p className="text-[11px] text-cyan-400 mt-1 font-mono">
-                        {formatPrice(displayedPrice * 12)} lek {dict.yearUnit}
+                        ${formatPrice(plan.annualTotalPrice)} {dict.yearUnit}
                       </p>
                     )}
 

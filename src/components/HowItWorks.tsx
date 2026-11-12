@@ -709,11 +709,6 @@ export function HowItWorks({ dict, locale = "sq" }: HowItWorksProps) {
                   <span>·</span>
                   <span className="text-white font-semibold">{currentScene.title}</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-emerald-400 font-bold">
-                    1080p Full HD Product Demonstration · 106s · H.264
-                  </span>
-                </div>
               </div>
             </div>
           </div>
