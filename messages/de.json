@@ -169,11 +169,21 @@
     "submitting": "Anfrage wird gesendet...",
     "successTitle": "Anfrage erfolgreich übermittelt!",
     "successMessage": "Vielen Dank! Unser Digital-Signage-Spezialist wird sich in Kürze bei Ihnen melden, um Ihren Zugang freizuschalten und Sie bei der Einrichtung zu unterstützen.",
-    "closeBtn": "Fenster schließen"
+    "closeBtn": "Fenster schließen",
+    "errors": {
+      "name": "Bitte geben Sie Ihren Vor- und Nachnamen ein.",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "phone": "Bitte geben Sie eine gültige Telefonnummer ein.",
+      "company": "Bitte geben Sie Ihren Firmennamen ein.",
+      "screens": "Bitte wählen Sie die Anzahl der Bildschirme.",
+      "rateLimited": "Zu viele Anfragen. Bitte warten Sie einige Minuten und versuchen Sie es erneut.",
+      "unavailable": "Der Dienst ist vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.",
+      "failed": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+      "network": "Verbindungsproblem. Bitte prüfen Sie Ihre Internetverbindung, laden Sie die Seite neu und versuchen Sie es erneut."
+    }
   },
   "footer": {
     "desc": "Moderne Cloud-Software für Digital Signage. Schnelle Aktivierung per Kopplungscode, Multi-Zonen-Layouts mit bis zu 4 Bereichen und 100% ausfallsichere Offline-Wiedergabe.",
-    "systemsOnline": "Alle Systeme operativ 99.99%",
     "platformCol": "Plattform",
     "featuresLink": "Funktionen",
     "layoutsLink": "Bildschirmzonen",
@@ -186,8 +196,7 @@
     "securityCol": "Sicherheit & TV-App",
     "securityDesc": "AES-256 Cloud-Verschlüsselung und manipulationssichere lokale Speicherung.",
     "dashboardLink": "App bei Google Play herunterladen",
-    "rightsReserved": "Alle Rechte vorbehalten.",
-    "craftedWith": "Entwickelt für Höchstleistung von AB"
+    "rightsReserved": "Alle Rechte vorbehalten."
   },
   "howItWorks": {
     "badge": "FUNKTIONSWEISE",

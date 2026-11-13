@@ -169,11 +169,21 @@
     "submitting": "Invio della richiesta in corso...",
     "successTitle": "Richiesta Ricevuta con Successo!",
     "successMessage": "Grazie! Un nostro specialista di digital signage ti contatterà a breve per attivare il tuo account e guidarti nella configurazione degli schermi.",
-    "closeBtn": "Chiudi Finestra"
+    "closeBtn": "Chiudi Finestra",
+    "errors": {
+      "name": "Inserisci il tuo nome e cognome.",
+      "email": "Inserisci un indirizzo email valido.",
+      "phone": "Inserisci un numero di telefono valido.",
+      "company": "Inserisci il nome della tua azienda.",
+      "screens": "Seleziona il numero di schermi.",
+      "rateLimited": "Troppe richieste. Attendi qualche minuto e riprova.",
+      "unavailable": "Il servizio è temporaneamente non disponibile. Riprova più tardi.",
+      "failed": "Non è stato possibile inviare la richiesta. Riprova.",
+      "network": "Problema di connessione. Controlla la connessione a Internet, ricarica la pagina e riprova."
+    }
   },
   "footer": {
     "desc": "Software cloud moderno per digital signage. Attivazione rapida con codice, layout multi-zona fino a 4 aree e riproduzione offline garantita al 100%.",
-    "systemsOnline": "Tutti i Sistemi Operativi 99.99%",
     "platformCol": "Piattaforma",
     "featuresLink": "Funzionalità",
     "layoutsLink": "Zone Schermo",
@@ -186,8 +196,7 @@
     "securityCol": "Sicurezza e App TV",
     "securityDesc": "Crittografia cloud AES-256 e archiviazione locale protetta.",
     "dashboardLink": "Scarica l'App su Google Play",
-    "rightsReserved": "Tutti i diritti riservati.",
-    "craftedWith": "Sviluppato per prestazioni elevate da AB"
+    "rightsReserved": "Tutti i diritti riservati."
   },
   "howItWorks": {
     "badge": "COME FUNZIONA",

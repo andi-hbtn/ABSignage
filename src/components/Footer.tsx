@@ -32,10 +32,6 @@ export function Footer({ dict, locale }: FooterProps) {
             <p className="text-xs text-slate-400 leading-relaxed">
               {dict.desc}
             </p>
-            <div className="flex items-center gap-2 text-xs text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span>{dict.systemsOnline}</span>
-            </div>
           </div>
 
           {/* Nav Column 1 */}
@@ -108,11 +104,7 @@ export function Footer({ dict, locale }: FooterProps) {
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} ABSignage Platform. {dict.rightsReserved}</p>
-          <div className="flex items-center gap-1">
-            <span>{dict.craftedWith}</span>
-          </div>
         </div>
-
       </div>
     </footer>
   )

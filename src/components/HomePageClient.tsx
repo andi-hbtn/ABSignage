@@ -111,7 +111,6 @@ export function HomePageClient({ dict, locale }: HomePageClientProps) {
       {demoModalOpen && (
         <DemoBookingModal
           dict={dict.modal}
-          open={demoModalOpen}
           onClose={handleCloseDemo}
         />
       )}

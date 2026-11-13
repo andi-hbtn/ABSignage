@@ -169,11 +169,21 @@
     "submitting": "Duke dërguar kërkesën...",
     "successTitle": "Kërkesa u Dërgua me Sukses!",
     "successMessage": "Faleminderit! Specialisti ynë do t'ju kontaktojë brenda pak minutash për t'ju mundësuar hyrjen dhe për t'ju udhëzuar në aktivizimin e ekraneve.",
-    "closeBtn": "Mbyll Dritaren"
+    "closeBtn": "Mbyll Dritaren",
+    "errors": {
+      "name": "Ju lutemi shkruani emrin dhe mbiemrin.",
+      "email": "Ju lutemi shkruani një adresë email-i të vlefshme.",
+      "phone": "Ju lutemi shkruani një numër telefoni të vlefshëm.",
+      "company": "Ju lutemi shkruani emrin e kompanisë.",
+      "screens": "Ju lutemi zgjidhni numrin e ekraneve.",
+      "rateLimited": "Shumë kërkesa brenda pak kohe. Ju lutemi prisni disa minuta dhe provoni përsëri.",
+      "unavailable": "Shërbimi nuk është i disponueshëm për momentin. Ju lutemi provoni më vonë.",
+      "failed": "Kërkesa nuk u dërgua dot. Ju lutemi provoni përsëri.",
+      "network": "Problem me lidhjen. Kontrolloni internetin, rifreskoni faqen dhe provoni përsëri."
+    }
   },
   "footer": {
     "desc": "Softuer modern në cloud për ekrane dixhitale. Lidhje me kod në sekonda, ndarje ekrani me shumë zona dhe riprodhim 100% i besueshëm offline.",
-    "systemsOnline": "Sistemet Operacionale 100%",
     "platformCol": "Platforma",
     "featuresLink": "Mundësitë",
     "layoutsLink": "Zonat e Ekranit",
@@ -186,8 +196,7 @@
     "securityCol": "Siguria & Aplikacioni TV",
     "securityDesc": "Enkriptim AES-256 në cloud dhe ruajtje lokale e sigurt.",
     "dashboardLink": "Shkarko Aplikacionin në Google Play",
-    "rightsReserved": "Të gjitha të drejtat të rezervuara.",
-    "craftedWith": "Ndërtuar me performancë të lartë nga AB"
+    "rightsReserved": "Të gjitha të drejtat të rezervuara."
   },
   "howItWorks": {
     "badge": "SI FUNKSIONON",

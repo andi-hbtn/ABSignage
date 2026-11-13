@@ -4,8 +4,10 @@
 # varësitë që përdoren. Imazhi përfundimtar nuk ka as `npm`, as kodin burim, as
 # varësitë e zhvillimit.
 #
-# Faqja NUK është statike: `src/app/api/send-demo/route.ts` përpunon kërkesat e
-# provës 14-ditore në server. Prandaj duhet një server Node, jo nginx me skedarë.
+# Faqja NUK është statike: Server Action-i `src/app/actions/demo-request.ts` përpunon
+# kërkesat e provës 14-ditore dhe i dërgon me SMTP. Prandaj duhet një server Node, jo
+# nginx me skedarë. `.env` nuk futet në imazh: në Easypanel duhen vendosur MAIL_HOST,
+# MAIL_FROM, MAIL_PASSWORD (opsionale: MAIL_PORT, MAIL_USER, MAIL_TO, MAIL_SECURE).
 
 FROM node:22-alpine AS deps
 

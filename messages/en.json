@@ -169,11 +169,21 @@
     "submitting": "Submitting Request...",
     "successTitle": "Request Received Successfully!",
     "successMessage": "Thank you! Our digital signage specialist will contact you shortly to activate your demo account and guide your setup.",
-    "closeBtn": "Close Window"
+    "closeBtn": "Close Window",
+    "errors": {
+      "name": "Please enter your full name.",
+      "email": "Please enter a valid email address.",
+      "phone": "Please enter a valid phone number.",
+      "company": "Please enter your company name.",
+      "screens": "Please select the number of screens.",
+      "rateLimited": "Too many requests. Please wait a few minutes and try again.",
+      "unavailable": "The service is temporarily unavailable. Please try again later.",
+      "failed": "We couldn't send your request. Please try again.",
+      "network": "Connection problem. Check your internet connection, refresh the page and try again."
+    }
   },
   "footer": {
     "desc": "Modern cloud digital signage software. Instant pairing code activation, split-screen multi-zone layouts, and 100% offline playback reliability.",
-    "systemsOnline": "All Systems Operational 99.99%",
     "platformCol": "Platform",
     "featuresLink": "Capabilities",
     "layoutsLink": "Screen Zones",
@@ -186,8 +196,7 @@
     "securityCol": "Security & TV App",
     "securityDesc": "AES-256 cloud encryption and tamper-proof local storage.",
     "dashboardLink": "Download App on Google Play",
-    "rightsReserved": "All rights reserved.",
-    "craftedWith": "Engineered for high performance by AB"
+    "rightsReserved": "All rights reserved."
   },
   "howItWorks": {
     "badge": "HOW IT WORKS",
