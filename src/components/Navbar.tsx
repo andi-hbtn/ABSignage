@@ -10,18 +10,7 @@ import { LanguageFlag } from "@/components/LanguageFlag"
 import { languages, type Locale } from "@/lib/i18n-config"
 import { switchLanguage } from "@/lib/language-utils"
 import type { Dictionary } from "@/app/[locale]/dictionaries"
-import {
-  Menu,
-  X,
-  Layers,
-  Sparkles,
-  HelpCircle,
-  CreditCard,
-  Globe,
-  Check,
-  ChevronDown,
-  Video,
-} from "lucide-react"
+import { Menu, X, Layers, Sparkles, HelpCircle, CreditCard, Globe, Check, ChevronDown, Video, } from "lucide-react"
 
 interface NavbarProps {
   dict: Dictionary["nav"]
@@ -66,10 +55,10 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
         locale === "sq"
           ? "Si Funksionon"
           : locale === "it"
-          ? "Come Funziona"
-          : locale === "de"
-          ? "Funktionsweise"
-          : "How It Works",
+            ? "Come Funziona"
+            : locale === "de"
+              ? "Funktionsweise"
+              : "How It Works",
       href: `/${locale}#how-it-works`,
       icon: Video,
     },
@@ -86,11 +75,10 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled
             ? "bg-slate-950/90 backdrop-blur-xl border-b border-cyan-500/20 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)]"
             : "bg-transparent border-b border-white/[0.05]"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           {/* Brand Logo */}
@@ -199,11 +187,10 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
                       key={lang.code}
                       type="button"
                       onClick={() => handleMobileSelectLanguage(lang.code)}
-                      className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer touch-manipulation active:scale-[0.98] ${
-                        isSelected
+                      className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer touch-manipulation active:scale-[0.98] ${isSelected
                           ? "bg-cyan-500/20 border-cyan-500/50 text-cyan-300 shadow-[0_0_12px_rgba(0,229,255,0.15)]"
                           : "bg-slate-900/80 border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
-                      }`}
+                        }`}
                     >
                       <LanguageFlag lang={lang} width={21} />
                       <span className="truncate">{lang.nativeName}</span>
@@ -271,11 +258,10 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
                     key={lang.code}
                     type="button"
                     onClick={() => handleMobileSelectLanguage(lang.code)}
-                    className={`w-full flex items-center justify-between p-3.5 rounded-2xl border text-sm font-semibold transition-all touch-manipulation cursor-pointer active:scale-[0.98] ${
-                      isSelected
+                    className={`w-full flex items-center justify-between p-3.5 rounded-2xl border text-sm font-semibold transition-all touch-manipulation cursor-pointer active:scale-[0.98] ${isSelected
                         ? "bg-cyan-500/20 border-cyan-500 text-cyan-300 shadow-[0_0_15px_rgba(0,229,255,0.2)]"
                         : "bg-slate-900/80 border-slate-800 text-slate-200 hover:bg-slate-800 hover:text-white"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       <LanguageFlag lang={lang} width={30} />
