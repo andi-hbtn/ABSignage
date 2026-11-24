@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { Globe, ChevronDown, Check } from "lucide-react"
 import { languages, type Locale } from "@/lib/i18n-config"
 import { switchLanguage } from "@/lib/language-utils"
+import { LanguageFlag } from "@/components/LanguageFlag"
 
 interface LanguageSelectorProps {
   currentLocale: Locale
@@ -69,7 +70,7 @@ export function LanguageSelector({
         aria-label="Select language"
         className="flex items-center gap-1.5 px-3 py-1.5 min-h-[36px] rounded-xl border border-slate-700/80 bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white hover:border-cyan-500/40 transition-all text-xs font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 touch-manipulation active:scale-[0.98] cursor-pointer"
       >
-        <span className="text-sm leading-none">{currentLang.flag}</span>
+        <LanguageFlag lang={currentLang} width={18} />
         <span className="hidden sm:inline">{currentLang.nativeName}</span>
         <span className="sm:hidden uppercase tracking-wide">{currentLang.code}</span>
         <ChevronDown
@@ -109,7 +110,7 @@ export function LanguageSelector({
                   }`}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-base leading-none">{lang.flag}</span>
+                    <LanguageFlag lang={lang} width={21} />
                     <span className="text-left">
                       <span className="block text-slate-100 font-semibold">{lang.nativeName}</span>
                       <span className="block text-[10px] text-slate-400 font-normal">

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import { ArrowRight, ShieldCheck, Download } from "lucide-react"
 
 const GOOGLE_PLAY_URL =

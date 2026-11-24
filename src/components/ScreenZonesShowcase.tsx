@@ -3,7 +3,7 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import {
   Maximize2,
   Columns2,

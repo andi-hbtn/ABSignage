@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { i18n, type Locale } from "@/lib/i18n-config"
-import { getDictionary } from "@/lib/get-dictionary"
+import { getDictionary } from "@/app/[locale]/dictionaries"
 import "../globals.css"
 
 export async function generateStaticParams() {

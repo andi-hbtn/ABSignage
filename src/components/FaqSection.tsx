@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import { ChevronDown } from "lucide-react"
 
 interface FaqSectionProps {

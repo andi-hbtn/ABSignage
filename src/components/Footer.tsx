@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import type { Locale } from "@/lib/i18n-config"
 import { ShieldCheck, ArrowUpRight, Lock, Trash2, FileText } from "lucide-react"
 

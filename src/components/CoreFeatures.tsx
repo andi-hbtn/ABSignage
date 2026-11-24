@@ -1,6 +1,6 @@
 "use client"
 
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import {
   KeyRound,
   Tv,

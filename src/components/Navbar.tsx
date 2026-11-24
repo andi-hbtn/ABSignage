@@ -6,9 +6,10 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { LanguageSelector } from "@/components/LanguageSelector"
+import { LanguageFlag } from "@/components/LanguageFlag"
 import { languages, type Locale } from "@/lib/i18n-config"
 import { switchLanguage } from "@/lib/language-utils"
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import {
   Menu,
   X,
@@ -145,7 +146,7 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
               aria-label="Select language"
               className="flex items-center gap-1.5 px-3 py-2 min-h-[38px] rounded-xl border border-slate-700/80 bg-slate-900/90 text-slate-200 hover:text-white hover:border-cyan-500/40 text-xs font-semibold shadow-sm touch-manipulation active:scale-[0.98] cursor-pointer"
             >
-              <span className="text-base leading-none">{currentLang.flag}</span>
+              <LanguageFlag lang={currentLang} width={18} />
               <span className="uppercase tracking-wide font-bold">{currentLang.code}</span>
               <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
             </button>
@@ -204,7 +205,7 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
                           : "bg-slate-900/80 border-slate-800 text-slate-300 hover:text-white hover:border-slate-700"
                       }`}
                     >
-                      <span className="text-base leading-none">{lang.flag}</span>
+                      <LanguageFlag lang={lang} width={21} />
                       <span className="truncate">{lang.nativeName}</span>
                       {isSelected && <Check className="w-3.5 h-3.5 text-cyan-400 ml-auto flex-shrink-0" />}
                     </button>
@@ -277,7 +278,7 @@ export function Navbar({ dict, locale, onOpenDemo }: NavbarProps) {
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl leading-none">{lang.flag}</span>
+                      <LanguageFlag lang={lang} width={30} />
                       <div className="text-left">
                         <span className="block font-bold text-white">{lang.nativeName}</span>
                         <span className="block text-xs text-slate-400 font-normal">

@@ -9,6 +9,7 @@
     "layouts": "Zone Schermo",
     "pricing": "Prezzi",
     "faq": "Domande Frequenti",
+    "howItWorks": "Come Funziona",
     "requestDemo": "Richiedi Demo"
   },
   "hero": {
@@ -216,6 +217,143 @@
     "soundOn": "Attiva Audio",
     "soundOff": "Disattiva Audio",
     "speed": "Velocità",
-    "fullscreen": "Schermo Intero"
+    "fullscreen": "Schermo Intero",
+    "sceneLabel": "SCENA",
+    "scenes": [
+      {
+        "shortTitle": "Codice TV",
+        "title": "Scena 1 — Generazione del codice su Android TV",
+        "desc": "L'app ABSignage per Android TV si avvia e genera automaticamente un codice di abbinamento univoco a 6 cifre (739-204), in attesa del collegamento alla piattaforma."
+      },
+      {
+        "shortTitle": "Abbinamento",
+        "title": "Scena 2 — Inserimento del codice sulla piattaforma web",
+        "desc": "L'utente apre la console web di ABSignage, va su Dispositivi e inserisce lo stesso codice a 6 cifre (739-204) mostrato sul televisore."
+      },
+      {
+        "shortTitle": "Attivazione",
+        "title": "Scena 3 — Abbinamento riuscito e attivazione dello schermo",
+        "desc": "La piattaforma conferma subito l'abbinamento. Il televisore risulta Online e Attivo, pronto a ricevere playlist e campagne."
+      },
+      {
+        "shortTitle": "Libreria Media",
+        "title": "Scena 4 — Caricamento contenuti multimediali per ogni settore",
+        "desc": "Carica immagini e video 4K professionali per cibo, bevande, cosmetici, collezioni moda e promozioni retail da un unico hub centralizzato."
+      },
+      {
+        "shortTitle": "Formati Playlist",
+        "title": "Scena 5 — Creazione formati: Full-screen, Orizzontale e Totem Verticale",
+        "desc": "Scegli il layout ideale: Schermo intero (100%), Multi-zona orizzontale (3 zone sincronizzate) o Totem verticale (9:16) per negozi e colonne espositive."
+      },
+      {
+        "shortTitle": "Organizzazione",
+        "title": "Scena 6 — Selezione e organizzazione dei contenuti con anteprima TV",
+        "desc": "Assegna i contenuti della libreria alle zone, imposta la durata (10s, 15s) e transizioni fluide con anteprima TV interattiva in tempo reale."
+      },
+      {
+        "shortTitle": "Campagna",
+        "title": "Scena 7 — Configurazione campagna e pubblicazione istantanea via cloud",
+        "desc": "Collega il flusso: CAMPAGNA ──▶ PLAYLIST ──▶ TV. Premi Pubblica e la rete cloud invia subito l'aggiornamento al tuo schermo."
+      },
+      {
+        "shortTitle": "Schermo Live",
+        "title": "Scena 8 — Campagna attiva su Android TV in ambienti commerciali reali",
+        "desc": "Il televisore riproduce la campagna pubblicata in ristoranti, bar, negozi di cosmetici e boutique di moda. Una piattaforma per ogni attività."
+      }
+    ]
+  },
+  "privacy": {
+    "backHome": "Torna alla Home",
+    "badge": "Google Play Policy Compliant · GDPR & COPPA Ready",
+    "title": "Informativa sulla Privacy per ABSignage Player",
+    "updated": "Ultimo Aggiornamento: 2026 · Versione 2.4.0",
+    "noticeLabel": "Avviso Ufficiale dell'Applicazione:",
+    "noticeText": "La presente Informativa sulla Privacy si applica direttamente all'applicazione ABSignage Android TV Player, alla Console di Gestione ABSignage e alle relative API cloud sviluppate da ABSignage.",
+    "s1Title": "1. Panoramica e Impegno Principale",
+    "s1P1": "In ABSignage rispettiamo la tua privacy e garantiamo la massima trasparenza in conformità con le Norme sui Dati Utente di Google Play, il GDPR dell'Unione Europea e le normative vigenti.",
+    "s1P2": "ABSignage Player è un client B2B di digital signage progettato per schermi TV, menu digitali e display commerciali. Non vendiamo mai dati personali e raccogliamo solo i dati tecnici minimi necessari per la sincronizzazione.",
+    "s2Title": "2. Dati Raccolti e Modalità di Utilizzo",
+    "b1Title": "Identificatore Dispositivo e Codice di Abbinamento: ",
+    "b1Text": "Un ID pseudonimo generato durante l'abbinamento per collegare lo schermo TV alla dashboard aziendale.",
+    "b2Title": "Heartbeat e Telemetria: ",
+    "b2Text": "Stato online dello schermo, frame rate e spazio di archiviazione cache per garantire una riproduzione continua senza schermate nere.",
+    "s3Title": "3. Cancellazione dei Dati e Diritti dell'Utente",
+    "s3Desc": "Hai il diritto di richiedere la cancellazione del tuo account e di tutti gli schermi associati in qualsiasi momento.",
+    "deletionBtn": "Apri Modulo di Cancellazione Dati",
+    "termsBtn": "Vedi Termini di Servizio"
+  },
+  "terms": {
+    "backHome": "Torna alla Home",
+    "badge": "Conforme alle Norme Google Play · Termini B2B SaaS",
+    "title": "Termini di Servizio per ABSignage",
+    "updated": "Ultimo Aggiornamento: 2026 · Versione 2.4.0",
+    "noticeLabel": "Accordo Ufficiale Applicazione e Piattaforma:",
+    "noticeText": "I presenti Termini di Servizio (\"Termini\") regolano l'accesso e l'utilizzo dell'applicazione ABSignage Android TV Player (ID pacchetto Google Play: com.andibevapi.digitalsignageplayer), della Console Cloud ABSignage e delle relative API.",
+    "s1Title": "1. Accettazione dei Termini e Ambito B2B",
+    "s1P1": "Scaricando, installando o avviando l'app ABSignage Player da Google Play, abbinando uno schermo TV o registrando un account sulla Console Cloud ABSignage, l'utente (\"Cliente\" o \"Azienda\") accetta integralmente i presenti Termini.",
+    "s1P2": "ABSignage è una piattaforma cloud B2B di digital signage progettata per attività commerciali (ristoranti, bar, negozi, supermercati, farmacie, cliniche, hotel e uffici) compatibile con Android TV, Google TV e TV Box Android.",
+    "s2Title": "2. Licenza d'Uso e Distribuzione su Google Play",
+    "s2Intro": "Nel rispetto dei presenti Termini e del piano di abbonamento attivo, ABSignage concede una licenza limitata, non esclusiva, non trasferibile e revocabile per installare l'app ABSignage Player sui propri display commerciali e utilizzare il pannello web.",
+    "s2B1Title": "Uso Commerciale Consentito: ",
+    "s2B1Text": "È possibile collegare e gestire schermi TV entro il limite previsto dal piano scelto (Start, Business 5, Business 10, Pro 20, Chain 50 o Enterprise).",
+    "s2B2Title": "Restrizioni Tecniche: ",
+    "s2B2Text": "È vietato decompilare, modificare o ridistribuire l'APK di ABSignage Player, nonché tentare di aggirare il codice di abbinamento a 6 cifre.",
+    "s2B3Title": "Conformità Google Play: ",
+    "s2B3Text": "L'installazione e gli aggiornamenti distribuiti tramite Google Play Store sono soggetti anche ai Termini di Servizio di Google Play.",
+    "s3Title": "3. Abbinamento Dispositivi, Cache Offline e Telemetria",
+    "s3Intro": "Per garantire una riproduzione continua senza schermate nere, l'app ABSignage Player esegue le seguenti operazioni tecniche sui televisori abbinati:",
+    "s3B1Title": "Codice di Abbinamento a 6 Cifre: ",
+    "s3B1Text": "All'avvio, l'app TV genera un codice univoco a 6 cifre per associare lo schermo alla dashboard aziendale.",
+    "s3B2Title": "Riproduzione Offline al 100% (Cache Locale): ",
+    "s3B2Text": "L'utente autorizza l'app a salvare localmente video 4K, immagini e playlist nella memoria del dispositivo affinché la riproduzione prosegua anche senza connessione Internet.",
+    "s3B3Title": "Telemetria Heartbeat e Proof-of-Play: ",
+    "s3B3Text": "Il player invia segnali tecnici periodici (stato online, FPS e memoria disponibile) per il monitoraggio in tempo reale.",
+    "s4Title": "4. Contenuti Multimediali, Proprietà Intellettuale e Uso Consentito",
+    "s4Intro": "ABSignage consente di caricare immagini e video 4K, creare layout a Schermo Intero, Doppia Divisione (50/50) e Tripla Divisione (33%) e programmare campagne per fasce orarie.",
+    "s4B1Title": "Proprietà dei Contenuti: ",
+    "s4B1Text": "Il Cliente mantiene il 100% dei diritti di proprietà intellettuale su tutti i file multimediali, loghi, menu e video caricati.",
+    "s4B2Title": "Responsabilità sui Diritti d'Autore: ",
+    "s4B2Text": "Il Cliente garantisce di possedere i diritti e le licenze commerciali per tutti i contenuti trasmessi sui propri schermi pubblici.",
+    "s4B3Title": "Contenuti Vietati: ",
+    "s4B3Text": "È severamente vietato caricare o trasmettere contenuti illegali, diffamatori, lesivi del copyright, espliciti, ingannevoli o dannosi.",
+    "s5Title": "5. Prova Gratuita di 14 Giorni, Abbonamenti e Fatturazione",
+    "s5Intro": "ABSignage offre piani trasparenti basati sul numero di schermi gestiti, con fatturazione Mensile o Annuale (2 mesi gratis sui piani annuali):",
+    "s5B1Title": "Prova Gratuita di 14 Giorni: ",
+    "s5B1Text": "Le nuove aziende possono testare la piattaforma gratuitamente per 14 giorni senza carta di credito.",
+    "s5B2Title": "Piani Scalabili: ",
+    "s5B2Text": "I pacchetti includono Start (1 TV), Business 5 (fino a 5 TV), Business 10 (fino a 10 TV), Pro 20 (fino a 20 TV), Chain 50 (fino a 50 TV) ed Enterprise (TV illimitati).",
+    "s5B3Title": "Upgrade e Disdetta: ",
+    "s5B3Text": "È possibile modificare o disdire l'abbonamento in qualsiasi momento senza costi nascosti.",
+    "s6Title": "6. Disponibilità del Servizio, Hardware e Aggiornamenti",
+    "s6P1": "ABSignage utilizza infrastrutture cloud protette con crittografia AES-256 e archiviazione locale per garantire la massima continuità operativa.",
+    "s6P2": "Il Cliente è responsabile della manutenzione fisica dei propri televisori e dispositivi Android TV. Gli aggiornamenti dell'app possono essere distribuiti automaticamente tramite Google Play.",
+    "s7Title": "7. Privacy dei Dati, GDPR e Cancellazione dell'Account",
+    "s7P1": "Il trattamento dei dati è regolato dalla nostra Informativa sulla Privacy in conformità con il GDPR europeo e le Norme sui Dati Utente di Google Play.",
+    "s7P2": "È possibile richiedere in qualsiasi momento la cancellazione definitiva dell'account e di tutti i dati associati, che verranno eliminati entro 30 giorni.",
+    "s8Title": "8. Limitazione di Responsabilità e Risoluzione",
+    "s8P1": "Nei limiti consentiti dalla legge, ABSignage non è responsabile per danni indiretti, guasti hardware di terze parti o interruzioni elettriche locali.",
+    "s8P2": "Ci riserviamo il diritto di sospendere gli account che violano i presenti Termini o trasmettono contenuti illeciti.",
+    "privacyBtn": "Informativa sulla Privacy",
+    "deletionBtn": "Modulo Cancellazione Dati",
+    "googlePlayBtn": "ABSignage Player su Google Play"
+  },
+  "dataDeletion": {
+    "privacyLink": "Informativa sulla Privacy",
+    "badge": "Conformità Dati Utente Google Play · Cancellazione Account",
+    "title": "Richiedi la Cancellazione di Account e Dati",
+    "subtitle": "In conformità con le norme sui dati utente di Google Play e con il GDPR, hai il diritto di richiedere la cancellazione definitiva del tuo account, degli schermi abbinati e dei file caricati.",
+    "emailLabel": "Email dell'Account Registrato *",
+    "emailPlaceholder": "admin@azienda.com",
+    "orgLabel": "Nome Organizzazione / Azienda *",
+    "orgPlaceholder": "es. Ristorante & Bar",
+    "deviceLabel": "ID Dispositivo (Facoltativo)",
+    "devicePlaceholder": "es. 849-204",
+    "reasonLabel": "Motivo della Cancellazione (Facoltativo)",
+    "reasonPlaceholder": "Descrivi il motivo...",
+    "warning": "Attenzione: questa azione è irreversibile. Tutti i contenuti multimediali, le playlist e la telemetria dei dispositivi verranno eliminati definitivamente entro 30 giorni.",
+    "submitBtn": "Invia Richiesta di Cancellazione Completa",
+    "successTitle": "Richiesta Registrata con Successo",
+    "successMessage": "La tua richiesta di cancellazione è stata registrata in modo sicuro. Riceverai un'email di conferma all'indirizzo registrato entro 48 ore.",
+    "returnHome": "Torna alla Home"
   }
 }

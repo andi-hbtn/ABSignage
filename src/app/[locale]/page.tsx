@@ -1,5 +1,5 @@
 import { i18n, type Locale } from "@/lib/i18n-config"
-import { getDictionary } from "@/lib/get-dictionary"
+import { getDictionary } from "@/app/[locale]/dictionaries"
 import { HomePageClient } from "@/components/HomePageClient"
 
 export default async function LocalizedHomePage({

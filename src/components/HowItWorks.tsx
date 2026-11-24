@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useCallback, useMemo } from "react"
 import { Badge } from "@/components/ui/badge"
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import type { Locale } from "@/lib/i18n-config"
 import {
   Play,

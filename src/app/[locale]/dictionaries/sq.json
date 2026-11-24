@@ -9,6 +9,7 @@
     "layouts": "Zonat e Ekranit",
     "pricing": "Çmimet",
     "faq": "Pyetje",
+    "howItWorks": "Si Funksionon",
     "requestDemo": "Kërko Demo"
   },
   "hero": {
@@ -216,6 +217,143 @@
     "soundOn": "Aktivizo Zërin",
     "soundOff": "Çaktivizo Zërin",
     "speed": "Shpejtësia",
-    "fullscreen": "Ekran i Plotë"
+    "fullscreen": "Ekran i Plotë",
+    "sceneLabel": "SKENA",
+    "scenes": [
+      {
+        "shortTitle": "Kodi në TV",
+        "title": "Skena 1 — Gjenerimi i kodit të çiftimit në Android TV",
+        "desc": "Aplikacioni ABSignage hapet në televizor dhe gjeneron automatikisht një kod unik prej 6 shifrash (739-204), duke pritur lidhjen me platformën."
+      },
+      {
+        "shortTitle": "Lidhja e TV",
+        "title": "Skena 2 — Futja e kodit në platformën ABSignage",
+        "desc": "Përdoruesi hap konsolën web të ABSignage, shkon te pajisjet dhe fut me lehtësi të njëjtin kod 6-shifror (739-204) të shfaqur në televizor."
+      },
+      {
+        "shortTitle": "Aktivizimi",
+        "title": "Skena 3 — Çiftimi i suksesshëm dhe aktivizimi i televizorit",
+        "desc": "Platforma verifikon kodin menjëherë. Televizori regjistrohet me statusin Online & Aktiv, gati për të marrë përmbajtje dhe fushata."
+      },
+      {
+        "shortTitle": "Ngarkimi i Mediave",
+        "title": "Skena 4 — Ngarkimi i mediave komerciale për çdo industri",
+        "desc": "Ngarkoni me lehtësi foto dhe video 4K për ushqime, pije, produkte bukurie e parfume, veshje mode dhe promovime me pakicë nga një vend i vetëm."
+      },
+      {
+        "shortTitle": "Formatet e Playlistave",
+        "title": "Skena 5 — Zgjedhja e formateve: Full-screen, Horizontal dhe Totem Vertikal",
+        "desc": "Krijoni playlista sipas nevojave: Ekran i plotë (1 zonë 100%), Horizontal me 3 zona të sinkronizuara, ose Totem Vertikal (9:16) për modë dhe dyqane."
+      },
+      {
+        "shortTitle": "Përzgjedhja e Mediave",
+        "title": "Skena 6 — Përzgjedhja dhe organizimi i mediave në zona me pamje live",
+        "desc": "Zgjidhni materialet nga Media Library, vendosni kohëzgjatjen (10s, 15s) dhe efektet e tranzicionit me preview live në kohë reale."
+      },
+      {
+        "shortTitle": "Krijimi i Fushatës",
+        "title": "Skena 7 — Krijimi i fushatës dhe publikimi i menjëhershëm në re",
+        "desc": "Lidhni playlistën me televizorin e regjistruar: FUSHATË ──▶ PLAYLISTË ──▶ TELEVIZOR. Klikoni Publiko dhe përmbajtja shpërndahet në çast."
+      },
+      {
+        "shortTitle": "Shfaqja Live në TV",
+        "title": "Skena 8 — Fushata luhet live në Android TV në mjedise reale biznesi",
+        "desc": "Televizori fillon menjëherë luajtjen e fushatës së publikuar në restorante, bare, dyqane kozmetike dhe butikë mode. Një platformë për çdo biznes."
+      }
+    ]
+  },
+  "privacy": {
+    "backHome": "Kthehu në Ballinë",
+    "badge": "Google Play Policy Compliant · GDPR & COPPA Ready",
+    "title": "Politika e Privatësisë për ABSignage Player",
+    "updated": "Përditësuar: 2026 · Versioni 2.4.0",
+    "noticeLabel": "Njoftim Zyrtar i Aplikacionit:",
+    "noticeText": "Kjo Politikë Privatësie zbatohet drejtpërdrejt për aplikacionin ABSignage Android TV Player, Panelin e Menaxhimit ABSignage dhe API-të në cloud të zhvilluara nga ABSignage.",
+    "s1Title": "1. Përmbledhja & Angazhimi Ynë",
+    "s1P1": "Në ABSignage, ne respektojmë privatësinë tuaj dhe jemi të përkushtuar ndaj transparencës së plotë në përputhje me Rregullat e të Dhënave të Përdoruesve të Google Play, GDPR-në e Bashkimit Evropian dhe ligjet në fuqi.",
+    "s1P2": "ABSignage Player është një aplikacion B2B për ekrane dixhitale televizive, tabela menysh dhe ekrane reklamimi. Ne nuk shesim kurrë të dhëna personale dhe mbledhim vetëm të dhënat minimale teknike të nevojshme për funksionimin e ekranit.",
+    "s2Title": "2. Të Dhënat që Mbledhim dhe Përdorimi",
+    "b1Title": "Identifikuesi i Pajisjes & Kodi i Lidhjes: ",
+    "b1Text": "Një kod pseudonim i krijuar gjatë lidhjes për të lidhur ekranin me panelin e administrimit.",
+    "b2Title": "Statusi Periodik i Pajisjes (Heartbeat): ",
+    "b2Text": "Statusi online i ekranit, shpejtësia FPS dhe hapësira e memorjes për të garantuar transmetim pa ndërprerje.",
+    "s3Title": "3. Fshirja e të Dhënave & Të Drejtat Tuaja",
+    "s3Desc": "Ju keni të drejtën të kërkoni fshirjen e llogarisë tuaj dhe të të gjithë ekraneve të lidhura në çdo kohë.",
+    "deletionBtn": "Hap Formularin e Fshirjes së të Dhënave",
+    "termsBtn": "Shiko Kushtet e Shërbimit"
+  },
+  "terms": {
+    "backHome": "Kthehu në Ballinë",
+    "badge": "Në Përputhje me Rregullat e Google Play · Kushtet B2B SaaS",
+    "title": "Kushtet e Shërbimit (Terms of Service) për ABSignage",
+    "updated": "Përditësuar: 2026 · Versioni 2.4.0",
+    "noticeLabel": "Marrëveshja Zyrtare e Aplikacionit & Platformës:",
+    "noticeText": "Këto Kushte Shërbimi (\"Kushtet\") rregullojnë aksesin dhe përdorimin e aplikacionit ABSignage Android TV Player (ID e Paketës në Google Play: com.andibevapi.digitalsignageplayer), Panelit të Menaxhimit në Cloud të ABSignage dhe API-ve përkatëse të operuara nga ABSignage.",
+    "s1Title": "1. Pranimi i Kushteve & Qëllimi B2B",
+    "s1P1": "Duke shkarkuar, instaluar ose hapur aplikacionin ABSignage Player nga Google Play, duke lidhur një ekran televiziv me kod çiftimi ose duke hapur një llogari në Panelin Cloud të ABSignage, ju (\"Klienti\", \"Biznesi\" ose \"Përdoruesi\") pranoni të respektoni këto Kushte Shërbimi.",
+    "s1P2": "ABSignage është një platformë B2B (Business-to-Business) në cloud për menaxhimin e ekraneve dixhitale komerciale—duke përfshirë restorante, kafene, dyqane me pakicë, supermarkete, farmaci, klinika, hotele, palestra dhe zyra—që funksionon në Android TV, Google TV dhe Android TV Box ose HDMI Stick.",
+    "s2Title": "2. Licenca e Përdorimit & Shpërndarja në Google Play",
+    "s2Intro": "Në përputhje me këto Kushte dhe paketën tuaj aktive të abonimit, ABSignage i jep biznesit tuaj një licencë të kufizuar, jo-ekskluzive, të patransferueshme dhe të revokueshme për të instaluar aplikacionin ABSignage Player në ekranet tuaja dhe për të përdorur panelin e menaxhimit.",
+    "s2B1Title": "Përdorimi i Lejuar Komercial: ",
+    "s2B1Text": "Ju mund të lidhni dhe menaxhoni ekrane televizive deri në limitin e paketës së zgjedhur (Start, Business 5, Business 10, Pro 20, Chain 50 ose Enterprise).",
+    "s2B2Title": "Kufizimet Teknike: ",
+    "s2B2Text": "Ndalohet dekompilimi, modifikimi, kopjimi i kodit burimor ose rishpërndarja e paautorizuar e APK-së së ABSignage Player, si dhe çdo tentativë për të anashkaluar kodin 6-shifror të sigurisë.",
+    "s2B3Title": "Përputhshmëria me Google Play: ",
+    "s2B3Text": "Instalimi dhe përditësimet automatike përmes Google Play Store i nënshtrohen gjithashtu Kushteve të Shërbimit të Google Play.",
+    "s3Title": "3. Lidhja e Pajisjeve, Memoria Offline & Telemetria",
+    "s3Intro": "Për të garantuar transmetim komercial pa ndërprerje dhe pa ekrane të zeza, aplikacioni ABSignage Player kryen këto procese teknike në pajisjen tuaj televizive:",
+    "s3B1Title": "Aktivizimi me Kod 6-Shifror: ",
+    "s3B1Text": "Gjatë hapjes në TV, aplikacioni gjeneron një kod unik 6-shifror që shërben për të çiftuar ekranin fizik me llogarinë e biznesit tuaj në cloud.",
+    "s3B2Title": "100% Riprodhim Offline (Cache Lokale): ",
+    "s3B2Text": "Ju autorizoni aplikacionin të shkarkojë dhe ruajë lokalisht në memorien e pajisjes videot 4K, fotot dhe strukturat me shumë zona, në mënyrë që transmetimi të vazhdojë pa ndërprerje edhe nëse shkëputet interneti.",
+    "s3B3Title": "Statusi Periodik (Heartbeat) & Proof-of-Play: ",
+    "s3B3Text": "Pajisja dërgon sinjale periodike teknike (statusi online/offline, playlist-a aktive, shpejtësia FPS dhe hapësira e lirë) për diagnostikim në kohë reale.",
+    "s4Title": "4. Përmbajtja e Ngarkuar, Pronësia Intelektuale & Përdorimi i Lejuar",
+    "s4Intro": "ABSignage ju mundëson ngarkimin e imazheve dhe videove 4K, ndarjen e ekranit në Fullscreen, Dual Split (50/50) e Triple Split (33%), dhe planifikimin sipas fashave orare (Day-Parting).",
+    "s4B1Title": "Pronësia mbi Mediat Tuaja: ",
+    "s4B1Text": "Ju ruani 100% të drejtat e pronësisë intelektuale mbi të gjitha logot, menytë, fotot, çmimet dhe videot promocionale që ngarkoni në Media Library.",
+    "s4B2Title": "Përgjegjësia Ligjore për Përmbajtjen: ",
+    "s4B2Text": "Ju garantoni se zotëroni të drejtat e autorit ose licencat e nevojshme komerciale për çdo material vizual apo audio që shfaqni publikisht në ekranet e biznesit tuaj.",
+    "s4B3Title": "Përmbajtja e Ndaluar: ",
+    "s4B3Text": "Ndalohet rreptësisht ngarkimi ose transmetimi i materialeve të paligjshme, mashtruese, që shkelin të drejtat e autorit, me përmbajtje të papërshtatshme ose skedarë keqdashës.",
+    "s5Title": "5. Prova 14-Ditore Falas, Paketat e Abonimit & Faturimi",
+    "s5Intro": "ABSignage ofron paketa të qarta sipas numrit të ekraneve televizive, me faturim Mujor ose Vjetor (me 2 muaj falas në faturimin vjetor):",
+    "s5B1Title": "Prova 14-Ditore Falas: ",
+    "s5B1Text": "Bizneset e reja mund ta testojnë platformën për 14 ditë falas pa kartë krediti. Nëse nuk vazhdoni me abonim pas provës, transmetimi ndalon pa asnjë pagesë automatike.",
+    "s5B2Title": "Paketat sipas Numrit të Ekraneve: ",
+    "s5B2Text": "Planet fillojnë nga Start (1 TV), Business 5 (deri 5 TV), Business 10 (deri 10 TV), Pro 20 (deri 20 TV), Chain 50 (deri 50 TV) deri te Enterprise (TV pa limit me 99.99% SLA uptime).",
+    "s5B3Title": "Ndryshimi i Paketës & Anulimi: ",
+    "s5B3Text": "Mund të kaloni në paketë më të lartë ose të anuloni abonimin në çdo kohë. Anulimi ndalon faturimet e ardhshme, ndërsa shërbimi mbetet aktiv deri në fund të periudhës së paguar.",
+    "s6Title": "6. Disponueshmëria e Shërbimit, Pajisjet & Përditësimet",
+    "s6P1": "ABSignage përdor infrastrukturë cloud të sigurt me enkriptim AES-256 për disponueshmëri maksimale, të kombinuar me ruajtjen lokale (Offline Cache) që mbron ekranet tuaja nga çdo rënie e rrjetit.",
+    "s6P2": "Klienti mban përgjegjësi për mirëmbajtjen fizike të televizorëve, pajisjeve Android TV Box/Stick dhe energjisë elektrike në pikën e shitjes. Ne mund të publikojmë përditësime automatike përmes Google Play për të përmirësuar sigurinë dhe performancën.",
+    "s7Title": "7. Privatësia e të Dhënave, GDPR & Fshirja e Llogarisë",
+    "s7P1": "Mbrojtja e të dhënave tuaja rregullohet nga Politika jonë e Privatësisë në përputhje të plotë me Rregullat e të Dhënave të Përdoruesve të Google Play dhe GDPR-në Evropiane. Ne nuk shesim kurrë të dhëna dhe nuk shfaqim reklama të palëve të treta në ekranet tuaja.",
+    "s7P2": "Ju keni të drejtë të shkëputni pajisjet, të fshini mediat ose të kërkoni fshirjen e përhershme të llogarisë dhe të dhënave në çdo kohë. Të gjitha mediat, playlist-at dhe telemetria fshihen përgjithmonë brenda 30 ditëve.",
+    "s8Title": "8. Kufizimi i Përgjegjësisë & Përfundimi i Marrëveshjes",
+    "s8P1": "Në masën maksimale të lejuar nga ligji, ABSignage nuk mban përgjegjësi për dëme të tërthorta, defekte fizike të televizorëve të palëve të treta, ndërprerje të energjisë elektrike apo përmbajtje të paautorizuar të ngarkuar nga përdoruesit.",
+    "s8P2": "Ne rezervojmë të drejtën të pezullojmë ose mbyllim llogaritë që shkelin këto Kushte ose transmetojnë përmbajtje të paligjshme. Për çdo pyetje ligjore apo kontrata Enterprise, mund të na kontaktoni drejtpërdrejt përmes platformës zyrtare ABSignage.",
+    "privacyBtn": "Politika e Privatësisë",
+    "deletionBtn": "Formulari i Fshirjes së të Dhënave",
+    "googlePlayBtn": "ABSignage Player në Google Play"
+  },
+  "dataDeletion": {
+    "privacyLink": "Politika e Privatësisë",
+    "badge": "Në Përputhje me Google Play · Fshirja e Llogarisë",
+    "title": "Kërkesë për Fshirjen e Llogarisë & të Dhënave",
+    "subtitle": "Në zbatim të rregullave të Google Play dhe GDPR, ju keni të drejtë të kërkoni fshirjen e përhershme të llogarisë suaj, pajisjeve të lidhura dhe të gjitha skedarëve.",
+    "emailLabel": "Email-i i Regjistruar i Llogarisë *",
+    "emailPlaceholder": "admin@kompania.com",
+    "orgLabel": "Emri i Organizatës / Biznesit *",
+    "orgPlaceholder": "p.sh. Restorant & Bar",
+    "deviceLabel": "ID e Pajisjes (Opsionale)",
+    "devicePlaceholder": "p.sh. 849-204",
+    "reasonLabel": "Arsyeja e Kërkesës (Opsionale)",
+    "reasonPlaceholder": "Shkruani arsyen e fshirjes...",
+    "warning": "Kujdes: Ky veprim është i pakthyeshëm. Të gjitha mediat, playlist-at dhe telemetria do të fshihen përgjithmonë brenda 30 ditëve.",
+    "submitBtn": "Dërgo Kërkesën për Fshirje të Plotë",
+    "successTitle": "Kërkesa u Regjistrua me Sukses",
+    "successMessage": "Kërkesa juaj është marrë nga ekipi ynë i sigurisë. Një email konfirmimi do të dërgohet te adresa e specifikuar brenda 48 orëve.",
+    "returnHome": "Kthehu në Ballinë"
   }
 }

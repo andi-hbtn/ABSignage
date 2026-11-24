@@ -16,7 +16,7 @@ import {
 import { submitDemoRequest } from "@/app/actions/demo-request"
 import { Button } from "@/components/ui/button"
 import { Input, type InputProps } from "@/components/ui/input"
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import { cn } from "@/lib/utils"
 import {
   DEFAULT_SCREEN_TIER,

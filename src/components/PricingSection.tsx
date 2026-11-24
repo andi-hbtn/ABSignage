@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react"
 import { Button } from "@/components/ui/button"
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import {
   Check,
   ArrowRight,

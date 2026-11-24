@@ -11,7 +11,7 @@ import { PricingSection } from "@/components/PricingSection"
 import { FaqSection } from "@/components/FaqSection"
 import { CtaBanner } from "@/components/CtaBanner"
 import { Footer } from "@/components/Footer"
-import type { Dictionary } from "@/lib/get-dictionary"
+import type { Dictionary } from "@/app/[locale]/dictionaries"
 import type { Locale } from "@/lib/i18n-config"
 
 const DemoBookingModal = dynamic(
