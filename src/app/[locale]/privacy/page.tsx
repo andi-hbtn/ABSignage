@@ -13,12 +13,22 @@ import {
   HardDrive,
   CheckCircle2,
   ArrowLeft,
+  FileText,
 } from "lucide-react"
 
 export default function LocalizedPrivacyPolicyPage() {
   const params = useParams()
   const locale = (params?.locale as Locale) || "en"
-  const [lang, setLang] = useState<"en" | "sq">(locale === "sq" ? "sq" : "en")
+  const defaultLang: "en" | "sq" = locale === "sq" ? "sq" : "en"
+  const [overrideLang, setOverrideLang] = useState<{
+    forLocale: Locale
+    lang: "en" | "sq"
+  } | null>(null)
+  const lang: "en" | "sq" =
+    overrideLang?.forLocale === locale ? overrideLang.lang : defaultLang
+  const setLang = (nextLang: "en" | "sq") => {
+    setOverrideLang({ forLocale: locale, lang: nextLang })
+  }
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
@@ -166,13 +176,20 @@ export default function LocalizedPrivacyPolicyPage() {
                   ? "You have the right to request deletion of your account and all associated screens at any time."
                   : "Ju keni të drejtën të kërkoni fshirjen e llogarisë tuaj dhe të të gjithë ekraneve të lidhura në çdo kohë."}
               </p>
-              <div className="pt-2">
+              <div className="pt-2 flex flex-wrap items-center gap-3">
                 <Link
                   href={`/${locale}/data-deletion`}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 text-xs font-bold hover:bg-rose-500/30 transition-all"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
                   <span>{lang === "en" ? "Open Data Deletion Form" : "Hap Formularin e Fshirjes së të Dhënave"}</span>
+                </Link>
+                <Link
+                  href={`/${locale}/terms`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-xs font-bold hover:bg-cyan-500/30 transition-all"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>{lang === "en" ? "View Terms of Service" : "Shiko Kushtet e Shërbimit"}</span>
                 </Link>
               </div>
             </section>

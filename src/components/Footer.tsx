@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import type { Dictionary } from "@/lib/get-dictionary"
 import type { Locale } from "@/lib/i18n-config"
-import { ShieldCheck, ArrowUpRight, Lock, Trash2 } from "lucide-react"
+import { ShieldCheck, ArrowUpRight, Lock, Trash2, FileText } from "lucide-react"
 
 interface FooterProps {
   dict: Dictionary["footer"]
@@ -64,6 +64,12 @@ export function Footer({ dict, locale }: FooterProps) {
                 <Link href={`/${locale}/privacy`} className="text-cyan-300 font-semibold hover:underline flex items-center gap-1.5">
                   <Lock className="w-3.5 h-3.5 text-cyan-400" />
                   <span>{dict.privacyPolicy}</span>
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/terms`} className="text-slate-300 hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+                  <FileText className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>{dict.termsOfService}</span>
                 </Link>
               </li>
               <li>
