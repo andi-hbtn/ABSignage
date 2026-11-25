@@ -4,14 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { LanguageSelector } from "@/components/LanguageSelector"
 import { i18n, type Locale } from "@/lib/i18n-config"
 import { getDictionary } from "@/app/[locale]/dictionaries"
-import {
-  ShieldCheck,
-  Trash2,
-  HardDrive,
-  CheckCircle2,
-  ArrowLeft,
-  FileText,
-} from "lucide-react"
+import { ShieldCheck, Trash2, HardDrive, CheckCircle2, ArrowLeft, FileText, } from "lucide-react"
 
 export default async function LocalizedPrivacyPolicyPage({
   params,
