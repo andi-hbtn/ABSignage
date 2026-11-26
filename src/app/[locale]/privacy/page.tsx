@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { LanguageSelector } from "@/components/LanguageSelector"
 import { i18n, type Locale } from "@/lib/i18n-config"
 import { getDictionary } from "@/app/[locale]/dictionaries"
-import { ShieldCheck, Trash2, HardDrive, CheckCircle2, ArrowLeft, FileText, } from "lucide-react"
+import { ShieldCheck, Trash2, HardDrive, CheckCircle2, ArrowLeft, FileText, Share2, Clock, Mail, } from "lucide-react"
 
 export default async function LocalizedPrivacyPolicyPage({
   params,
@@ -104,13 +104,64 @@ export default async function LocalizedPrivacyPolicyPage({
               </ul>
             </section>
 
-            {/* 3. Account Deletion & Contact */}
+            {/* 3. Sharing — e kërkuar nga Google Play User Data policy: politika duhet të
+                thotë me kë ndahen të dhënat, qoftë edhe për ta mohuar. Pa të, formulari
+                «Data safety» nuk ka mbështetje te kjo faqe. */}
+            <section className="rounded-2xl border border-white/[0.08] bg-slate-900/50 p-6 sm:p-8 space-y-3">
+              <div className="flex items-center gap-2.5 text-cyan-400 font-bold text-lg">
+                <Share2 className="w-5 h-5" />
+                <h2>{t.sharingTitle}</h2>
+              </div>
+              <p>{t.sharingP1}</p>
+              <p>{t.sharingP2}</p>
+            </section>
+
+            {/* 4. Retention — afatet janë ato që zbatojnë punët e planifikuara te backend-i
+                (10 / 30 / 400 / 30 ditë), jo numra të zgjedhur për tekstin. */}
+            <section className="rounded-2xl border border-white/[0.08] bg-slate-900/50 p-6 sm:p-8 space-y-4">
+              <div className="flex items-center gap-2.5 text-cyan-400 font-bold text-lg">
+                <Clock className="w-5 h-5" />
+                <h2>{t.retentionTitle}</h2>
+              </div>
+              <p>{t.retentionIntro}</p>
+              <ul className="space-y-3 text-xs sm:text-sm">
+                {[
+                  [t.r1Title, t.r1Text],
+                  [t.r2Title, t.r2Text],
+                  [t.r3Title, t.r3Text],
+                  [t.r4Title, t.r4Text],
+                ].map(([label, text]) => (
+                  <li key={label} className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-white">{label}</strong>
+                      {text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p>{t.retentionP2}</p>
+            </section>
+
+            {/* 5. Account Deletion & Contact */}
             <section className="rounded-2xl border border-cyan-500/30 bg-slate-900/70 p-6 sm:p-8 space-y-4">
               <div className="flex items-center gap-2.5 text-cyan-400 font-bold text-lg">
                 <Trash2 className="w-5 h-5 text-rose-400" />
                 <h2>{t.s3Title}</h2>
               </div>
               <p>{t.s3Desc}</p>
+              {/* Pika e kontaktit: Google kërkon një rrugë pyetjesh, dhe një formular
+                  fshirjeje nuk është rrugë pyetjesh. */}
+              <p className="flex items-center gap-2 flex-wrap">
+                <Mail className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                <strong className="text-white">{t.contactLabel}</strong>
+                <a
+                  href={`mailto:${t.contactEmail}`}
+                  className="text-cyan-300 underline underline-offset-2 hover:text-cyan-200"
+                >
+                  {t.contactEmail}
+                </a>
+              </p>
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <Link
                   href={`/${validLocale}/data-deletion`}
